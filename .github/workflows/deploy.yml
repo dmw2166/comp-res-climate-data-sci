@@ -32,7 +32,8 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build src
+        cd src
+        jupyter-book build .
 
   # Deploy the book's html to GitHub Pages
     - name: GitHub Pages action
