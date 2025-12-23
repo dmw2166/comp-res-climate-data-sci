@@ -1,6 +1,6 @@
-title: Earth and Environmental Data Science
-author: Ryan Abernathey
-copyright: 2016-2021
+title: Computing and Research Methods for Climate Data Science
+author: Dan Westervelt
+copyright: 2025
 logo: eeds-logo.png
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 only_build_toc_files: true
@@ -10,15 +10,10 @@ execute:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/earth-env-data-science/earth-env-data-science-book
+  url: https://github.com/dmw2166/comp-res-climate-data-sci
   path_to_book: src
   branch: master
 
-# Launch button settings
-launch_buttons:
-  notebook_interface: jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
-  binderhub_url: "" # The URL of the BinderHub (e.g., https://mybinder.org)
-  jupyterhub_url: "https://https://us-central1-b.gcp.pangeo.io/"
 
 # HTML-specific settings
 html:
@@ -31,7 +26,7 @@ html:
   extra_footer              : ""  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : "https://earth-env-data-science.github.io"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  baseurl                   : "https://dmw2166.github.io/comp-res-climate-data-sci"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
     hypothesis              : false
     utterances              : false
@@ -40,7 +35,7 @@ sphinx:
   extra_extensions:
   - sphinxext.opengraph
   config:
-    ogp_site_url: "https://earth-env-data-science.github.io/"
-    ogp_image: "https://earth-env-data-science.github.io/_static/eeds-logo.png"
+    ogp_site_url: "https://dmw2166.github.io/comp-res-climate-data-sci"
+    ogp_image: "https://dmw2166.github.io/comp-res-climate-data-sci/_static/eeds-logo.png"
     ogp_description_length: 200
     ogp_use_first_image: true
