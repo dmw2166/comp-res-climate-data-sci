@@ -1,5 +1,4 @@
 name: deploy-book
-
 # Trigger the workflow on push to main branch and PRs
 on:
   push:
@@ -8,7 +7,6 @@ on:
   pull_request:
     branches:
     - master
-
 # This job installs dependencies, builds the book, and deploys the html
 jobs:
   build-and-deploy-book:
@@ -19,7 +17,6 @@ jobs:
         python-version: [3.11]
     steps:
     - uses: actions/checkout@v2
-
     # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
@@ -28,16 +25,21 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-
     # Build the book
     - name: Build the book
       run: |
-        ls -la
-        ls -la src/
-        cat src/_config.yml
         cd src
-        pwd
-        jupyter-book build . -v
+        jupyter-book build .
+    
+    # Check what was built
+    - name: Check build output
+      run: |
+        echo "Contents of src:"
+        ls -la src/
+        echo "Does _build exist?"
+        ls -la src/_build/ || echo "_build not found"
+        echo "Does html exist?"
+        ls -la src/_build/html/ || echo "html not found"
 
   # Deploy the book's html to GitHub Pages
     - name: GitHub Pages action
