@@ -2,7 +2,7 @@
 
 ## History
 
-This book grew out of a course developed at Columbia University called _Research Computing in Earth Science_.
+This website grew out of a course developed at Columbia University called _Research Computing in Earth Science_.
 It was written originally by [Ryan Abernathey](https://rabernat.github.io), with significant contributions from
 [Kerry Key](https://emlab.ldeo.columbia.edu/index.php/team/kerry-key/), 
 [Tim Crone](https://github.com/tjcrone), and [Julius Busecke](https:www.juliusbusecke.com).
