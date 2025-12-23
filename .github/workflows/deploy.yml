@@ -37,7 +37,7 @@ jobs:
         cat src/_config.yml
         cd src
         pwd
-        jupyter-book build . --verbose
+        jupyter-book build . -v
 
   # Deploy the book's html to GitHub Pages
     - name: GitHub Pages action
