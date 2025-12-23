@@ -25,12 +25,12 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-# Build the book
+    # Build the book
     - name: Build the book
       run: |
         cd src
         echo "Starting jupyter-book build..."
-        jupyter-book build . || echo "Build failed with exit code $?"
+        jupyter-book build . --builder html
         echo "Build command finished"
     
     # Check what was built
