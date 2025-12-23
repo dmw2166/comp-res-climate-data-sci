@@ -1,2 +1,2 @@
 jupyter-book>=0.15.0
-sphinxext-opengraph
+sphinxext-opengraph=0.9.1
