@@ -5,16 +5,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="An Introduction to Earth and Environmental Data Science" />
+<meta property="og:title" content="Computing and Research Methods for Climate Data Science" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://dmw2166.github.io/intro.html" />
 <meta property="og:site_name" content="Python" />
-<meta property="og:description" content="History: This book grew out of a course developed at Columbia University called Research Computing in Earth Science. It was written mostly by Ryan Abernathey, with significant contributions from Ke..." />
+<meta property="og:description" content="History: This book grew out of a course developed at Columbia University called Research Computing in Earth Science. It was written originally by Ryan Abernathey, with significant contributions fro..." />
 <meta property="og:image" content="https://dmw2166.github.io/comp-res-climate-data-sci/_static/eeds-logo.png" />
 <meta property="og:image:alt" content="Python" />
-<meta name="description" content="History: This book grew out of a course developed at Columbia University called Research Computing in Earth Science. It was written mostly by Ryan Abernathey, with significant contributions from Ke..." />
+<meta name="description" content="History: This book grew out of a course developed at Columbia University called Research Computing in Earth Science. It was written originally by Ryan Abernathey, with significant contributions fro..." />
 
-    <title>An Introduction to Earth and Environmental Data Science &#8212; Computing and Research Methods for Climate Data Science</title>
+    <title>Computing and Research Methods for Climate Data Science &#8212; Computing and Research Methods for Climate Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -117,7 +117,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    An Introduction to Earth and Environmental Data Science
+                    Computing and Research Methods for Climate Data Science
                 </a>
             </li>
         </ul>
@@ -585,8 +585,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recommended-course-structure">
-   Recommended Course Structure
+  <a class="reference internal nav-link" href="#course-structure">
+   Course Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-jupyterhub">
+   Course jupyterhub
   </a>
  </li>
 </ul>
@@ -598,7 +603,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>An Introduction to Earth and Environmental Data Science</h1>
+                <h1>Computing and Research Methods for Climate Data Science</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -624,8 +629,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recommended-course-structure">
-   Recommended Course Structure
+  <a class="reference internal nav-link" href="#course-structure">
+   Course Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-jupyterhub">
+   Course jupyterhub
   </a>
  </li>
 </ul>
@@ -638,32 +648,31 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-earth-and-environmental-data-science">
-<h1>An Introduction to Earth and Environmental Data Science<a class="headerlink" href="#an-introduction-to-earth-and-environmental-data-science" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-and-research-methods-for-climate-data-science">
+<h1>Computing and Research Methods for Climate Data Science<a class="headerlink" href="#computing-and-research-methods-for-climate-data-science" title="Permalink to this headline">#</a></h1>
 <section id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">#</a></h2>
 <p>This book grew out of a course developed at Columbia University called <em>Research Computing in Earth Science</em>.
-It was written mostly by <a class="reference external" href="https://rabernat.github.io">Ryan Abernathey</a>, with significant contributions from
+It was written originally by <a class="reference external" href="https://rabernat.github.io">Ryan Abernathey</a>, with significant contributions from
 <a class="reference external" href="https://emlab.ldeo.columbia.edu/index.php/team/kerry-key/">Kerry Key</a>,
 <a class="reference external" href="https://github.com/tjcrone">Tim Crone</a>, and <a class="reference external" href="https:///www.juliusbusecke.com">Julius Busecke</a>.
-By separating the book from the class, we hope to create an open-source community resource for Python education
-in the Earth and Environmental Sciences.</p>
+It was adapted and updated for use at the Columbia Climate School by <a class="reference external" href="https://aerosol.ldeo.columbia.edu/">Dan Westervelt</a>.</p>
 </section>
 <section id="motivation-and-scope">
 <h2>Motivation and Scope<a class="headerlink" href="#motivation-and-scope" title="Permalink to this headline">#</a></h2>
-<p>Computing has become an indispensable tool for nearly all Earth and Environmental Scientists, but it doesn’t often appear in our curriculums.
-This book focuses on <em>data analysis</em>, a subset of computing in which the data already exist, e.g.from observations or from the output of a simulation, but have to be transformed into understanding.
+<p>Computing has become an indispensable tool for nearly all climate scientists. Nearly all subdisciplines in climate now rely on aspects of data science to understand problems and evaluate solutions.</p>
+<p>This course focuses on <em>data analysis</em>, a subset of computing in which the data already exist, e.g.from observations or from the output of a simulation, but have to be transformed into understanding.
 There are many different ways to gain understanding, but most workflows often boil down to:</p>
 <ul class="simple">
 <li><p>read data files</p></li>
 <li><p>perform some analysis operations, from very simple (e.g. take the mean) to very complex (e.g. train a deep neural network)</p></li>
 <li><p>visualize the output in a plot</p></li>
+<li><p>save out some data</p></li>
 </ul>
-<p>This book doesn’t attempt to teach deep learning; its goal is to teach the basic foundations of Earth and Environmental Data Science which are often overlooked.
-The material is designed to be accessible for Earth Science graduate students in any discipline, with no prerequisites.</p>
-<p>This book is intended to introduce new graduate students to modern computing software, programming tools and best practices that are broadly applicable to the analysis and visualization of Earth and Environmental data.
-This includes an introduction to Unix, version control, and basic programming in the open-source Python language.
-The bulk of the content is devoted to in-depth exploration of the numerical analysis and visualization packages which comprise the modern Scientific Python ecosystem, including Numpy, Scipy, Matplotlib, Pandas, Xarray, using real Earth and Environmental datasets.</p>
+<p>This course is a broad introduction to research computing and data science drawing from examples in climate science. The material is designed to be accessible for Masters Students in Climate, with no prerequisites.</p>
+<p>This book is intended to introduce new graduate students to modern computing software, programming tools and best practices that are broadly applicable to the analysis and visualization of climate data.
+This includes an introduction to Unix, Git and Github, and basic programming in the open-source Python language.
+The bulk of the content is devoted to in-depth exploration of the numerical analysis and visualization packages which comprise the modern Scientific Python ecosystem, including Numpy, Scipy, Matplotlib, Pandas, Xarray, using real climate datasets.</p>
 </section>
 <section id="learning-goals">
 <h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h2>
@@ -680,17 +689,21 @@ The bulk of the content is devoted to in-depth exploration of the numerical anal
 </li>
 <li><p>Use visualization to enhance interpretation of data, including maps and interactive visualizations</p></li>
 <li><p>Construct complete, well-structured programs in Python</p></li>
-<li><p>Practice reproducible research through version control and binder</p></li>
+<li><p>Practice reproducible research through version control and Github</p></li>
 </ul>
 </section>
-<section id="recommended-course-structure">
-<h2>Recommended Course Structure<a class="headerlink" href="#recommended-course-structure" title="Permalink to this headline">#</a></h2>
-<p>This course material can be used however you want.
-However, it was developed for a full-credit, semester-long course that meets twice a week.
-The idea is to complete one lecture and one homework assignment per week.
-One of the weekly meetings consists of a lecture in which the instructor presents the week’s lecture, with students typing along.
-The other should be used as “collaborative time,” during which the students work on their assignments, ask questions, and interact with their peers.
+<section id="course-structure">
+<h2>Course Structure<a class="headerlink" href="#course-structure" title="Permalink to this headline">#</a></h2>
+<p>This course is designed for one weekly meeting, with at least half of the time in lecture in which the instructor presents the week’s lecture, with students typing along. The remaining time is used as “collaborative time,” during which the students work on their assignments, ask questions, and interact with their peers.
 A final project is an important capstone experience for a semester-long course.</p>
+</section>
+<section id="course-jupyterhub">
+<h2>Course jupyterhub<a class="headerlink" href="#course-jupyterhub" title="Permalink to this headline">#</a></h2>
+<p>We have a jupyterhub for the course in which you should do all of your assignments and take your notes. You should have received an email from Dr. Gus Correa, Systems programmer and Administrator at LDEO (Prof. Westervelt’s home institution within Columbia University). The physical server is called “chopin” and lives at LDEO.</p>
+<p>You can login to the JupyterHub running on chopin, with your username and password (provided by email to you),
+by pointing your laptop browser to [<a class="reference external" href="https://chopin.ldeo.columbia.edu:8441/jupyterhub/">https://chopin.ldeo.columbia.edu:8441/jupyterhub/</a>]</p>
+<p>Everyone is given a home directory has a quota of 10GB, and your work directory /data9/CLMT5053G/work/your_username has a quota of 50GB. Code can go in the home directories, which are backed up, but large datasets should go in the work directory.</p>
+<p>Please remember to actively log out of the jupyterhub when you are done using it. It is not enough to simply close the browser or close your laptop screen.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
