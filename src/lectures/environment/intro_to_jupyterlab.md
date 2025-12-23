@@ -31,7 +31,12 @@ Here are some useful references on Markdown syntax.
 ## Our Course JupyterHub
 
 [JupyterHub](https://jupyter.org/hub) is multi-user Jupyter environment designed for companies, classrooms and research labs.
-The Columbia version of this course uses a cloud-based JupyterHub environment
-managed by [2i2c](https://2i2c.org/infrastructure/):
 
-[![Launch JupyterHub](https://img.shields.io/badge/jupyterhub-us--central1--b.gcp.pangeo.io-orange?style=for-the-badge&logo=jupyter)]([https://pangeo.2i2c.cloud/](https://us-central1-b.gcp.pangeo.io/))
+We have a jupyterhub for the course in which you should do all of your assignments and take your notes. You should have received an email from Dr. Gus Correa, Systems programmer and Administrator at LDEO (Prof. Westervelt's home institution within Columbia University). The physical server is called "chopin" and lives at LDEO.
+
+You can login to the JupyterHub running on chopin, with your username and password (provided by email to you), by pointing your laptop browser to [https://chopin.ldeo.columbia.edu:8441/jupyterhub/]
+
+Everyone is given a home directory has a quota of 10GB, and your work directory /data9/CLMT5053G/work/your_username has a quota of 50GB. Code can go in the home directories, which are backed up, but large datasets should go in the work directory.
+
+Please remember to actively log out of the jupyterhub when you are done using it. It is not enough to simply close the browser or close your laptop screen.
+
