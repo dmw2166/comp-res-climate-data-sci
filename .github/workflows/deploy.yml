@@ -30,7 +30,7 @@ jobs:
       run: |
         cd src
         echo "Starting jupyter-book build..."
-        jupyter-book build . --builder html
+        jupyter-book build . --all
         echo "Build command finished"
     
     # Check what was built
