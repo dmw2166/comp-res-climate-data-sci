@@ -25,19 +25,22 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-    # Build the book
+# Build the book
     - name: Build the book
       run: |
         cd src
-        jupyter-book build .
+        jupyter-book build . 2>&1 | tee build.log
+        cat build.log
     
     # Check what was built
     - name: Check build output
       run: |
-        echo "Contents of src:"
-        ls -la src/
-        echo "Does _build exist?"
-        ls -la src/_build/ || echo "_build not found"
+        echo "Contents of src/_build:"
+        ls -la src/_build/
+        echo "Contents of src/_build/logs:"
+        ls -la src/_build/logs/
+        echo "Build log contents:"
+        cat src/_build/logs/*.log || echo "No logs found"
         echo "Does html exist?"
         ls -la src/_build/html/ || echo "html not found"
 
