@@ -14,29 +14,28 @@ To get started, open a terminal using the JupyterLab launcher. You will see
 something like this.
 
 ~~~
-jovyan@jupyter-rabernat:~$
+danielmw@chopin:~$
 ~~~
 
 The dollar sign is a **prompt**, which shows us that the shell is waiting for input.
-`jovyan` is our **username** and `jupyter-rabernat` is the **hostname**.
-Because we are using JupyterHub on the cloud, we all have the same username
-("jovyan" = resident of the planet Jupyter). However, we each have a different
-hostname (the name of the computer we are using), which corresponds to a
-"virtual machine" running in the cloud. From now on, we will just use a `$`
+`danielmw` is our **username** and `chopin` is the **hostname**.
+Because we are using JupyterHub on a physical server, we all have the same hostname
+("chopin" = the composer). However, we each have a different
+username (the name of our account, possibly your uni). From now on, we will just use a `$`
 to indicate the prompt.
 
 To find out your username in general, you can use the command
 
 ~~~
 $ whoami
-jovyan
+danielmw
 ~~~
 
 and to find out your hostname
 
 ~~~
 $ hostname
-jupyter-rabernat
+chopin
 ~~~
 
 Next,
@@ -49,8 +48,8 @@ i.e.,
 the directory that the computer assumes we want to run commands in
 unless we explicitly specify something else.
 Here,
-the computer's response is `/home/jovyan`,
-which is the **home directory** of the user named `jovyan`.
+the computer's response is `/home/danielmw`,
+which is the **home directory** of the user named `danielmw`.
 
 ~~~
 $ pwd
@@ -58,7 +57,7 @@ $ pwd
 
 
 ~~~
-/home/jovyan
+/home/danielmw
 ~~~
 
 
@@ -76,7 +75,7 @@ On a Unix computer, the filesystem looks like something this:
 At the top is the **root directory**
 that holds everything else.
 We refer to it using a slash character `/` on its own;
-this is the leading slash in `/home/jovyan`.
+this is the leading slash in `/home/danielmw`.
 
 Inside that directory are several other directories:
 `bin` (which is where some built-in programs are stored),
@@ -95,7 +94,7 @@ $ ls
 
 
 ~~~
-config.yaml  examples  lost+found  work  worker-template.yaml
+AOD_python CES-2024 CLMT5053G data data8 data9 Desktop ERF idl ...
 ~~~
 
 `ls` prints the names of the files and directories in the current directory in
@@ -108,10 +107,6 @@ which tells `ls` to add a trailing `/` to the names of directories:
 $ ls -F
 ~~~
 
-
-~~~
-config.yaml  examples/  lost+found/  work/  worker-template.yaml
-~~~
 
 
 `ls` has lots of other options. To find out what they are, we can type:
@@ -133,27 +128,20 @@ Any names in your output that don't have trailing slashes,
 are plain old **files**.
 
 We can also use `ls` to see the contents of a different directory.  Let's take a
-look at our `examples` directory by running `ls -F examples`,
+look at our `python -` directory by running `ls -F python`,
 i.e.,
-the command `ls` with the **arguments** `-F` and `examples`.
+the command `ls` with the **arguments** `-F` and `python`.
 The second argument --- the one *without* a leading dash --- tells `ls` that
 we want a listing of something other than our current working directory:
 
 ~~~
-$ ls -F examples
+$ ls -F python
 ~~~
 
-~~~
-content/                                                LICENSE           publishconf.py
-develop_server.sh*                                      Makefile          README.md
-DONT_SAVE_ANYTHING_HERE.md                              pelicanconf.py    themes/
-fabfile.py                                              pelican-plugins/
-github_deploy_key_rabernat_research_computing_2018.enc  plugins/
-~~~
 
-The output is the list of all the files in the `examples` directory.
-The examples directory on our JupyterHub is automatically populated with files
-from the [Git Source Repository for the class](https://github.com/rabernat/research_computing_2018)
+The output is the list of all the files in the `python` directory.
+The python directory on our JupyterHub is populated with files from research projects of mine from many years ago.
+
 
 The command to change locations is `cd` followed by a
 directory name to change our working directory.
@@ -167,16 +155,16 @@ use the following series of commands to get there:
 
 ~~~
 $ cd examples
-$ cd content
+$ cd notebooks
 ~~~
 
 
 These commands will move us from our home directory onto into
-the `examples` directory, then into the `content` directory. `cd` doesn't print anything,
+the `python` directory, then into the `notebooks` directory. `cd` doesn't print anything,
 but if we run `pwd` after it, we can see that we are now
-in `/home/jovyan/examples/content`.
+in `/home/danielmw/python/notebooks`.
 If we run `ls` without arguments now,
-it lists the contents of `/home/jovyan/examples/content`,
+it lists the contents of `/home/jovyan/python/notebooks`,
 because that's where we now are.
 
 We now know how to go down the directory tree, but
@@ -194,14 +182,14 @@ $ cd ..
 or more succinctly,
 the **parent** of the current directory.
 Sure enough,
-if we run `pwd` after running `cd ..`, we're back in `/home/jovyan/examples`:
+if we run `pwd` after running `cd ..`, we're back in `/home/danielmw/python`:
 
 ~~~
 $ pwd
 ~~~
 
 ~~~
-/home/jovyan/examples
+/home/danielmw/python
 ~~~
 
 e special directory `..` doesn't usually show up when we run `ls`.  If we want
@@ -214,7 +202,7 @@ $ ls -F -a
 
 `-a` stands for "show all";
 it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/home/jovyan`, refers to the `/home` directory)
+such as `..` (which, if we're in `/home/danielmw`, refers to the `/home` directory)
 As you can see,
 it also displays another special directory that's just called `.`,
 which means "the current working directory".
@@ -243,7 +231,7 @@ $ pwd
 
 
 ~~~
-/home/jovyan
+/home/danielmw
 ~~~
 
 It turns out that `cd` without an argument will return you to your home directory,
@@ -254,7 +242,7 @@ three commands, but we can actually string together the list of directories
 to move to `data` in one step:
 
 ~~~
-$ cd examples/content
+$ cd python/notebooks
 ~~~
 
 
@@ -286,12 +274,12 @@ $ pwd
 
 
 ~~~
-/home/jovyan/examples/content
+/home/danielmw/python/notebooks
 ~~~
 
 
 ~~~
-$ cd /home/jovyan/examples
+$ cd /home/danielmw/python
 ~~~
 
 
@@ -301,8 +289,8 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 
 The shell interprets the character `~` (tilde) at the start of a path to
 mean "the current user's home directory". For example, if Nelle's home
-directory is `/home/jovyan`, then `~/examples` is equivalent to
-`/home/jovyan/examples`. This only works if it is the first character in the
+directory is `/home/danielmw`, then `~/python` is equivalent to
+`/home/danielmw/python`. This only works if it is the first character in the
 path.
 
 Another shortcut is the `-` (dash) character.  `cd` will translate `-` into
@@ -351,7 +339,7 @@ $ pwd
 
 
 ~~~
-/home/jovyan
+/home/danielmw
 ~~~
 
 
@@ -361,8 +349,9 @@ $ ls -F
 
 
 ~~~
-config.yaml  examples/  lost+found/  work/  worker-template.yaml
+AOD_python CES-2024 CLMT5053G data data8 data9 Desktop ERF idl ...
 ~~~
+
 
 
 Let's create a new directory called `thesis` using the command `mkdir thesis`
@@ -384,9 +373,12 @@ $ ls -F
 ~~~
 
 
+
 ~~~
-config.yaml  examples/  lost+found/  thesis/  work/  worker-template.yaml
+AOD_python CES-2024 CLMT5053G data data8 data9 Desktop ERF idl ... thesis
 ~~~
+
+
 
 
 ## Good names for files and directories
@@ -473,7 +465,7 @@ file's disk space right away.
 
 
 Let's re-create that file
-and then move up one directory to `/home/jovyan` using `cd ..`:
+and then move up one directory to `/home/danielmw` using `cd ..`:
 
 ~~~
 $ touch draft.txt
