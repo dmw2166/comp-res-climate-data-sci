@@ -16,13 +16,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.8]
+        python-version: [3.11]
     steps:
     - uses: actions/checkout@v2
 
     # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
@@ -34,13 +34,12 @@ jobs:
       run: |
         jupyter-book build src
 
-    # Deploy the book's html to earth-env-data-science.github.io
+  # Deploy the book's html to GitHub Pages
     - name: GitHub Pages action
       if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        external_repository: earth-env-data-science/earth-env-data-science.github.io
-        publish_branch: master
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
         publish_dir: src/_build/html
-        full_commit_message: "GitHub action book deploy"
+        force_orphan: true
