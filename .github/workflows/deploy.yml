@@ -29,8 +29,9 @@ jobs:
     - name: Build the book
       run: |
         cd src
-        jupyter-book build . 2>&1 | tee build.log
-        cat build.log
+        echo "Starting jupyter-book build..."
+        jupyter-book build . || echo "Build failed with exit code $?"
+        echo "Build command finished"
     
     # Check what was built
     - name: Check build output
@@ -39,8 +40,8 @@ jobs:
         ls -la src/_build/
         echo "Contents of src/_build/logs:"
         ls -la src/_build/logs/
-        echo "Build log contents:"
-        cat src/_build/logs/*.log || echo "No logs found"
+        echo "myst.build.json contents:"
+        cat src/_build/logs/myst.build.json
         echo "Does html exist?"
         ls -la src/_build/html/ || echo "html not found"
 
