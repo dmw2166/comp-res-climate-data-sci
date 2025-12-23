@@ -118,7 +118,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    An Introduction to Earth and Environmental Data Science
+                    Computing and Research Methods for Climate Data Science
                 </a>
             </li>
         </ul>
@@ -717,24 +717,23 @@ title="Print to PDF"
 <p>Several commands are frequently used to create, inspect, rename, and delete files and directories.</p>
 <p>To get started, open a terminal using the JupyterLab launcher. You will see
 something like this.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>jovyan@jupyter-rabernat:~$
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>danielmw@chopin:~$
 </pre></div>
 </div>
 <p>The dollar sign is a <strong>prompt</strong>, which shows us that the shell is waiting for input.
-<code class="docutils literal notranslate"><span class="pre">jovyan</span></code> is our <strong>username</strong> and <code class="docutils literal notranslate"><span class="pre">jupyter-rabernat</span></code> is the <strong>hostname</strong>.
-Because we are using JupyterHub on the cloud, we all have the same username
-(“jovyan” = resident of the planet Jupyter). However, we each have a different
-hostname (the name of the computer we are using), which corresponds to a
-“virtual machine” running in the cloud. From now on, we will just use a <code class="docutils literal notranslate"><span class="pre">$</span></code>
+<code class="docutils literal notranslate"><span class="pre">danielmw</span></code> is our <strong>username</strong> and <code class="docutils literal notranslate"><span class="pre">chopin</span></code> is the <strong>hostname</strong>.
+Because we are using JupyterHub on a physical server, we all have the same hostname
+(“chopin” = the composer). However, we each have a different
+username (the name of our account, possibly your uni). From now on, we will just use a <code class="docutils literal notranslate"><span class="pre">$</span></code>
 to indicate the prompt.</p>
 <p>To find out your username in general, you can use the command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ whoami
-jovyan
+danielmw
 </pre></div>
 </div>
 <p>and to find out your hostname</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ hostname
-jupyter-rabernat
+chopin
 </pre></div>
 </div>
 <p>Next,
@@ -747,12 +746,12 @@ i.e.,
 the directory that the computer assumes we want to run commands in
 unless we explicitly specify something else.
 Here,
-the computer’s response is <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>,
-which is the <strong>home directory</strong> of the user named <code class="docutils literal notranslate"><span class="pre">jovyan</span></code>.</p>
+the computer’s response is <code class="docutils literal notranslate"><span class="pre">/home/danielmw</span></code>,
+which is the <strong>home directory</strong> of the user named <code class="docutils literal notranslate"><span class="pre">danielmw</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">danielmw</span>
 </pre></div>
 </div>
 <p>To understand what a “home directory” is,
@@ -766,7 +765,7 @@ which will be constructed in a similar way, but not be exactly identical.</p>
 <p>At the top is the <strong>root directory</strong>
 that holds everything else.
 We refer to it using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own;
-this is the leading slash in <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>.</p>
+this is the leading slash in <code class="docutils literal notranslate"><span class="pre">/home/danielmw</span></code>.</p>
 <p>Inside that directory are several other directories:
 <code class="docutils literal notranslate"><span class="pre">bin</span></code> (which is where some built-in programs are stored),
 <code class="docutils literal notranslate"><span class="pre">lib</span></code> (for the software “libraries” used by different programs),
@@ -779,7 +778,7 @@ which stands for “listing”:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">yaml</span>  <span class="n">examples</span>  <span class="n">lost</span><span class="o">+</span><span class="n">found</span>  <span class="n">work</span>  <span class="n">worker</span><span class="o">-</span><span class="n">template</span><span class="o">.</span><span class="n">yaml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AOD_python</span> <span class="n">CES</span><span class="o">-</span><span class="mi">2024</span> <span class="n">CLMT5053G</span> <span class="n">data</span> <span class="n">data8</span> <span class="n">data9</span> <span class="n">Desktop</span> <span class="n">ERF</span> <span class="n">idl</span> <span class="o">...</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints the names of the files and directories in the current directory in
@@ -788,9 +787,6 @@ arranged neatly into columns.
 We can make its output more comprehensible by using the <strong>flag</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code>,
 which tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to add a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> to the names of directories:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">yaml</span>  <span class="n">examples</span><span class="o">/</span>  <span class="n">lost</span><span class="o">+</span><span class="n">found</span><span class="o">/</span>  <span class="n">work</span><span class="o">/</span>  <span class="n">worker</span><span class="o">-</span><span class="n">template</span><span class="o">.</span><span class="n">yaml</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> has lots of other options. To find out what they are, we can type:</p>
@@ -808,24 +804,16 @@ we can see that our home directory contains mostly <strong>sub-directories</stro
 Any names in your output that don’t have trailing slashes,
 are plain old <strong>files</strong>.</p>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents of a different directory.  Let’s take a
-look at our <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">examples</span></code>,
+look at our <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-</span></code> directory by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">python</span></code>,
 i.e.,
-the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the <strong>arguments</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code> and <code class="docutils literal notranslate"><span class="pre">examples</span></code>.
+the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the <strong>arguments</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span></code>.
 The second argument — the one <em>without</em> a leading dash — tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> that
 we want a listing of something other than our current working directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F examples
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F python
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="o">/</span>                                                <span class="n">LICENSE</span>           <span class="n">publishconf</span><span class="o">.</span><span class="n">py</span>
-<span class="n">develop_server</span><span class="o">.</span><span class="n">sh</span><span class="o">*</span>                                      <span class="n">Makefile</span>          <span class="n">README</span><span class="o">.</span><span class="n">md</span>
-<span class="n">DONT_SAVE_ANYTHING_HERE</span><span class="o">.</span><span class="n">md</span>                              <span class="n">pelicanconf</span><span class="o">.</span><span class="n">py</span>    <span class="n">themes</span><span class="o">/</span>
-<span class="n">fabfile</span><span class="o">.</span><span class="n">py</span>                                              <span class="n">pelican</span><span class="o">-</span><span class="n">plugins</span><span class="o">/</span>
-<span class="n">github_deploy_key_rabernat_research_computing_2018</span><span class="o">.</span><span class="n">enc</span>  <span class="n">plugins</span><span class="o">/</span>
-</pre></div>
-</div>
-<p>The output is the list of all the files in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory.
-The examples directory on our JupyterHub is automatically populated with files
-from the <a class="reference external" href="https://github.com/rabernat/research_computing_2018">Git Source Repository for the class</a></p>
+<p>The output is the list of all the files in the <code class="docutils literal notranslate"><span class="pre">python</span></code> directory.
+The python directory on our JupyterHub is populated with files from research projects of mine from many years ago.</p>
 <p>The command to change locations is <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by a
 directory name to change our working directory.
 <code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for “change directory”,
@@ -835,15 +823,15 @@ it changes the shell’s idea of what directory we are in.</p>
 <p>Let’s say we want to move to the <code class="docutils literal notranslate"><span class="pre">content</span></code> directory we saw above.  We can
 use the following series of commands to get there:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd examples
-$ cd content
+$ cd notebooks
 </pre></div>
 </div>
 <p>These commands will move us from our home directory onto into
-the <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory, then into the <code class="docutils literal notranslate"><span class="pre">content</span></code> directory. <code class="docutils literal notranslate"><span class="pre">cd</span></code> doesn’t print anything,
+the <code class="docutils literal notranslate"><span class="pre">python</span></code> directory, then into the <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> directory. <code class="docutils literal notranslate"><span class="pre">cd</span></code> doesn’t print anything,
 but if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after it, we can see that we are now
-in <code class="docutils literal notranslate"><span class="pre">/home/jovyan/examples/content</span></code>.
+in <code class="docutils literal notranslate"><span class="pre">/home/danielmw/python/notebooks</span></code>.
 If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> without arguments now,
-it lists the contents of <code class="docutils literal notranslate"><span class="pre">/home/jovyan/examples/content</span></code>,
+it lists the contents of <code class="docutils literal notranslate"><span class="pre">/home/jovyan/python/notebooks</span></code>,
 because that’s where we now are.</p>
 <p>We now know how to go down the directory tree, but
 how do we go up?<br />
@@ -857,11 +845,11 @@ that looks like this:</p>
 or more succinctly,
 the <strong>parent</strong> of the current directory.
 Sure enough,
-if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, we’re back in <code class="docutils literal notranslate"><span class="pre">/home/jovyan/examples</span></code>:</p>
+if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, we’re back in <code class="docutils literal notranslate"><span class="pre">/home/danielmw/python</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span><span class="o">/</span><span class="n">examples</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">danielmw</span><span class="o">/</span><span class="n">python</span>
 </pre></div>
 </div>
 <p>e special directory <code class="docutils literal notranslate"><span class="pre">..</span></code> doesn’t usually show up when we run <code class="docutils literal notranslate"><span class="pre">ls</span></code>.  If we want
@@ -871,7 +859,7 @@ to display it, we can give <code class="docutils literal notranslate"><span clas
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-a</span></code> stands for “show all”;
 it forces <code class="docutils literal notranslate"><span class="pre">ls</span></code> to show us file and directory names that begin with <code class="docutils literal notranslate"><span class="pre">.</span></code>,
-such as <code class="docutils literal notranslate"><span class="pre">..</span></code> (which, if we’re in <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>, refers to the <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory)
+such as <code class="docutils literal notranslate"><span class="pre">..</span></code> (which, if we’re in <code class="docutils literal notranslate"><span class="pre">/home/danielmw</span></code>, refers to the <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory)
 As you can see,
 it also displays another special directory that’s just called <code class="docutils literal notranslate"><span class="pre">.</span></code>,
 which means “the current working directory”.
@@ -891,7 +879,7 @@ a directory?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">danielmw</span>
 </pre></div>
 </div>
 <p>It turns out that <code class="docutils literal notranslate"><span class="pre">cd</span></code> without an argument will return you to your home directory,
@@ -899,7 +887,7 @@ which is great if you’ve gotten lost in your own filesystem.</p>
 <p>Let’s try returning to the <code class="docutils literal notranslate"><span class="pre">content</span></code> directory from before.  Last time, we used
 three commands, but we can actually string together the list of directories
 to move to <code class="docutils literal notranslate"><span class="pre">data</span></code> in one step:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd examples/content
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd python/notebooks
 </pre></div>
 </div>
 <p>Check that we’ve moved to the right place by running <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code></p>
@@ -922,10 +910,10 @@ to move to <code class="docutils literal notranslate"><span class="pre">examples
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">content</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">danielmw</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">notebooks</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /home/jovyan/examples
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /home/danielmw/python
 </pre></div>
 </div>
 <p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code> to ensure that we’re in the directory we expect.</p>
@@ -933,8 +921,8 @@ to move to <code class="docutils literal notranslate"><span class="pre">examples
 <h3>Two More Shortcuts<a class="headerlink" href="#two-more-shortcuts" title="Permalink to this headline">#</a></h3>
 <p>The shell interprets the character <code class="docutils literal notranslate"><span class="pre">~</span></code> (tilde) at the start of a path to
 mean “the current user’s home directory”. For example, if Nelle’s home
-directory is <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>, then <code class="docutils literal notranslate"><span class="pre">~/examples</span></code> is equivalent to
-<code class="docutils literal notranslate"><span class="pre">/home/jovyan/examples</span></code>. This only works if it is the first character in the
+directory is <code class="docutils literal notranslate"><span class="pre">/home/danielmw</span></code>, then <code class="docutils literal notranslate"><span class="pre">~/python</span></code> is equivalent to
+<code class="docutils literal notranslate"><span class="pre">/home/danielmw/python</span></code>. This only works if it is the first character in the
 path.</p>
 <p>Another shortcut is the <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) character.  <code class="docutils literal notranslate"><span class="pre">cd</span></code> will translate <code class="docutils literal notranslate"><span class="pre">-</span></code> into
 <em>the previous directory I was in</em>, which is faster than having to remember,
@@ -982,13 +970,13 @@ and use <code class="docutils literal notranslate"><span class="pre">ls</span> <
 $ pwd
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">danielmw</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">yaml</span>  <span class="n">examples</span><span class="o">/</span>  <span class="n">lost</span><span class="o">+</span><span class="n">found</span><span class="o">/</span>  <span class="n">work</span><span class="o">/</span>  <span class="n">worker</span><span class="o">-</span><span class="n">template</span><span class="o">.</span><span class="n">yaml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AOD_python</span> <span class="n">CES</span><span class="o">-</span><span class="mi">2024</span> <span class="n">CLMT5053G</span> <span class="n">data</span> <span class="n">data8</span> <span class="n">data9</span> <span class="n">Desktop</span> <span class="n">ERF</span> <span class="n">idl</span> <span class="o">...</span>
 </pre></div>
 </div>
 <p>Let’s create a new directory called <code class="docutils literal notranslate"><span class="pre">thesis</span></code> using the command <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">thesis</span></code>
@@ -1004,7 +992,7 @@ the new directory is created in the current working directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -F
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">yaml</span>  <span class="n">examples</span><span class="o">/</span>  <span class="n">lost</span><span class="o">+</span><span class="n">found</span><span class="o">/</span>  <span class="n">thesis</span><span class="o">/</span>  <span class="n">work</span><span class="o">/</span>  <span class="n">worker</span><span class="o">-</span><span class="n">template</span><span class="o">.</span><span class="n">yaml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AOD_python</span> <span class="n">CES</span><span class="o">-</span><span class="mi">2024</span> <span class="n">CLMT5053G</span> <span class="n">data</span> <span class="n">data8</span> <span class="n">data9</span> <span class="n">Desktop</span> <span class="n">ERF</span> <span class="n">idl</span> <span class="o">...</span> <span class="n">thesis</span>
 </pre></div>
 </div>
 </section>
@@ -1072,7 +1060,7 @@ recovering deleted files do exist, but there’s no guarantee they’ll
 work in any particular situation, since the computer may recycle the
 file’s disk space right away.</p>
 <p>Let’s re-create that file
-and then move up one directory to <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>:</p>
+and then move up one directory to <code class="docutils literal notranslate"><span class="pre">/home/danielmw</span></code> using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ touch draft.txt
 $ cd ..
 </pre></div>
