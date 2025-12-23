@@ -32,7 +32,12 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build $GITHUB_WORKSPACE/src
+        ls -la
+        ls -la src/
+        cat src/_config.yml
+        cd src
+        pwd
+        jupyter-book build . --verbose
 
   # Deploy the book's html to GitHub Pages
     - name: GitHub Pages action
