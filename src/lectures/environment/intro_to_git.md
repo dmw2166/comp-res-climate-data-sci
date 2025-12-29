@@ -8,7 +8,7 @@ Using version control allows you to confidently make changes to your code (any a
 
     my_code.py
     my_code_version2.py
-    my_code_version2B-RPA-edit.py
+    my_code_version2B-DMW-edit.py
     my_code_FINAL_VERSION.py
     my_code_THIS_IS_ACTUALLY_THE FINAL VERSION.py
 
@@ -30,8 +30,8 @@ Here we simply enumerate the most common git commands.
 
 Set up your username and email
 
-    git config --global user.name "Ryan Abernathey"
-    git config --global user.email "rpa@ldeo.columbia.edu"
+    git config --global user.name "Dan Westervelt"
+    git config --global user.email "danielmw@ldeo.columbia.edu"
 
 
 Create a new repository:
@@ -63,29 +63,16 @@ Revert a file to an earlier version:
 
 The recommended way to move code in and out of a remote hub is via git / GitHub.
 You should clone your project repo from the terminal and use git pull / git push to update and push changes.
-In order to push data to GitHub from the hub, you will need to set up GitHub authentication.
-[gh-scoped-creds](https://github.com/yuvipanda/gh-scoped-creds/) should be already setup
-on your 2i2c managed JupyterHub, and we shall use that to authenticate to GitHub for
-push / pull access.
+In order to push data to GitHub from the hub, you will need to set up GitHub authentication. To do this, we will need to generate an SSH key and connect it with github. Within your home directory tracked by git on Chopin, run: 
 
-Open a terminal in JupyterHub, run `gh-scoped-creds` and follow the prompts.
+~~
+ssh-keygen -t rsa -b 4096 -C dmw2166@Columbia.edu
+~~
+but replace the email address with yours associated with git.
 
-Alternatively, in a notebook, run the following code and follow the prompts:
+We then need to give Github our public key under Settings and SSH and GPG keys on github.com
 
-```
-import gh_scoped_creds
-%ghscopedcreds
-```
-
-You should now be able to push to GitHub from the hub! These credentials will expire after
-8 hours (or whenever your JupyterHub server stops), and you'll have to repeat these steps
-to fetch a fresh set of credentials. Once you authenticate, you'll be provided with a link
-to a [GitHub App](https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps)
-that you have to [install](https://docs.github.com/en/developers/apps/managing-github-apps/installing-github-apps)
-on the repositories you want to be able to push to from this particular JupyterHub. You only
-need to do this once per JupyterHub, and can revoke access any time. You can always provide
-access to your own personal repositories, but might need approval from admins of GitHub
-organizations if you want to push to repos in that organization.
+You should do your github work on the course Jupyterhub on Chopin.
 
 
 ## Collaborating with Git and Github
