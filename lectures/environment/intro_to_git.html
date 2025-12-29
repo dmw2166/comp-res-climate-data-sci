@@ -699,10 +699,10 @@ git diff      # view file content differences
 <p>The recommended way to move code in and out of a remote hub is via git / GitHub.
 You should clone your project repo from the terminal and use git pull / git push to update and push changes.
 In order to push data to GitHub from the hub, you will need to set up GitHub authentication. To do this, we will need to generate an SSH key and connect it with github. Within your home directory tracked by git on Chopin, run:</p>
-<p>~~
-ssh-keygen -t rsa -b 4096 -C <a class="reference external" href="mailto:dmw2166&#37;&#52;&#48;Columbia&#46;edu">dmw2166<span>&#64;</span>Columbia<span>&#46;</span>edu</a>
-~~
-but replace the email address with yours associated with git.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">b</span> <span class="mi">4096</span> <span class="o">-</span><span class="n">C</span> <span class="n">dmw2166</span><span class="nd">@Columbia</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p>but replace the email address with yours associated with git.</p>
 <p>We then need to give Github our public key under Settings and SSH and GPG keys on <a class="reference external" href="http://github.com">github.com</a></p>
 <p>You should do your github work on the course Jupyterhub on Chopin.</p>
 </section>

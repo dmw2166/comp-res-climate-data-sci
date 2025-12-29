@@ -65,9 +65,9 @@ The recommended way to move code in and out of a remote hub is via git / GitHub.
 You should clone your project repo from the terminal and use git pull / git push to update and push changes.
 In order to push data to GitHub from the hub, you will need to set up GitHub authentication. To do this, we will need to generate an SSH key and connect it with github. Within your home directory tracked by git on Chopin, run: 
 
-~~
+```
 ssh-keygen -t rsa -b 4096 -C dmw2166@Columbia.edu
-~~
+```
 but replace the email address with yours associated with git.
 
 We then need to give Github our public key under Settings and SSH and GPG keys on github.com
