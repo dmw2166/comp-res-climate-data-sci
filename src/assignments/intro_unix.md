@@ -44,7 +44,7 @@
                         <p>Compute the total number of earthquakes<span>&nbsp;</span><em>each year</em><span>&nbsp;</span>and then output a sorted list of the top ten years with the most earthquakes. Paste your command and the top ten list below.</p>
                     </li>
                     <li>
-                        <p>Turn in your homework by sharing it with us on a GitHub repository. Use your repository from Assignment 0. Share this repository with users<span>&nbsp;</span><code>graheja</code><span>&nbsp; and <code>dmw2166. </code></span>Clone the repository to your laptop. Save your answers to the exercises above in a text file called<span>&nbsp;</span><code>answers.txt</code>. Use git to<span>&nbsp;</span><code>commit</code><span>&nbsp;</span><code>answers.txt</code><span>&nbsp;</span>to your repository on your laptop, and then<span>&nbsp;</span><code>push</code><span>&nbsp;</span>the changes to the remote repository on GitHub.</p>
+                        <p>Turn in your homework by sharing it with us on a GitHub repository. Share this repository with us. Clone the repository to your laptop. Save your answers to the exercises above in a text file called<span>&nbsp;</span><code>answers.txt</code>. Use git to<span>&nbsp;</span><code>commit</code><span>&nbsp;</span><code>answers.txt</code><span>&nbsp;</span>to your repository on your laptop, and then<span>&nbsp;</span><code>push</code><span>&nbsp;</span>the changes to the remote repository on GitHub.</p>
                     </li>
                 </ol>
             </div>
