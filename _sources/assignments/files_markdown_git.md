@@ -41,11 +41,11 @@ To "hand in" this part of the assignment, put a link to it in the `Readme.md` fi
 
 Now that you know how to create a git repository, you should create your assignments repository.
 
-- Create a new directory called `rces-assignments` in your home directory.
+- Create a new directory called `crm4cds-assignments` in your home directory.
 - Create a `Readme.md` markdown file that contains your name and a link to your "resume" repo.
 - Initialize a new git repository 
 - Add the file and make your first commit
-- Create a new **private** repository on GitHub called `rces-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
-- Push your `rces-assignments` repository to GitHub
+- Create a new **private** repository on GitHub called `crm4cds-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
+- Push your `crm4cds-assignments` repository to GitHub
 - On GitHub, go to "settings" -> "collaborators" and add `dmw2166` and `sst2166` and `jc6618`.
 - Push new commits to this repository whenever you are ready to hand in your assignments
