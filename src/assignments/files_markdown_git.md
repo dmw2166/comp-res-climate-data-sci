@@ -32,7 +32,7 @@ Now go back to the terminal and do the following:
 1. Push your local resume repository to GitHub following the instructions.
 1. View your online resume at `http://github.com/<your github username>/resume`
 
-Finally, go back to the editor and add a new subsection called "Research Interests" to your `Readme.md` file. Update your local git repository and push your changes to GitHub. Verify that the remote repository is updated.
+Finally, go back to the editor and add a new subsection called "Professional Interests" to your `Readme.md` file. Update your local git repository and push your changes to GitHub. Verify that the remote repository is updated.
 
 To "hand in" this part of the assignment, put a link to it in the `Readme.md` file in the next part.
 
@@ -47,5 +47,5 @@ Now that you know how to create a git repository, you should create your assignm
 - Add the file and make your first commit
 - Create a new **private** repository on GitHub called `rces-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
 - Push your `rces-assignments` repository to GitHub
-- On GitHub, go to "settings" -> "collaborators" and add `rabernat` and `stb2145`.
+- On GitHub, go to "settings" -> "collaborators" and add `dmw2166` and `sst2166` and `jc6618`.
 - Push new commits to this repository whenever you are ready to hand in your assignments
