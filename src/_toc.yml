@@ -16,6 +16,7 @@ parts:
 #  - file: lectures/environment/python_environments
 #  - file: lectures/environment/binder
   - file: lectures/data
+  - file: assignments/data_problems
 
 - caption: The Core Python Language
   chapters:
