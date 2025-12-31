@@ -2275,12 +2275,12 @@ That’s why not just anyone can create a DOI; it’s a commitment.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Article</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.1109/MCSE.2021.3059437</span></code></p></td>
-<td><p><a class="reference external" href="https://doi.org/10.1109/MCSE.2021.3059437">https://doi.org/10.1109/MCSE.2021.3059437</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.5194/acp-25-11611-2025</span></code></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5194/acp-25-11611-2025">https://doi.org/10.5194/acp-25-11611-2025</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Dataset</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">10.6084/m9.figshare.3507758.v1</span></code></p></td>
-<td><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.3507758.v1">https://doi.org/10.6084/m9.figshare.3507758.v1</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.6084/m9.figshare.28030610</span></code></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.28030610">https://doi.org/10.6084/m9.figshare.28030610</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Software</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">10.5281/zenodo.4821276</span></code></p></td>
@@ -2340,18 +2340,14 @@ This will create a permanent archive for your data and generate a new DOI! 🎉<
 <p>Here is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doi</span> <span class="o">=</span> <span class="s2">&quot;doi:10.5281/zenodo.5739406&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pooch</span>
+<span class="n">doi</span> <span class="o">=</span> <span class="s2">&quot;doi:10.5281/zenodo.5739406&quot;</span>
 <span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;wind_po_hrly.csv&quot;</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
     <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;md5:cf059b73d6831282c5580776ac07309a&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">file_path</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/pooch/fc13d29563dcf659960ec752e43618fa-wind_po_hrly.csv&#39;
 </pre></div>
 </div>
 </div>
