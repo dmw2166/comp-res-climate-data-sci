@@ -156,6 +156,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/intro_unix.html">
+   Assignment: Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../environment/intro_to_git.html">
    Intro to Git for Version Control
   </a>
@@ -733,7 +738,7 @@ title="Print to PDF"
 </section>
 <section id="python-versions">
 <h2>Python Versions<a class="headerlink" href="#python-versions" title="Permalink to this headline">#</a></h2>
-<p>There are two versions of the Python language out there: Python 2 and Python 3. In 2019, the vast majority of the scientific community now uses Python 3. As new Python learners, you should definitely learn Python 3. But it is important to be aware that Python 2 exists, since you might encounter it in the wild.</p>
+<p>There are two versions of the Python language out there: Python 2 and Python 3. In 2026, the vast majority of the scientific community now uses Python 3. As new Python learners, you should definitely learn Python 3. But it is important to be aware that Python 2 exists, since you might encounter it in the wild. As of Jan 2026 the current stable release of Python is version 3.12</p>
 <p>Some of the main changes introduced in Python 3 are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</p></li>
@@ -1313,13 +1318,13 @@ middle, skipping every other item [10, 12, 14]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this index notation also applies to strings</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Ryan Abernathey&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Daniel Westervelt&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ryan
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Daniel
 </pre></div>
 </div>
 </div>
@@ -1396,8 +1401,8 @@ first: 4 second: 14
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuples are created with parentheses, or just commas</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;Takaya&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="kc">False</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Daniel&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;Jaewon&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="kc">False</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1416,7 +1421,7 @@ first: 4 second: 14
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
 </pre></div>
 </div>
 </div>
@@ -1437,14 +1442,14 @@ first: 4 second: 14
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># different ways to create dictionaries</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">}</span>
-<span class="n">e</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Takaya&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Jaewon&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
 <span class="n">e</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Takaya&#39;, &#39;age&#39;: 25}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Jaewon&#39;, &#39;age&#39;: 23}
 </pre></div>
 </div>
 </div>
@@ -1457,7 +1462,7 @@ first: 4 second: 14
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ryan&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Daniel&#39;
 </pre></div>
 </div>
 </div>
@@ -1500,13 +1505,13 @@ False
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add a new key</span>
-<span class="n">d</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="c1"># a tuple</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># a tuple</span>
 <span class="n">d</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Ryan&#39;, &#39;age&#39;: 33, &#39;height&#39;: (5, 11)}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Daniel&#39;, &#39;age&#39;: 40, &#39;height&#39;: (6, 0)}
 </pre></div>
 </div>
 </div>
@@ -1520,7 +1525,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Ryan&#39;, &#39;age&#39;: 33, &#39;height&#39;: (5, 11), 99: &#39;ninety nine&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Daniel&#39;, &#39;age&#39;: 40, &#39;height&#39;: (6, 0), 99: &#39;ninety nine&#39;}
 </pre></div>
 </div>
 </div>
@@ -1534,9 +1539,9 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name Ryan
-age 33
-height (5, 11)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name Daniel
+age 40
+height (6, 0)
 99 ninety nine
 </pre></div>
 </div>
@@ -1553,9 +1558,9 @@ height (5, 11)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name Ryan
-age 33
-height (5, 11)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name Daniel
+age 40
+height (6, 0)
 99 ninety nine
 </pre></div>
 </div>

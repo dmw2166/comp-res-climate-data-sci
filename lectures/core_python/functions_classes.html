@@ -156,6 +156,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/intro_unix.html">
+   Assignment: Intro to Unix
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../environment/intro_to_git.html">
    Intro to Git for Version Control
   </a>
@@ -737,14 +742,6 @@ say_hello<span class="o">?</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> say_hello<span class=" -Color -Color-Blue">()</span>
-<span class=" -Color -Color-Red">Docstring:</span> Return the word hello.
-<span class=" -Color -Color-Red">File:</span>      ~/Teaching/rces_book/content/lectures/core_python/&lt;ipython-input-1-5cff6abf0dfe&gt;
-<span class=" -Color -Color-Red">Type:</span>      function
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -856,13 +853,13 @@ say_hello<span class="o">?</span>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">say_hello_or_hola</span><span class="p">(</span><span class="s1">&#39;Ryan&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">say_hello_or_hola</span><span class="p">(</span><span class="s1">&#39;Dan&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">say_hello_or_hola</span><span class="p">(</span><span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="n">spanish</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Ryan
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Dan
 Hola Juan
 </pre></div>
 </div>
@@ -879,12 +876,12 @@ Hola Juan
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">say_hello_to_everyone</span><span class="p">(</span><span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Xiaomeng&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">say_hello_to_everyone</span><span class="p">(</span><span class="s1">&#39;Dan&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Shweta&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hello Ryan&#39;, &#39;hello Juan&#39;, &#39;hello Xiaomeng&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hello Dan&#39;, &#39;hello Juan&#39;, &#39;hello Shweta&#39;]
 </pre></div>
 </div>
 </div>
@@ -904,7 +901,7 @@ Hola Juan
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Xiaomeng&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Dan&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Shweta&#39;</span><span class="p">]</span>
 <span class="n">remove_last_from_list</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="n">remove_last_from_list</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
@@ -913,8 +910,8 @@ Hola Juan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ryan&#39;, &#39;Juan&#39;]
-[&#39;Ryan&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dan&#39;, &#39;Juan&#39;]
+[&#39;Dan&#39;]
 </pre></div>
 </div>
 </div>
@@ -933,7 +930,7 @@ Hola Juan
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ryan&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Xiaomeng&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Dan&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Shweta&#39;</span><span class="p">]</span>
 <span class="n">new_names</span> <span class="o">=</span> <span class="n">remove_last_from_list_pure</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_names</span><span class="p">)</span>
@@ -941,8 +938,8 @@ Hola Juan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ryan&#39;, &#39;Juan&#39;, &#39;Xiaomeng&#39;]
-[&#39;Ryan&#39;, &#39;Juan&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Dan&#39;, &#39;Juan&#39;, &#39;Shweta&#39;]
+[&#39;Dan&#39;, &#39;Juan&#39;]
 </pre></div>
 </div>
 </div>
@@ -955,13 +952,13 @@ Hola Juan
 <p>The namespace can change depending on where you are in your program. Functions can “see” the variables in the parent namespace, but they can also redefine them in a private scope.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Ryan&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Dan&#39;</span>
 
 <span class="k">def</span> <span class="nf">print_name</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">print_name_v2</span><span class="p">():</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Kerry&#39;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jaewon&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     
 <span class="n">print_name</span><span class="p">()</span>
@@ -971,9 +968,9 @@ Hola Juan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ryan
-Kerry
-Ryan
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dan
+Jaewon
+Dan
 </pre></div>
 </div>
 </div>
