@@ -5,16 +5,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta property="og:title" content="Assignment: More Matplotlib" />
+<meta property="og:title" content="Homework Assignment: Data Formats and Access" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://dmw2166.github.io/assignments/more_matplotlib.html" />
+<meta property="og:url" content="https://dmw2166.github.io/assignments/data_problems.html" />
 <meta property="og:site_name" content="Python" />
-<meta property="og:description" content="The goal here is to replicate the figures you see as closely as possible. In order to get some data, you will have to run the code in the cells below. Don’t worry about how this code works. In the ..." />
-<meta property="og:image" content="https://dmw2166.github.io/_images/fig1.png" />
-<meta property="og:image:alt" content="figure" />
-<meta name="description" content="The goal here is to replicate the figures you see as closely as possible. In order to get some data, you will have to run the code in the cells below. Don’t worry about how this code works. In the ..." />
+<meta property="og:description" content="Overview: This assignment focuses on accessing and exploring different types of climate data. You will learn to work with various data formats and sources. Code templates are provided- your job is ..." />
+<meta property="og:image" content="https://dmw2166.github.io/comp-res-climate-data-sci/_static/eeds-logo.png" />
+<meta property="og:image:alt" content="Python" />
+<meta name="description" content="Overview: This assignment focuses on accessing and exploring different types of climate data. You will learn to work with various data formats and sources. Code templates are provided- your job is ..." />
 
-    <title>Assignment: More Matplotlib &#8212; Computing and Research Methods for Climate Data Science</title>
+    <title>Homework Assignment: Data Formats and Access &#8212; Computing and Research Methods for Climate Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -58,13 +58,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://dmw2166.github.io/comp-res-climate-data-sci/assignments/more_matplotlib.html" />
+    <link rel="canonical" href="https://dmw2166.github.io/comp-res-climate-data-sci/assignments/data_problems.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pandas" href="../lectures/pandas/pandas_intro.html" />
-    <link rel="prev" title="More Matplotlib" href="../lectures/basic_scipy/more_matplotlib.html" />
+    <link rel="next" title="Python Fundamentals" href="../lectures/core_python/python_fundamentals.html" />
+    <link rel="prev" title="All About Data" href="../lectures/data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -146,7 +144,7 @@ const thebe_selector_output = ".output, .cell_output"
   The Interactive Computing Environment
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../lectures/environment/intro_to_jupyterlab.html">
    Intro to JupyterLab
@@ -177,8 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
    All About Data
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_problems.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Homework Assignment: Data Formats and Access
   </a>
  </li>
@@ -215,7 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
   Scientific Python Fundamentals
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../lectures/basic_scipy/numpy_and_matplotlib.html">
    Numpy and Matplotlib
@@ -231,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
    More Matplotlib
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="more_matplotlib.html">
    Assignment: More Matplotlib
   </a>
  </li>
@@ -437,7 +435,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dmw2166/comp-res-climate-data-sci/master?urlpath=tree/src/assignments/more_matplotlib.ipynb"
+        <a href="https://mybinder.org/v2/gh/dmw2166/comp-res-climate-data-sci/master?urlpath=tree/src/assignments/data_problems.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -497,7 +495,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/issues/new?title=Issue%20on%20page%20%2Fassignments/more_matplotlib.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/issues/new?title=Issue%20on%20page%20%2Fassignments/data_problems.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -514,7 +512,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/edit/master/src/assignments/more_matplotlib.ipynb"
+        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/edit/master/src/assignments/data_problems.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -542,7 +540,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/assignments/more_matplotlib.ipynb"
+        <a href="../_sources/assignments/data_problems.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -602,18 +600,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-1-line-plots">
-   Problem 1: Line plots
+  <a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-2-contour-plots">
-   Problem 2: Contour Plots
+  <a class="reference internal nav-link" href="#setup-install-required-packages">
+   Setup: Install Required Packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-3-scatter-plots">
-   Problem 3: Scatter plots
+  <a class="reference internal nav-link" href="#part-1-working-with-json-data">
+   Part 1: Working with JSON Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-downloading-files-with-python">
+   Part 2: Downloading Files with Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-understanding-netcdf-metadata">
+   Part 3: Understanding NetCDF Metadata
   </a>
  </li>
 </ul>
@@ -625,7 +633,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment: More Matplotlib</h1>
+                <h1>Homework Assignment: Data Formats and Access</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -636,18 +644,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-1-line-plots">
-   Problem 1: Line plots
+  <a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-2-contour-plots">
-   Problem 2: Contour Plots
+  <a class="reference internal nav-link" href="#setup-install-required-packages">
+   Setup: Install Required Packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-3-scatter-plots">
-   Problem 3: Scatter plots
+  <a class="reference internal nav-link" href="#part-1-working-with-json-data">
+   Part 1: Working with JSON Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-downloading-files-with-python">
+   Part 2: Downloading Files with Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-understanding-netcdf-metadata">
+   Part 3: Understanding NetCDF Metadata
   </a>
  </li>
 </ul>
@@ -660,127 +678,177 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-more-matplotlib">
-<h1>Assignment: More Matplotlib<a class="headerlink" href="#assignment-more-matplotlib" title="Permalink to this headline">#</a></h1>
-<p>The goal here is to replicate the figures you see as closely as possible.</p>
-<p>In order to get some data, you will have to run the code in the cells below. <strong>Don’t worry about how this code works.</strong> In the end, it will give you some numpy arrays, which you will use in your plots. You are not allowed to use any packages other than numpy and matplotlib to complete your assignment.</p>
-<section id="problem-1-line-plots">
-<h2>Problem 1: Line plots<a class="headerlink" href="#problem-1-line-plots" title="Permalink to this headline">#</a></h2>
-<p>In this problem, we will plot some daily weather data from a NOAA station in <a class="reference external" href="https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:US1NYDT0008/detail">Millbrook, NY</a>. A full description of this dataset is available at: <a class="reference external" href="https://www.ncdc.noaa.gov/data-access/land-based-station-data">https://www.ncdc.noaa.gov/data-access/land-based-station-data</a></p>
-<p>The cell below uses pandas to download the data and populate a bunch of numpy arrays (<code class="docutils literal notranslate"><span class="pre">t_daily_min</span></code>, <code class="docutils literal notranslate"><span class="pre">t_daily_max</span></code>, etc.) Run the cell and then use the numpy arrays to try to re-create the plot you see.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pooch</span>
-<span class="n">POOCH</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">path</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">os_cache</span><span class="p">(</span><span class="s2">&quot;noaa-data&quot;</span><span class="p">),</span>
-    <span class="c1"># Use the figshare DOI</span>
-    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;doi:10.5281/zenodo.5553029/&quot;</span><span class="p">,</span>
-    <span class="n">registry</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;HEADERS.txt&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:2a306ca225fe3ccb72a98953ded2f536&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;CRND0103-2016-NY_Millbrook_3_W.txt&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:eb69811d14d0573ffa69f70dd9c768d9&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;CRND0103-2017-NY_Millbrook_3_W.txt&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:b911da727ba1bdf26a34a775f25d1088&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;CRND0103-2018-NY_Millbrook_3_W.txt&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:5b61bc687261596eba83801d7080dc56&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;CRND0103-2019-NY_Millbrook_3_W.txt&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:9b814430612cd8a770b72020ca4f2b7d&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;CRND0103-2020-NY_Millbrook_3_W.txt&quot;</span><span class="p">:</span> <span class="s2">&quot;md5:cd8de6d5445024ce35fcaafa9b0e7b64&quot;</span>
-    <span class="p">},</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-assignment-data-formats-and-access">
+<h1>Homework Assignment: Data Formats and Access<a class="headerlink" href="#homework-assignment-data-formats-and-access" title="Permalink to this headline">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>This assignment focuses on accessing and exploring different types of climate data. You will learn to work with various data formats and sources. <strong>Code templates are provided</strong> - your job is to fill in the gaps and extend the analysis.</p>
+</section>
+<hr class="docutils" />
+<section id="setup-install-required-packages">
+<h2>Setup: Install Required Packages<a class="headerlink" href="#setup-install-required-packages" title="Permalink to this headline">#</a></h2>
+<p>Run this cell first:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># You may need to install these</span>
+<span class="c1"># pip install pooch requests</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="part-1-working-with-json-data">
+<h2>Part 1: Working with JSON Data<a class="headerlink" href="#part-1-working-with-json-data" title="Permalink to this headline">#</a></h2>
+<p>JSON (JavaScript Object Notation) is commonly used for web APIs. Many climate data services provide JSON outputs.</p>
+<p><strong>Provided Code:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="c1"># Here&#39;s a sample JSON structure similar to what APIs return</span>
+<span class="n">sample_json</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">{</span>
+<span class="s1">  &quot;station&quot;: &quot;USC00305800&quot;,</span>
+<span class="s1">  &quot;name&quot;: &quot;New York Central Park&quot;,</span>
+<span class="s1">  &quot;location&quot;: {</span>
+<span class="s1">    &quot;latitude&quot;: 40.7789,</span>
+<span class="s1">    &quot;longitude&quot;: -73.9692</span>
+<span class="s1">  },</span>
+<span class="s1">  &quot;observations&quot;: [</span>
+<span class="s1">    {&quot;date&quot;: &quot;2023-01-01&quot;, &quot;temperature&quot;: 32, &quot;precipitation&quot;: 0.0},</span>
+<span class="s1">    {&quot;date&quot;: &quot;2023-01-02&quot;, &quot;temperature&quot;: 28, &quot;precipitation&quot;: 0.5},</span>
+<span class="s1">    {&quot;date&quot;: &quot;2023-01-03&quot;, &quot;temperature&quot;: 35, &quot;precipitation&quot;: 0.0},</span>
+<span class="s1">    {&quot;date&quot;: &quot;2023-01-04&quot;, &quot;temperature&quot;: 38, &quot;precipitation&quot;: 0.2},</span>
+<span class="s1">    {&quot;date&quot;: &quot;2023-01-05&quot;, &quot;temperature&quot;: 41, &quot;precipitation&quot;: 0.0}</span>
+<span class="s1">  ]</span>
+<span class="s1">}</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="c1"># Parse the JSON</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">sample_json</span><span class="p">)</span>
+
+<span class="c1"># Access nested data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Station:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;station&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Location:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First observation:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;observations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Your Tasks:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Extract and print all dates and temperatures (8 points)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Date, Temperature&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;observations&#39;</span><span class="p">]:</span>
+    <span class="c1"># YOUR CODE HERE: print date and temperature for each observation</span>
+    <span class="k">pass</span>
+
+<span class="c1"># 2. Calculate average temperature (8 points)</span>
+<span class="n">total_temp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># YOUR CODE HERE: calculate average</span>
+
+<span class="n">avg_temp</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Replace this</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average temperature: </span><span class="si">{</span><span class="n">avg_temp</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Find days with precipitation (9 points)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Days with precipitation:&quot;</span><span class="p">)</span>
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+<p><strong>Now try with a real API :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use a real weather API (you may need to sign up for a free API key)</span>
+<span class="c1"># Example APIs: OpenWeatherMap, NOAA, Weather.gov</span>
+<span class="c1"># YOUR CODE HERE </span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="part-2-downloading-files-with-python">
+<h2>Part 2: Downloading Files with Python<a class="headerlink" href="#part-2-downloading-files-with-python" title="Permalink to this headline">#</a></h2>
+<p>Pooch is a Python tool for downloading and caching data files.</p>
+<p><strong>Provided Code:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pooch</span>
+
+<span class="c1"># Set up Pooch to download a file</span>
+<span class="c1"># This example downloads a small air quality dataset</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/pandas-dev/pandas/raw/main/doc/data/air_quality_no2.csv&quot;</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;md5:05f09d0097a7d1b1e71e64e5e5d52c3c&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">POOCH</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;HEADERS.txt&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-
-<span class="n">dframes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2019</span><span class="p">):</span>
-    <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;CRND0103-</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">-NY_Millbrook_3_W.txt&#39;</span>               
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">POOCH</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">fname</span><span class="p">),</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                     <span class="n">names</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span>
-                     <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">99.0</span><span class="p">])</span>
-    <span class="n">dframes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dframes</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;LST_DATE&#39;</span><span class="p">)</span>
-<span class="n">df</span>
-
-<span class="c1">#########################################################</span>
-<span class="c1">#### BELOW ARE THE VARIABLES YOU SHOULD USE IN THE PLOTS!</span>
-<span class="c1">#### (numpy arrays)  </span>
-<span class="c1">#### NO PANDAS ALLOWED!</span>
-<span class="c1">#########################################################</span>
-
-<span class="n">t_daily_min</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">T_DAILY_MIN</span><span class="o">.</span><span class="n">values</span>
-<span class="n">t_daily_max</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">T_DAILY_MAX</span><span class="o">.</span><span class="n">values</span>
-<span class="n">t_daily_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">T_DAILY_MEAN</span><span class="o">.</span><span class="n">values</span>
-<span class="n">p_daily_calc</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">P_DAILY_CALC</span><span class="o">.</span><span class="n">values</span>
-<span class="n">soil_moisture_5</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SOIL_MOISTURE_5_DAILY</span><span class="o">.</span><span class="n">values</span>
-<span class="n">soil_moisture_10</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SOIL_MOISTURE_10_DAILY</span><span class="o">.</span><span class="n">values</span>
-<span class="n">soil_moisture_20</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SOIL_MOISTURE_20_DAILY</span><span class="o">.</span><span class="n">values</span>
-<span class="n">soil_moisture_50</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SOIL_MOISTURE_50_DAILY</span><span class="o">.</span><span class="n">values</span>
-<span class="n">soil_moisture_100</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">SOIL_MOISTURE_100_DAILY</span><span class="o">.</span><span class="n">values</span>
-<span class="n">date</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File downloaded to:&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File exists:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">units</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">headers</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<p><strong>Your Tasks:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># 1. Verify the file was downloaded (5 points)</span>
+<span class="c1"># Check the file size</span>
+<span class="n">file_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+
+<span class="c1"># YOUR CODE HERE: open the file and count how many lines it has</span>
+<span class="n">line_count</span> <span class="o">=</span> <span class="mi">0</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of lines: </span><span class="si">{</span><span class="n">line_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Download another file (10 points)</span>
+<span class="c1"># Find a climate dataset online using the sources we talked about in lecture</span>
+<span class="c1"># Download it using Pooch</span>
+
+<span class="c1"># YOUR CODE HERE:</span>
+<span class="c1"># my_url = &quot;...&quot;</span>
+<span class="c1"># my_file = pooch.retrieve(url=my_url, known_hash=None)  # hash optional for first try</span>
+<span class="c1"># Print info about your downloaded file</span>
+
+<span class="c1"># 3. Create a data inventory (5 points)</span>
+<span class="c1"># List all the files you&#39;ve downloaded in this assignment</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data Inventory:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. meteorites.csv - NASA meteorite landings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. air_quality_no2.csv - Air quality NO2 measurements&quot;</span><span class="p">)</span>
+<span class="c1"># YOUR CODE HERE: add your file from task 2</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p><img alt="figure" src="../_images/fig1.png" /></p>
 </section>
-<section id="problem-2-contour-plots">
-<h2>Problem 2: Contour Plots<a class="headerlink" href="#problem-2-contour-plots" title="Permalink to this headline">#</a></h2>
-<p>Now we will visualize some global temperature data from the NCEP-NCAR atmospheric reanalysis.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="n">ds_url</span> <span class="o">=</span> <span class="s1">&#39;http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NCEP-NCAR/.CDAS-1/.MONTHLY/.Diagnostic/.surface/.temp/dods&#39;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">ds_url</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<hr class="docutils" />
+<section id="part-3-understanding-netcdf-metadata">
+<h2>Part 3: Understanding NetCDF Metadata<a class="headerlink" href="#part-3-understanding-netcdf-metadata" title="Permalink to this headline">#</a></h2>
+<p>NetCDF is a common format for climate data. Even without loading the full dataset, we can examine its metadata using HTTP requests.</p>
+<p><strong>Provided Code:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="c1">#########################################################</span>
-<span class="c1">#### BELOW ARE THE VARIABLES YOU SHOULD USE IN THE PLOTS!</span>
-<span class="c1">#### (numpy arrays) </span>
-<span class="c1">#### NO XARRAY ALLOWED!</span>
-<span class="c1">#########################################################</span>
+<span class="c1"># OPeNDAP provides metadata in different formats</span>
+<span class="c1"># We&#39;ll get basic info about a climate dataset</span>
 
-<span class="n">temp</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="mf">273.15</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">values</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">values</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain&quot;</span>
+
+<span class="c1"># Get DDS (Dataset Descriptor Structure) - describes the structure</span>
+<span class="n">dds_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;.dds&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dds_url</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset Structure:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">500</span><span class="p">])</span>  <span class="c1"># Print first 500 characters</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p><img alt="fig2" src="../_images/fig2.png" /></p>
-</section>
-<section id="problem-3-scatter-plots">
-<h2>Problem 3: Scatter plots<a class="headerlink" href="#problem-3-scatter-plots" title="Permalink to this headline">#</a></h2>
-<p>Here we will make a map plot of earthquakes from a USGS catalog of historic large earthquakes. Color the earthquakes by log10(depth) and adjust the marker size to be magntiude<span class="math notranslate nohighlight">\(^4\)</span>/100</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
-    <span class="s2">&quot;https://rabernat.github.io/research_computing/signif.txt.tsv.zip&quot;</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s1">&#39;22b9f7045bf90fb99e14b95b24c81da3c52a0b4c79acf95d72fbe3a257001dbb&#39;</span><span class="p">,</span>
-    <span class="n">processor</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">Unzip</span><span class="p">()</span>
-<span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<p><strong>Your Tasks:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Identify dimensions and variables (5 points)</span>
+<span class="c1"># Look at the DDS output above and answer:</span>
+<span class="c1"># - What are the dimension names?</span>
+<span class="c1"># - What is the main variable name?</span>
+<span class="c1"># - Write your answers in a markdown cell</span>
 
-<span class="n">earthquakes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">depth</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="n">magnitude</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">9</span><span class="p">]</span>
-<span class="n">latitude</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">20</span><span class="p">]</span>
-<span class="n">longitude</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">21</span><span class="p">]</span>
+<span class="c1"># 2. Get data attributes (5 points)</span>
+<span class="c1"># DAS (Dataset Attribute Structure) contains metadata</span>
+<span class="n">das_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;.das&quot;</span>
+<span class="c1"># YOUR CODE HERE: make a request to das_url and print first 1000 characters</span>
+
+<span class="c1"># 3. Document what you learned (5 points)</span>
+<span class="c1"># In a markdown cell, write:</span>
+<span class="c1"># - What does this dataset contain?</span>
+<span class="c1"># - What time period does it cover?</span>
+<span class="c1"># - What geographic region does it cover?</span>
+<span class="c1"># - What are the units of the main variable?</span>
+<span class="c1"># Find this info in the DAS output</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p><img alt="fig3" src="../_images/fig3.png" /></p>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -811,17 +879,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../lectures/basic_scipy/more_matplotlib.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../lectures/data.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">More Matplotlib</p>
+            <p class="prev-next-title">All About Data</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../lectures/pandas/pandas_intro.html" title="next page">
+    <a class='right-next' id="next-link" href="../lectures/core_python/python_fundamentals.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pandas</p>
+        <p class="prev-next-title">Python Fundamentals</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
