@@ -1228,8 +1228,8 @@ However, sometimes it takes some sleuthing to find the right link.</p>
 <p>As an example, let’s consider the <a class="reference external" href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">NASA Meteorite Landings Database</a>.</p>
 <p>When we go to this site we see something like this:</p>
 <p><img alt="meteorite page" src="../_images/meteorite_page.png" /></p>
-<p>Clicking the “export” button gives us an option to export CSV, which we know pandas can read.
-If we just click the “CSV” button, we download the file to our computer (not what we want).
+<p>Clicking the link gives us an option to export CSV, which we know pandas can read.
+If we just click the link, we download the file to our computer (not what we want).
 Instead, <em>right click or CTRL-click the download link</em> and select “Copy Link Address”.</p>
 <img src="figures/meteorite_export.png" width="500px" />
 <p>Pasting the results into our code editor gives us the desired URL.</p>
@@ -1240,7 +1240,7 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://data.nasa.gov/docs/legacy/meteorite_landings/Meteorite_Landings.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
