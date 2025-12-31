@@ -9,10 +9,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://dmw2166.github.io/assignments/python_basics_and_functions.html" />
 <meta property="og:site_name" content="Python" />
-<meta property="og:description" content="Part I: Lists and Loops: In this problem, we will explore the basic data structures and flow controls of Python by manually creating data structures. 1) Create a list with the names of every planet..." />
+<meta property="og:description" content="Part I: Lists and Loops: In this problem, we will explore the basic data structures and flow controls of Python by manually creating data structures. 1) Create a list with the names of the top 10 C..." />
 <meta property="og:image" content="https://dmw2166.github.io/comp-res-climate-data-sci/_static/eeds-logo.png" />
 <meta property="og:image:alt" content="Python" />
-<meta name="description" content="Part I: Lists and Loops: In this problem, we will explore the basic data structures and flow controls of Python by manually creating data structures. 1) Create a list with the names of every planet..." />
+<meta name="description" content="Part I: Lists and Loops: In this problem, we will explore the basic data structures and flow controls of Python by manually creating data structures. 1) Create a list with the names of the top 10 C..." />
 
     <title>Assignment: Basic Python &#8212; Computing and Research Methods for Climate Data Science</title>
     
@@ -605,29 +605,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
-     1) Create a list with the names of every planet in the solar system (in order)
+    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-the-top-10-co2-emitting-countries-in-order-by-total-emissions">
+     1) Create a list with the names of the top 10 CO₂ emitting countries (in order by total emissions)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
-     2) Have Python tell you how many planets there are by examining your list
+    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-countries-there-are-by-examining-your-list">
+     2) Have Python tell you how many countries there are by examining your list
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets">
-     3) Use slicing to display the first four planets (the rocky planets)
+    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-three-countries-the-top-emitters">
+     3) Use slicing to display the first three countries (the top emitters)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
-     4) Iterate through your planets and print the planet name only if it has an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       s
-      </span>
-     </code>
-     at the end
+    <a class="reference internal nav-link" href="#iterate-through-your-countries-and-print-the-country-name-only-if-it-has-an-a-in-the-name">
+     4) Iterate through your countries and print the country name only if it has an a in the name
     </a>
    </li>
   </ul>
@@ -638,23 +632,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
-     1) Now create a dictionary that maps each planet name to its mass
+    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-country-name-to-its-annual-co2-emissions">
+     1) Now create a dictionary that maps each country name to its annual CO₂ emissions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-earth-s-mass">
-     2) Use your dictionary to look up Earth’s mass
+    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-the-united-states-emissions">
+     2) Use your dictionary to look up the United States’ emissions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
-     3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg
+    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-countries-whose-emissions-are-greater-than-1-000-million-metric-tons-per-year">
+     3) Loop through the data and create a list of countries whose emissions are greater than 1,000 million metric tons per year
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-add-pluto-to-your-dictionary">
-     4) Now add pluto to your dictionary
+    <a class="reference internal nav-link" href="#now-add-brazil-to-your-dictionary">
+     4) Now add Brazil to your dictionary
     </a>
    </li>
   </ul>
@@ -730,29 +724,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
-     1) Create a list with the names of every planet in the solar system (in order)
+    <a class="reference internal nav-link" href="#create-a-list-with-the-names-of-the-top-10-co2-emitting-countries-in-order-by-total-emissions">
+     1) Create a list with the names of the top 10 CO₂ emitting countries (in order by total emissions)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
-     2) Have Python tell you how many planets there are by examining your list
+    <a class="reference internal nav-link" href="#have-python-tell-you-how-many-countries-there-are-by-examining-your-list">
+     2) Have Python tell you how many countries there are by examining your list
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets">
-     3) Use slicing to display the first four planets (the rocky planets)
+    <a class="reference internal nav-link" href="#use-slicing-to-display-the-first-three-countries-the-top-emitters">
+     3) Use slicing to display the first three countries (the top emitters)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
-     4) Iterate through your planets and print the planet name only if it has an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       s
-      </span>
-     </code>
-     at the end
+    <a class="reference internal nav-link" href="#iterate-through-your-countries-and-print-the-country-name-only-if-it-has-an-a-in-the-name">
+     4) Iterate through your countries and print the country name only if it has an a in the name
     </a>
    </li>
   </ul>
@@ -763,23 +751,23 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
-     1) Now create a dictionary that maps each planet name to its mass
+    <a class="reference internal nav-link" href="#now-create-a-dictionary-that-maps-each-country-name-to-its-annual-co2-emissions">
+     1) Now create a dictionary that maps each country name to its annual CO₂ emissions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-earth-s-mass">
-     2) Use your dictionary to look up Earth’s mass
+    <a class="reference internal nav-link" href="#use-your-dictionary-to-look-up-the-united-states-emissions">
+     2) Use your dictionary to look up the United States’ emissions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
-     3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg
+    <a class="reference internal nav-link" href="#loop-through-the-data-and-create-a-list-of-countries-whose-emissions-are-greater-than-1-000-million-metric-tons-per-year">
+     3) Loop through the data and create a list of countries whose emissions are greater than 1,000 million metric tons per year
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-add-pluto-to-your-dictionary">
-     4) Now add pluto to your dictionary
+    <a class="reference internal nav-link" href="#now-add-brazil-to-your-dictionary">
+     4) Now add Brazil to your dictionary
     </a>
    </li>
   </ul>
@@ -856,39 +844,35 @@ title="Print to PDF"
 <section id="part-i-lists-and-loops">
 <h2>Part I: Lists and Loops<a class="headerlink" href="#part-i-lists-and-loops" title="Permalink to this headline">#</a></h2>
 <p>In this problem, we will explore the basic data structures and flow controls of Python by <em>manually creating data structures</em>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Pluto is <a class="reference external" href="https://www.loc.gov/everyday-mysteries/item/why-is-pluto-no-longer-a-planet/">not a planet any more</a>.</p>
-</div>
-<section id="create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order">
-<h3>1) Create a list with the names of every planet in the solar system (in order)<a class="headerlink" href="#create-a-list-with-the-names-of-every-planet-in-the-solar-system-in-order" title="Permalink to this headline">#</a></h3>
+<section id="create-a-list-with-the-names-of-the-top-10-co2-emitting-countries-in-order-by-total-emissions">
+<h3>1) Create a list with the names of the top 10 CO₂ emitting countries (in order by total emissions)<a class="headerlink" href="#create-a-list-with-the-names-of-the-top-10-co2-emitting-countries-in-order-by-total-emissions" title="Permalink to this headline">#</a></h3>
+<p>use 2024 data from here: <a class="reference external" href="https://edgar.jrc.ec.europa.eu/report_2025?vis=co2tot#emissions_table">https://edgar.jrc.ec.europa.eu/report_2025?vis=co2tot#emissions_table</a> (don’t include things that aren’t countries)</p>
 </section>
-<section id="have-python-tell-you-how-many-planets-there-are-by-examining-your-list">
-<h3>2) Have Python tell you how many planets there are by examining your list<a class="headerlink" href="#have-python-tell-you-how-many-planets-there-are-by-examining-your-list" title="Permalink to this headline">#</a></h3>
+<section id="have-python-tell-you-how-many-countries-there-are-by-examining-your-list">
+<h3>2) Have Python tell you how many countries there are by examining your list<a class="headerlink" href="#have-python-tell-you-how-many-countries-there-are-by-examining-your-list" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="use-slicing-to-display-the-first-four-planets-the-rocky-planets">
-<h3>3) Use slicing to display the first four planets (the rocky planets)<a class="headerlink" href="#use-slicing-to-display-the-first-four-planets-the-rocky-planets" title="Permalink to this headline">#</a></h3>
+<section id="use-slicing-to-display-the-first-three-countries-the-top-emitters">
+<h3>3) Use slicing to display the first three countries (the top emitters)<a class="headerlink" href="#use-slicing-to-display-the-first-three-countries-the-top-emitters" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end">
-<h3>4) Iterate through your planets and print the planet name only if it has an <code class="docutils literal notranslate"><span class="pre">s</span></code> at the end<a class="headerlink" href="#iterate-through-your-planets-and-print-the-planet-name-only-if-it-has-an-s-at-the-end" title="Permalink to this headline">#</a></h3>
+<section id="iterate-through-your-countries-and-print-the-country-name-only-if-it-has-an-a-in-the-name">
+<h3>4) Iterate through your countries and print the country name only if it has an a in the name<a class="headerlink" href="#iterate-through-your-countries-and-print-the-country-name-only-if-it-has-an-a-in-the-name" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="part-ii-dictionaries">
 <h2>Part II: Dictionaries<a class="headerlink" href="#part-ii-dictionaries" title="Permalink to this headline">#</a></h2>
-<section id="now-create-a-dictionary-that-maps-each-planet-name-to-its-mass">
-<h3>1) Now create a dictionary that maps each planet name to its mass<a class="headerlink" href="#now-create-a-dictionary-that-maps-each-planet-name-to-its-mass" title="Permalink to this headline">#</a></h3>
-<p>You can use values from this <a class="reference external" href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA fact sheet</a>.
-You can use whatever units you want, but be consistent.</p>
+<section id="now-create-a-dictionary-that-maps-each-country-name-to-its-annual-co2-emissions">
+<h3>1) Now create a dictionary that maps each country name to its annual CO₂ emissions<a class="headerlink" href="#now-create-a-dictionary-that-maps-each-country-name-to-its-annual-co2-emissions" title="Permalink to this headline">#</a></h3>
+<p>Use the data source from Part 1</p>
 </section>
-<section id="use-your-dictionary-to-look-up-earth-s-mass">
-<h3>2) Use your dictionary to look up Earth’s mass<a class="headerlink" href="#use-your-dictionary-to-look-up-earth-s-mass" title="Permalink to this headline">#</a></h3>
+<section id="use-your-dictionary-to-look-up-the-united-states-emissions">
+<h3>2) Use your dictionary to look up the United States’ emissions<a class="headerlink" href="#use-your-dictionary-to-look-up-the-united-states-emissions" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg">
-<h3>3) Loop through the data and create a list of planets whose mast is greater than 100 x 10^24 kg<a class="headerlink" href="#loop-through-the-data-and-create-a-list-of-planets-whose-mast-is-greater-than-100-x-10-24-kg" title="Permalink to this headline">#</a></h3>
+<section id="loop-through-the-data-and-create-a-list-of-countries-whose-emissions-are-greater-than-1-000-million-metric-tons-per-year">
+<h3>3) Loop through the data and create a list of countries whose emissions are greater than 1,000 million metric tons per year<a class="headerlink" href="#loop-through-the-data-and-create-a-list-of-countries-whose-emissions-are-greater-than-1-000-million-metric-tons-per-year" title="Permalink to this headline">#</a></h3>
 <p>Display your result</p>
 </section>
-<section id="now-add-pluto-to-your-dictionary">
-<h3>4) Now add pluto to your dictionary<a class="headerlink" href="#now-add-pluto-to-your-dictionary" title="Permalink to this headline">#</a></h3>
+<section id="now-add-brazil-to-your-dictionary">
+<h3>4) Now add Brazil to your dictionary<a class="headerlink" href="#now-add-brazil-to-your-dictionary" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="part-iii-functions">
