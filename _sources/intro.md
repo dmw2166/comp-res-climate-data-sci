@@ -52,7 +52,7 @@ We have a jupyterhub for the course in which you should do all of your assignmen
 You can login to the JupyterHub running on chopin, with your username and password (provided by email to you),
 by pointing your laptop browser to [https://chopin.ldeo.columbia.edu:8441/jupyterhub/]
 
-Everyone is given a home directory has a quota of 10GB, and your work directory /data9/CLMT5053G/work/your_username has a quota of 50GB. Code can go in the home directories, which are backed up, but large datasets should go in the work directory. 
+Everyone is given a home directory has a quota of 10GB, and your work directory /data9/G5053/work/your_username has a quota of 50GB. Code can go in the home directories, which are backed up, but large datasets should go in the work directory. 
 
 Please remember to actively log out of the jupyterhub when you are done using it. It is not enough to simply close the browser or close your laptop screen. 
 

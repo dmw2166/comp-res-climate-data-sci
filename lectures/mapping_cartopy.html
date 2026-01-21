@@ -1,7 +1,10 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -15,42 +18,51 @@
 <meta name="description" content="Making maps is a fundamental part of geoscience research. Maps differ from regular figures in the following principle ways: Maps require a projection of geographic coordinates on the 3D Earth to th..." />
 
     <title>Maps in Scientific Python &#8212; Computing and Research Methods for Climate Data Science</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -58,62 +70,110 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/mapping_cartopy';</script>
     <link rel="canonical" href="https://dmw2166.github.io/comp-res-climate-data-sci/lectures/mapping_cartopy.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assignment: Making Maps with Cartopy" href="../assignments/cartopy.html" />
     <link rel="prev" title="Xarray Tips and Tricks" href="xarray/xarray_tips_and_tricks.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/eeds-logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computing and Research Methods for Climate Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/eeds-logo.png" class="logo__image only-light" alt="Computing and Research Methods for Climate Data Science - Home"/>
+    <script>document.write(`<img src="../_static/eeds-logo.png" class="logo__image only-dark" alt="Computing and Research Methods for Climate Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -122,704 +182,318 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About this Book
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Book</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../LICENSE.html">
-   License for this book
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects.html">
-   Final Projects
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License for this book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects.html">Final Projects</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The Interactive Computing Environment
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Interactive Computing Environment</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="environment/intro_to_jupyterlab.html">
-   Intro to JupyterLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="environment/intro_to_unix.html">
-   Intro to Unix
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/intro_unix.html">
-   Assignment: Intro to Unix
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="environment/intro_to_git.html">
-   Intro to Git for Version Control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/files_markdown_git.html">
-   Assignment: Files, Git, and Github
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
-   All About Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/data_problems.html">
-   Homework Assignment: Data Formats and Access
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="environment/intro_to_jupyterlab.html">Intro to JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment/intro_to_unix.html">Intro to Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/intro_unix.html">Assignment: Intro to Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment/intro_to_git.html">Intro to Git for Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/files_markdown_git.html">Assignment: Files, Git, and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">All About Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/data_problems.html">Homework Assignment: Data Formats and Access</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The Core Python Language
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Core Python Language</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="core_python/python_fundamentals.html">
-   Python Fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="core_python/functions_classes.html">
-   Python Functions and Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="core_python/organization_and_packaging.html">
-   Organization and Packaging of Python Projects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/python_basics_and_functions.html">
-   Assignment: Basic Python
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="core_python/python_fundamentals.html">Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_python/functions_classes.html">Python Functions and Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core_python/organization_and_packaging.html">Organization and Packaging of Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/python_basics_and_functions.html">Assignment: Basic Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Scientific Python Fundamentals
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Python Fundamentals</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="basic_scipy/numpy_and_matplotlib.html">
-   Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/numpy_matplotlib.html">
-   Assignment: Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="basic_scipy/more_matplotlib.html">
-   More Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/more_matplotlib.html">
-   Assignment: More Matplotlib
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="basic_scipy/numpy_and_matplotlib.html">Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/numpy_matplotlib.html">Assignment: Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_scipy/more_matplotlib.html">More Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/more_matplotlib.html">Assignment: More Matplotlib</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  High Level Data Analysis Frameworks
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">High Level Data Analysis Frameworks</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="pandas/pandas_intro.html">
-   Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas/basic_pandas.html">
-     Pandas Fundamentals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assignments/basic_pandas.html">
-     Assignment: Pandas Fundamentals with Earthquake Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas/pandas_groupby.html">
-     Pandas: Groupby
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assignments/pandas_groupby.html">
-     Assignment: Pandas Groupby with Hurricane Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="xarray/xarray_intro.html">
-   Xarray for multidimensional gridded data
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray/xarray.html">
-     Xarray Fundamentals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray/xarray-part2.html">
-     Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pandas/pandas_intro.html">Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pandas/basic_pandas.html">Pandas Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/basic_pandas.html">Assignment: Pandas Fundamentals with Earthquake Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas/pandas_groupby.html">Pandas: Groupby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/pandas_groupby.html">Assignment: Pandas Groupby with Hurricane Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Geoscience Package
- </span>
-</p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="xarray/xarray_intro.html">Xarray for multidimensional gridded data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="xarray/xarray.html">Xarray Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/basic_xarray.html">Assignment: Xarray Fundamentals with Atmospheric Radiation Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarray/xarray-part2.html">Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assignments/more_xarray.html">Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarray/xarray_tips_and_tricks.html">Xarray Tips and Tricks</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Geoscience Package</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Maps in Scientific Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/cartopy.html">
-   Assignment: Making Maps with Cartopy
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Maps in Scientific Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/cartopy.html">Assignment: Making Maps with Cartopy</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Climate Model Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Climate Model Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="models/intro_models.html">
-   Working With Earth Science Model Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="models/cmip.html">
-   Working with output from many different CMIP6 climate models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../assignments/cmip.html">
-   Assignment: Calculate wet bulb temperature for CMIP6 models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="models/regridding.html">
-   Model validation: Comparing a state estimate to observations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="models/xgcm.html">
-   Calculating properties in the native model grid using xgcm
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="models/intro_models.html">Working With Earth Science Model Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/cmip.html">Working with output from many different CMIP6 climate models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignments/cmip.html">Assignment: Calculate wet bulb temperature for CMIP6 models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/regridding.html">Model validation: Comparing a state estimate to observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/xgcm.html">Calculating properties in the native model grid using xgcm</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Big Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Big Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="dask/intro.html">
-   Dask for Parallel Computing in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dask/dask_arrays.html">
-   Computing with Dask
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="dask/intro.html">Dask for Parallel Computing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dask/dask_arrays.html">Computing with Dask</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/dmw2166/comp-res-climate-data-sci/master?urlpath=tree/src/lectures/mapping_cartopy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dmw2166/comp-res-climate-data-sci" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmw2166/comp-res-climate-data-sci/edit/master/src/lectures/mapping_cartopy.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmw2166/comp-res-climate-data-sci/issues/new?title=Issue%20on%20page%20%2Flectures/mapping_cartopy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lectures/mapping_cartopy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/issues/new?title=Issue%20on%20page%20%2Flectures/mapping_cartopy.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/edit/master/src/lectures/mapping_cartopy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/lectures/mapping_cartopy.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#credit-phil-elson">
-   Credit: Phil Elson
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background-projections">
-   Background: Projections
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#most-of-our-media-for-visualization-are-flat">
-     Most of our media for visualization
-     <em>
-      are
-     </em>
-     flat
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#map-projections-taking-us-from-spherical-to-flat">
-     [Map] Projections: Taking us from spherical to flat
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-major-problem-with-map-projections">
-     The major problem with map projections
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-cartopy">
-   Introducing Cartopy
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cartopy-projections-and-other-reference-systems">
-     Cartopy Projections and other reference systems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#drawing-a-map">
-     Drawing a map
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-methods-of-a-geoaxes">
-     Useful methods of a GeoAxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-more-examples-of-different-global-projections">
-     Some More Examples of Different Global Projections
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regional-maps">
-     Regional Maps
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-features-to-the-map">
-   Adding Features to the Map
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-data-to-the-map">
-   Adding Data to the Map
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-2d-raster-data">
-     Plotting 2D (Raster) Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#showing-images">
-     Showing Images
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xarray-integration">
-   Xarray Integration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#doing-more">
-   Doing More
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Maps in Scientific Python</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#credit-phil-elson">
-   Credit: Phil Elson
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background-projections">
-   Background: Projections
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#most-of-our-media-for-visualization-are-flat">
-     Most of our media for visualization
-     <em>
-      are
-     </em>
-     flat
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#map-projections-taking-us-from-spherical-to-flat">
-     [Map] Projections: Taking us from spherical to flat
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-major-problem-with-map-projections">
-     The major problem with map projections
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-cartopy">
-   Introducing Cartopy
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cartopy-projections-and-other-reference-systems">
-     Cartopy Projections and other reference systems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#drawing-a-map">
-     Drawing a map
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-methods-of-a-geoaxes">
-     Useful methods of a GeoAxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-more-examples-of-different-global-projections">
-     Some More Examples of Different Global Projections
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regional-maps">
-     Regional Maps
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-features-to-the-map">
-   Adding Features to the Map
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-data-to-the-map">
-   Adding Data to the Map
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-2d-raster-data">
-     Plotting 2D (Raster) Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#showing-images">
-     Showing Images
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#xarray-integration">
-   Xarray Integration
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#doing-more">
-   Doing More
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Maps in Scientific Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credit-phil-elson">Credit: Phil Elson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-projections">Background: Projections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-of-our-media-for-visualization-are-flat">Most of our media for visualization <em>are</em> flat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-projections-taking-us-from-spherical-to-flat">[Map] Projections: Taking us from spherical to flat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-major-problem-with-map-projections">The major problem with map projections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-cartopy">Introducing Cartopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartopy-projections-and-other-reference-systems">Cartopy Projections and other reference systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-a-map">Drawing a map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-methods-of-a-geoaxes">Useful methods of a GeoAxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples-of-different-global-projections">Some More Examples of Different Global Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-maps">Regional Maps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-features-to-the-map">Adding Features to the Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-data-to-the-map">Adding Data to the Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-2d-raster-data">Plotting 2D (Raster) Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#showing-images">Showing Images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray-integration">Xarray Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-more">Doing More</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="maps-in-scientific-python">
-<h1>Maps in Scientific Python<a class="headerlink" href="#maps-in-scientific-python" title="Permalink to this headline">#</a></h1>
+<h1>Maps in Scientific Python<a class="headerlink" href="#maps-in-scientific-python" title="Permalink to this heading">#</a></h1>
 <p>Making maps is a fundamental part of geoscience research.
 Maps differ from regular figures in the following principle ways:</p>
 <ul class="simple">
@@ -829,13 +503,13 @@ Maps differ from regular figures in the following principle ways:</p>
 <p>Mapping is a notoriously hard and complicated problem, mostly due to the complexities of projection.</p>
 <p>In this lecture, we will learn about <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy</a>, one of the most common packages for making maps within python. Another popular and powerful library is <a class="reference external" href="https://matplotlib.org/basemap/">Basemap</a>; however, Basemap is <a class="reference external" href="https://matplotlib.org/basemap/users/intro.html#cartopy-new-management-and-eol-announcement">going away</a> and being replaced with Cartopy in the near future. For this reason, new python learners are recommended to learn Cartopy.</p>
 <section id="credit-phil-elson">
-<h2>Credit: Phil Elson<a class="headerlink" href="#credit-phil-elson" title="Permalink to this headline">#</a></h2>
+<h2>Credit: Phil Elson<a class="headerlink" href="#credit-phil-elson" title="Permalink to this heading">#</a></h2>
 <p>Lots of the material in this lesson was adopted from <a class="reference external" href="https://pelson.github.io/">Phil Elson</a>’s excellent <a class="reference external" href="https://github.com/SciTools/cartopy-tutorial">Cartopy Tutorial</a>. Phil is the creator of Cartopy and published his tutorial under an <a class="reference external" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">open license</a>, meaning that we can copy, adapt, and redistribute it as long as we give proper attribution. <strong>THANKS PHIL!</strong> 👏👏👏</p>
 </section>
 <section id="background-projections">
-<h2>Background: Projections<a class="headerlink" href="#background-projections" title="Permalink to this headline">#</a></h2>
+<h2>Background: Projections<a class="headerlink" href="#background-projections" title="Permalink to this heading">#</a></h2>
 <section id="most-of-our-media-for-visualization-are-flat">
-<h3>Most of our media for visualization <em>are</em> flat<a class="headerlink" href="#most-of-our-media-for-visualization-are-flat" title="Permalink to this headline">#</a></h3>
+<h3>Most of our media for visualization <em>are</em> flat<a class="headerlink" href="#most-of-our-media-for-visualization-are-flat" title="Permalink to this heading">#</a></h3>
 <p>Our two most common media are flat:</p>
 <ul class="simple">
 <li><p>Paper</p></li>
@@ -844,14 +518,14 @@ Maps differ from regular figures in the following principle ways:</p>
 <p><img alt="" src="https://raw.githubusercontent.com/SciTools/cartopy-tutorial/master/static/flat_medium.jpg" /></p>
 </section>
 <section id="map-projections-taking-us-from-spherical-to-flat">
-<h3>[Map] Projections: Taking us from spherical to flat<a class="headerlink" href="#map-projections-taking-us-from-spherical-to-flat" title="Permalink to this headline">#</a></h3>
+<h3>[Map] Projections: Taking us from spherical to flat<a class="headerlink" href="#map-projections-taking-us-from-spherical-to-flat" title="Permalink to this heading">#</a></h3>
 <p>A map projection (or more commonly refered to as just “projection”) is:</p>
 <blockquote>
 <div><p>a systematic transformation of the latitudes and longitudes of locations from the surface of a sphere or an ellipsoid into locations on a plane. [<a class="reference external" href="https://en.wikipedia.org/wiki/Map_projection">Wikipedia: Map projection</a>].</p>
 </div></blockquote>
 </section>
 <section id="the-major-problem-with-map-projections">
-<h3>The major problem with map projections<a class="headerlink" href="#the-major-problem-with-map-projections" title="Permalink to this headline">#</a></h3>
+<h3>The major problem with map projections<a class="headerlink" href="#the-major-problem-with-map-projections" title="Permalink to this heading">#</a></h3>
 <p><img alt="orange peel" src="https://raw.githubusercontent.com/SciTools/cartopy-tutorial/master/static/orange_peel.jpg" /></p>
 <ul class="simple">
 <li><p>The surface of a sphere is topologically different to a 2D surface, therefore we <em>have</em> to cut the sphere <em>somewhere</em></p></li>
@@ -862,20 +536,20 @@ Instead, we will dive into the more practical sides of Caropy usage.</p>
 </section>
 </section>
 <section id="introducing-cartopy">
-<h2>Introducing Cartopy<a class="headerlink" href="#introducing-cartopy" title="Permalink to this headline">#</a></h2>
+<h2>Introducing Cartopy<a class="headerlink" href="#introducing-cartopy" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/">https://scitools.org.uk/cartopy/docs/latest/</a></p>
 <p>Cartopy makes use of the powerful <a class="reference external" href="https://proj4.org/">PROJ.4</a>, numpy and shapely libraries and includes a programatic interface built on top of Matplotlib for the creation of publication quality maps.</p>
 <p>Key features of cartopy are its object oriented projection definitions, and its ability to transform points, lines, vectors, polygons and images between those projections.</p>
 <section id="cartopy-projections-and-other-reference-systems">
-<h3>Cartopy Projections and other reference systems<a class="headerlink" href="#cartopy-projections-and-other-reference-systems" title="Permalink to this headline">#</a></h3>
+<h3>Cartopy Projections and other reference systems<a class="headerlink" href="#cartopy-projections-and-other-reference-systems" title="Permalink to this heading">#</a></h3>
 <p>In Cartopy, each projection is a class.
 Most classes of projection can be configured in projection-specific ways, although Cartopy takes an opinionated stance on sensible defaults.</p>
 <p>Let’s create a Plate Carree projection instance.</p>
 <p>To do so, we need cartopy’s crs module. This is typically imported as <code class="docutils literal notranslate"><span class="pre">ccrs</span></code> (Cartopy Coordinate Reference Systems).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">cartopy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy</span>
 </pre></div>
 </div>
 </div>
@@ -6834,14 +6508,14 @@ L 7.2 146.7
 </div>
 </section>
 <section id="drawing-a-map">
-<h3>Drawing a map<a class="headerlink" href="#drawing-a-map" title="Permalink to this headline">#</a></h3>
+<h3>Drawing a map<a class="headerlink" href="#drawing-a-map" title="Permalink to this heading">#</a></h3>
 <p>Cartopy optionally depends upon matplotlib, and each projection knows how to create a matplotlib Axes (or AxesSubplot) that can represent itself.</p>
 <p>The Axes that the projection creates is a <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/matplotlib/geoaxes.html#cartopy.mpl.geoaxes.GeoAxes">cartopy.mpl.geoaxes.GeoAxes</a>. This Axes subclass overrides some of matplotlib’s existing methods, and adds a number of extremely useful ones for drawing maps.</p>
 <p>We’ll go back and look at those methods shortly, but first, let’s actually see the cartopy+matplotlib dance in action:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 </pre></div>
@@ -6851,7 +6525,7 @@ L 7.2 146.7
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;GeoAxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_8_1.png" src="../_images/mapping_cartopy_8_1.png" />
+<img alt="../_images/541e8fca8ce0acb58ff80b0a0fd06ec75eec6ffcfd823e11caba54e2a53d6065.png" src="../_images/541e8fca8ce0acb58ff80b0a0fd06ec75eec6ffcfd823e11caba54e2a53d6065.png" />
 </div>
 </div>
 <p>That was a little underwhelming, but we can see that the Axes created is indeed one of those GeoAxes[Subplot] instances.</p>
@@ -6868,7 +6542,7 @@ L 7.2 146.7
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fc448ad7e80&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_10_1.png" src="../_images/mapping_cartopy_10_1.png" />
+<img alt="../_images/be4648c03739d92b3c583b65d4ad87f2812fdb5c7f94011d8addde13c2c1ed38.png" src="../_images/be4648c03739d92b3c583b65d4ad87f2812fdb5c7f94011d8addde13c2c1ed38.png" />
 </div>
 </div>
 <p>We could just as equally created a matplotlib subplot with one of the many approaches that exist. For example, the <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> function could be used:</p>
@@ -6883,7 +6557,7 @@ L 7.2 146.7
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fc453f68c10&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_12_1.png" src="../_images/mapping_cartopy_12_1.png" />
+<img alt="../_images/be4648c03739d92b3c583b65d4ad87f2812fdb5c7f94011d8addde13c2c1ed38.png" src="../_images/be4648c03739d92b3c583b65d4ad87f2812fdb5c7f94011d8addde13c2c1ed38.png" />
 </div>
 </div>
 <p>Projection classes have options we can use to customize the map</p>
@@ -6929,12 +6603,12 @@ globe: :class:`~cartopy.crs.Globe` instance, optional
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fc453f99370&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_15_1.png" src="../_images/mapping_cartopy_15_1.png" />
+<img alt="../_images/0a4e93a4c09c79c69db5f1d18e438ee2b1908c5a2699cde526e849e587d49f9f.png" src="../_images/0a4e93a4c09c79c69db5f1d18e438ee2b1908c5a2699cde526e849e587d49f9f.png" />
 </div>
 </div>
 </section>
 <section id="useful-methods-of-a-geoaxes">
-<h3>Useful methods of a GeoAxes<a class="headerlink" href="#useful-methods-of-a-geoaxes" title="Permalink to this headline">#</a></h3>
+<h3>Useful methods of a GeoAxes<a class="headerlink" href="#useful-methods-of-a-geoaxes" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/matplotlib/geoaxes.html#cartopy.mpl.geoaxes.GeoAxes">cartopy.mpl.geoaxes.GeoAxes</a> class adds a number of useful methods.</p>
 <p>Let’s take a look at:</p>
 <ul class="simple">
@@ -6948,7 +6622,7 @@ globe: :class:`~cartopy.crs.Globe` instance, optional
 </ul>
 </section>
 <section id="some-more-examples-of-different-global-projections">
-<h3>Some More Examples of Different Global Projections<a class="headerlink" href="#some-more-examples-of-different-global-projections" title="Permalink to this headline">#</a></h3>
+<h3>Some More Examples of Different Global Projections<a class="headerlink" href="#some-more-examples-of-different-global-projections" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">projections</span> <span class="o">=</span> <span class="p">[</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
@@ -6969,16 +6643,16 @@ globe: :class:`~cartopy.crs.Globe` instance, optional
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/mapping_cartopy_17_0.png" src="../_images/mapping_cartopy_17_0.png" />
-<img alt="../_images/mapping_cartopy_17_1.png" src="../_images/mapping_cartopy_17_1.png" />
-<img alt="../_images/mapping_cartopy_17_2.png" src="../_images/mapping_cartopy_17_2.png" />
-<img alt="../_images/mapping_cartopy_17_3.png" src="../_images/mapping_cartopy_17_3.png" />
-<img alt="../_images/mapping_cartopy_17_4.png" src="../_images/mapping_cartopy_17_4.png" />
+<img alt="../_images/92864d54806ba0152eb389642146a867c633c0945ed62ecfecb6389b9edbe536.png" src="../_images/92864d54806ba0152eb389642146a867c633c0945ed62ecfecb6389b9edbe536.png" />
+<img alt="../_images/04a09722e3e1b28e785800c0c648dca1b8b7736a27b1219f2eb97f3d66c9723b.png" src="../_images/04a09722e3e1b28e785800c0c648dca1b8b7736a27b1219f2eb97f3d66c9723b.png" />
+<img alt="../_images/95d5251851e288714cd58cf42de91724ce9a68629ad1d88862438c668269585a.png" src="../_images/95d5251851e288714cd58cf42de91724ce9a68629ad1d88862438c668269585a.png" />
+<img alt="../_images/eeff3db79482f8487479b89860fc94f4a0e65e45bc66738df4664a1674bafd2d.png" src="../_images/eeff3db79482f8487479b89860fc94f4a0e65e45bc66738df4664a1674bafd2d.png" />
+<img alt="../_images/33c1c924066f951edf03dd2639c1481d4d67705d1c7095208bc0e882c5796bd4.png" src="../_images/33c1c924066f951edf03dd2639c1481d4d67705d1c7095208bc0e882c5796bd4.png" />
 </div>
 </div>
 </section>
 <section id="regional-maps">
-<h3>Regional Maps<a class="headerlink" href="#regional-maps" title="Permalink to this headline">#</a></h3>
+<h3>Regional Maps<a class="headerlink" href="#regional-maps" title="Permalink to this heading">#</a></h3>
 <p>To create a regional map, we use the <code class="docutils literal notranslate"><span class="pre">set_extent</span></code> method of GeoAxis to limit the size of the region.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7020,16 +6694,16 @@ extents
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fc448d09160&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_20_1.png" src="../_images/mapping_cartopy_20_1.png" />
+<img alt="../_images/c13cfa25f1b6aa825cc2efd99689673cacbc24fe69f9289f30044f07daee9fb6.png" src="../_images/c13cfa25f1b6aa825cc2efd99689673cacbc24fe69f9289f30044f07daee9fb6.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="adding-features-to-the-map">
-<h2>Adding Features to the Map<a class="headerlink" href="#adding-features-to-the-map" title="Permalink to this headline">#</a></h2>
+<h2>Adding Features to the Map<a class="headerlink" href="#adding-features-to-the-map" title="Permalink to this heading">#</a></h2>
 <p>To give our map more styles and details, we add <code class="docutils literal notranslate"><span class="pre">cartopy.feature</span></code> objects.
 Many useful features are built in. These “default features” are at coarse (110m) resolution.</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Description</p></th>
@@ -7059,11 +6733,12 @@ Many useful features are built in. These “default features” are at coarse (1
 </tr>
 </tbody>
 </table>
+</div>
 <p>Below we illustrate these features in a customized map of North America.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">central_lat</span> <span class="o">=</span> <span class="mf">37.5</span>
 <span class="n">central_lon</span> <span class="o">=</span> <span class="o">-</span><span class="mi">96</span>
@@ -7093,7 +6768,7 @@ Many useful features are built in. These “default features” are at coarse (1
   warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_22_2.png" src="../_images/mapping_cartopy_22_2.png" />
+<img alt="../_images/1e34348651d1b4f90e457cd2a4db7383075d502c789234a8ef01a1c8e33e0c91.png" src="../_images/1e34348651d1b4f90e457cd2a4db7383075d502c789234a8ef01a1c8e33e0c91.png" />
 </div>
 </div>
 <p>If we want higher-resolution features, Cartopy can automatically download and create them from the <a class="reference external" href="http://www.naturalearthdata.com/">Natural Earth Data</a> database or the <a class="reference external" href="https://www.ngdc.noaa.gov/mgg/shorelines/gshhs.html">GSHHS dataset</a> database.</p>
@@ -7116,12 +6791,12 @@ Many useful features are built in. These “default features” are at coarse (1
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.gridliner.Gridliner at 0x7fc448591880&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_24_1.png" src="../_images/mapping_cartopy_24_1.png" />
+<img alt="../_images/118094705c009f13e6111ffb64277ac28c82cdd3beeb2dad5705e2bc760dd312.png" src="../_images/118094705c009f13e6111ffb64277ac28c82cdd3beeb2dad5705e2bc760dd312.png" />
 </div>
 </div>
 </section>
 <section id="adding-data-to-the-map">
-<h2>Adding Data to the Map<a class="headerlink" href="#adding-data-to-the-map" title="Permalink to this headline">#</a></h2>
+<h2>Adding Data to the Map<a class="headerlink" href="#adding-data-to-the-map" title="Permalink to this heading">#</a></h2>
 <p>Now that we know how to create a map, let’s add our data to it! That’s the whole point.</p>
 <p>Because our map is a matplotlib axis, we can use all the familiar maptplotlib commands to make plots.
 By default, the map extent will be adjusted to match the data. We can override this with the <code class="docutils literal notranslate"><span class="pre">.set_global</span></code> or <code class="docutils literal notranslate"><span class="pre">.set_extent</span></code> commands.</p>
@@ -7155,15 +6830,15 @@ If you don’t specify a transform, Cartopy assume that the data is using the sa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/mapping_cartopy_28_0.png" src="../_images/mapping_cartopy_28_0.png" />
+<img alt="../_images/c7afebe89236981fd54d0ff34781d82804bb9467cea8e3b9a8db04e21d3a4b13.png" src="../_images/c7afebe89236981fd54d0ff34781d82804bb9467cea8e3b9a8db04e21d3a4b13.png" />
 </div>
 </div>
 <section id="plotting-2d-raster-data">
-<h3>Plotting 2D (Raster) Data<a class="headerlink" href="#plotting-2d-raster-data" title="Permalink to this headline">#</a></h3>
+<h3>Plotting 2D (Raster) Data<a class="headerlink" href="#plotting-2d-raster-data" title="Permalink to this heading">#</a></h3>
 <p>The same principles apply to 2D data. Below we create some example data defined in regular lat / lon coordinates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">lon2d</span><span class="p">,</span> <span class="n">lat2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
@@ -7176,7 +6851,7 @@ If you don’t specify a transform, Cartopy assume that the data is using the sa
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7fc4489320d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_30_1.png" src="../_images/mapping_cartopy_30_1.png" />
+<img alt="../_images/9bfade4fbd4063c9cb42d6c783d9cc2cdd67e6dfd6cf90eb8089ffad2c39ac34.png" src="../_images/9bfade4fbd4063c9cb42d6c783d9cc2cdd67e6dfd6cf90eb8089ffad2c39ac34.png" />
 </div>
 </div>
 <p>Now we create a <code class="docutils literal notranslate"><span class="pre">PlateCarree</span></code> projection and plot the data on it without any <code class="docutils literal notranslate"><span class="pre">transform</span></code> keyword.
@@ -7194,7 +6869,7 @@ This happens to work because <code class="docutils literal notranslate"><span cl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7fc4485cd3d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_32_1.png" src="../_images/mapping_cartopy_32_1.png" />
+<img alt="../_images/2dd0614ad45575b57b3048a49ec2d68e47bd26a73f8e943de257b8b74be11681.png" src="../_images/2dd0614ad45575b57b3048a49ec2d68e47bd26a73f8e943de257b8b74be11681.png" />
 </div>
 </div>
 <p>However, if we try the same thing with a different projection, we get the wrong result.</p>
@@ -7212,7 +6887,7 @@ This happens to work because <code class="docutils literal notranslate"><span cl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7fc448a8ad00&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_34_1.png" src="../_images/mapping_cartopy_34_1.png" />
+<img alt="../_images/aaad9a61d4c5a0887fb3f1b2d2239df56b6f9a90edc14e39ef7edb2b97405582.png" src="../_images/aaad9a61d4c5a0887fb3f1b2d2239df56b6f9a90edc14e39ef7edb2b97405582.png" />
 </div>
 </div>
 <p>To fix this, we need to pass the correct transform argument to <code class="docutils literal notranslate"><span class="pre">contourf</span></code>:</p>
@@ -7230,12 +6905,12 @@ This happens to work because <code class="docutils literal notranslate"><span cl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7fc44894d7f0&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_36_1.png" src="../_images/mapping_cartopy_36_1.png" />
+<img alt="../_images/0c566fe2f1bad9636a08a99044489984dc0be9d2ae28841e01ab0fcbb817b8b2.png" src="../_images/0c566fe2f1bad9636a08a99044489984dc0be9d2ae28841e01ab0fcbb817b8b2.png" />
 </div>
 </div>
 </section>
 <section id="showing-images">
-<h3>Showing Images<a class="headerlink" href="#showing-images" title="Permalink to this headline">#</a></h3>
+<h3>Showing Images<a class="headerlink" href="#showing-images" title="Permalink to this heading">#</a></h3>
 <p>We can plot a satellite image easily on a map if we know its extent</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7293,17 +6968,17 @@ Miriam.A2012270.205 100%[===================&gt;] 250.21K  --.-KB/s    in 0.1s
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-117, 33, &#39;San Diego&#39;)
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_39_1.png" src="../_images/mapping_cartopy_39_1.png" />
+<img alt="../_images/56821f4dd152e5a064413a4e37663a9aeabc00ae04e9634aaf63b43516d73d98.png" src="../_images/56821f4dd152e5a064413a4e37663a9aeabc00ae04e9634aaf63b43516d73d98.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="xarray-integration">
-<h2>Xarray Integration<a class="headerlink" href="#xarray-integration" title="Permalink to this headline">#</a></h2>
+<h2>Xarray Integration<a class="headerlink" href="#xarray-integration" title="Permalink to this heading">#</a></h2>
 <p>Cartopy transforms can be passed to xarray! This creates a very quick path for creating professional looking maps from netCDF data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/noaa.ersst.v5/sst.mnmean.nc&#39;</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">drop_variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time_bnds&#39;</span><span class="p">])</span>
 <span class="n">ds</span>
@@ -7726,12 +7401,12 @@ Attributes: (12/38)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.geocollection.GeoQuadMesh at 0x7fc42d31d580&gt;
 </pre></div>
 </div>
-<img alt="../_images/mapping_cartopy_42_1.png" src="../_images/mapping_cartopy_42_1.png" />
+<img alt="../_images/d02f68adfb8ed42e40e895f1ad6328192e4c1a6f1739b45e2bbe207b8dd96c28.png" src="../_images/d02f68adfb8ed42e40e895f1ad6328192e4c1a6f1739b45e2bbe207b8dd96c28.png" />
 </div>
 </div>
 </section>
 <section id="doing-more">
-<h2>Doing More<a class="headerlink" href="#doing-more" title="Permalink to this headline">#</a></h2>
+<h2>Doing More<a class="headerlink" href="#doing-more" title="Permalink to this heading">#</a></h2>
 <p>Browse the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/index.html">Cartopy Gallery</a> to learn about all the different types of data and plotting methods available!</p>
 </section>
 </section>
@@ -7748,7 +7423,7 @@ Attributes: (12/38)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./lectures"
         },
         predefinedOutput: true
@@ -7756,50 +7431,125 @@ Attributes: (12/38)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="xarray/xarray_tips_and_tricks.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Xarray Tips and Tricks</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="xarray/xarray_tips_and_tricks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Xarray Tips and Tricks</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../assignments/cartopy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../assignments/cartopy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment: Making Maps with Cartopy</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credit-phil-elson">Credit: Phil Elson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-projections">Background: Projections</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-of-our-media-for-visualization-are-flat">Most of our media for visualization <em>are</em> flat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-projections-taking-us-from-spherical-to-flat">[Map] Projections: Taking us from spherical to flat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-major-problem-with-map-projections">The major problem with map projections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-cartopy">Introducing Cartopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartopy-projections-and-other-reference-systems">Cartopy Projections and other reference systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-a-map">Drawing a map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-methods-of-a-geoaxes">Useful methods of a GeoAxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-more-examples-of-different-global-projections">Some More Examples of Different Global Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-maps">Regional Maps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-features-to-the-map">Adding Features to the Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-data-to-the-map">Adding Data to the Map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-2d-raster-data">Plotting 2D (Raster) Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#showing-images">Showing Images</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray-integration">Xarray Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-more">Doing More</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Dan Westervelt<br/>
-  
-      &copy; Copyright 2025.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Dan Westervelt
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,7 +1,10 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -10,47 +13,56 @@
 <meta property="og:url" content="https://dmw2166.github.io/lectures/xarray/xarray-part2.html" />
 <meta property="og:site_name" content="Python" />
 <meta property="og:description" content="In this lesson, we cover some more advanced aspects of xarray. Interpolation: In the previous lesson on Xarray, we learned how to select data based on its dimension coordinates and align data with ..." />
-<meta property="og:image" content="https://dmw2166.github.io/_images/xarray-part2_4_1.png" />
+<meta property="og:image" content="https://dmw2166.github.io/_images/00f23c029e18d34186a5cbafbc88788298258f7ae4e3bdb354dfb3e5e8376ed4.png" />
 <meta property="og:image:alt" content="Python" />
 <meta name="description" content="In this lesson, we cover some more advanced aspects of xarray. Interpolation: In the previous lesson on Xarray, we learned how to select data based on its dimension coordinates and align data with ..." />
 
     <title>Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen &#8212; Computing and Research Methods for Climate Data Science</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -58,62 +70,110 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/xarray/xarray-part2';</script>
     <link rel="canonical" href="https://dmw2166.github.io/comp-res-climate-data-sci/lectures/xarray/xarray-part2.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data" href="../../assignments/more_xarray.html" />
     <link rel="prev" title="Assignment: Xarray Fundamentals with Atmospheric Radiation Data" href="../../assignments/basic_xarray.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/eeds-logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Computing and Research Methods for Climate Data Science</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/eeds-logo.png" class="logo__image only-light" alt="Computing and Research Methods for Climate Data Science - Home"/>
+    <script>document.write(`<img src="../../_static/eeds-logo.png" class="logo__image only-dark" alt="Computing and Research Methods for Climate Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -122,642 +182,318 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About this Book
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Book</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../LICENSE.html">
-   License for this book
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../projects.html">
-   Final Projects
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">License for this book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects.html">Final Projects</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The Interactive Computing Environment
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Interactive Computing Environment</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../environment/intro_to_jupyterlab.html">
-   Intro to JupyterLab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../environment/intro_to_unix.html">
-   Intro to Unix
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/intro_unix.html">
-   Assignment: Intro to Unix
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../environment/intro_to_git.html">
-   Intro to Git for Version Control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/files_markdown_git.html">
-   Assignment: Files, Git, and Github
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../data.html">
-   All About Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/data_problems.html">
-   Homework Assignment: Data Formats and Access
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/intro_to_jupyterlab.html">Intro to JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/intro_to_unix.html">Intro to Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/intro_unix.html">Assignment: Intro to Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/intro_to_git.html">Intro to Git for Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/files_markdown_git.html">Assignment: Files, Git, and Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">All About Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/data_problems.html">Homework Assignment: Data Formats and Access</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The Core Python Language
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Core Python Language</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../core_python/python_fundamentals.html">
-   Python Fundamentals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core_python/functions_classes.html">
-   Python Functions and Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core_python/organization_and_packaging.html">
-   Organization and Packaging of Python Projects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/python_basics_and_functions.html">
-   Assignment: Basic Python
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../core_python/python_fundamentals.html">Python Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core_python/functions_classes.html">Python Functions and Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core_python/organization_and_packaging.html">Organization and Packaging of Python Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/python_basics_and_functions.html">Assignment: Basic Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Scientific Python Fundamentals
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Python Fundamentals</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../basic_scipy/numpy_and_matplotlib.html">
-   Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/numpy_matplotlib.html">
-   Assignment: Numpy and Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../basic_scipy/more_matplotlib.html">
-   More Matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/more_matplotlib.html">
-   Assignment: More Matplotlib
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_scipy/numpy_and_matplotlib.html">Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/numpy_matplotlib.html">Assignment: Numpy and Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_scipy/more_matplotlib.html">More Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/more_matplotlib.html">Assignment: More Matplotlib</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  High Level Data Analysis Frameworks
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">High Level Data Analysis Frameworks</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../pandas/pandas_intro.html">
-   Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../pandas/basic_pandas.html">
-     Pandas Fundamentals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_pandas.html">
-     Assignment: Pandas Fundamentals with Earthquake Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../pandas/pandas_groupby.html">
-     Pandas: Groupby
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/pandas_groupby.html">
-     Assignment: Pandas Groupby with Hurricane Data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="xarray_intro.html">
-   Xarray for multidimensional gridded data
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray.html">
-     Xarray Fundamentals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pandas/pandas_intro.html">Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/basic_pandas.html">Pandas Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assignments/basic_pandas.html">Assignment: Pandas Fundamentals with Earthquake Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/pandas_groupby.html">Pandas: Groupby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assignments/pandas_groupby.html">Assignment: Pandas Groupby with Hurricane Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Geoscience Package
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../mapping_cartopy.html">
-   Maps in Scientific Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/cartopy.html">
-   Assignment: Making Maps with Cartopy
-  </a>
- </li>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="xarray_intro.html">Xarray for multidimensional gridded data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="xarray.html">Xarray Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assignments/basic_xarray.html">Assignment: Xarray Fundamentals with Atmospheric Radiation Data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assignments/more_xarray.html">Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarray_tips_and_tricks.html">Xarray Tips and Tricks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Climate Model Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../models/intro_models.html">
-   Working With Earth Science Model Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../models/cmip.html">
-   Working with output from many different CMIP6 climate models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/cmip.html">
-   Assignment: Calculate wet bulb temperature for CMIP6 models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../models/regridding.html">
-   Model validation: Comparing a state estimate to observations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../models/xgcm.html">
-   Calculating properties in the native model grid using xgcm
-  </a>
- </li>
+</details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Big Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Geoscience Package</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../dask/intro.html">
-   Dask for Parallel Computing in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../dask/dask_arrays.html">
-   Computing with Dask
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../mapping_cartopy.html">Maps in Scientific Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/cartopy.html">Assignment: Making Maps with Cartopy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Climate Model Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/intro_models.html">Working With Earth Science Model Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/cmip.html">Working with output from many different CMIP6 climate models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assignments/cmip.html">Assignment: Calculate wet bulb temperature for CMIP6 models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/regridding.html">Model validation: Comparing a state estimate to observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../models/xgcm.html">Calculating properties in the native model grid using xgcm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Big Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../dask/intro.html">Dask for Parallel Computing in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dask/dask_arrays.html">Computing with Dask</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/dmw2166/comp-res-climate-data-sci/master?urlpath=tree/src/lectures/xarray/xarray-part2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dmw2166/comp-res-climate-data-sci" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmw2166/comp-res-climate-data-sci/edit/master/src/lectures/xarray/xarray-part2.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmw2166/comp-res-climate-data-sci/issues/new?title=Issue%20on%20page%20%2Flectures/xarray/xarray-part2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/xarray/xarray-part2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/issues/new?title=Issue%20on%20page%20%2Flectures/xarray/xarray-part2.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/dmw2166/comp-res-climate-data-sci/edit/master/src/lectures/xarray/xarray-part2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/lectures/xarray/xarray-part2.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpolation">
-   Interpolation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#groupby">
-   Groupby
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#split-step">
-     Split Step
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#map-combine">
-     Map &amp; Combine
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#aggregations">
-       Aggregations
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transformations">
-       Transformations
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grouby-related-resample-rolling-coarsen">
-   Grouby-Related: Resample, Rolling, Coarsen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resample">
-     Resample
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rolling">
-     Rolling
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coarsen">
-   Coarsen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-advanced-example">
-   An Advanced Example
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpolation">
-   Interpolation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#groupby">
-   Groupby
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#split-step">
-     Split Step
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#map-combine">
-     Map &amp; Combine
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#aggregations">
-       Aggregations
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transformations">
-       Transformations
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grouby-related-resample-rolling-coarsen">
-   Grouby-Related: Resample, Rolling, Coarsen
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resample">
-     Resample
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rolling">
-     Rolling
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coarsen">
-   Coarsen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-advanced-example">
-   An Advanced Example
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">Groupby</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-step">Split Step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-combine">Map &amp; Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouby-related-resample-rolling-coarsen">Grouby-Related: Resample, Rolling, Coarsen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">Resample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling">Rolling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coarsen">Coarsen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-advanced-example">An Advanced Example</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="xarray-interpolation-groupby-resample-rolling-and-coarsen">
-<h1>Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen<a class="headerlink" href="#xarray-interpolation-groupby-resample-rolling-and-coarsen" title="Permalink to this headline">#</a></h1>
+<h1>Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen<a class="headerlink" href="#xarray-interpolation-groupby-resample-rolling-and-coarsen" title="Permalink to this heading">#</a></h1>
 <p>In this lesson, we cover some more advanced aspects of xarray.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="o">%</span><span class="k">xmode</span> Minimal
 </pre></div>
 </div>
@@ -769,7 +505,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="interpolation">
-<h2>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">#</a></h2>
+<h2>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this heading">#</a></h2>
 <p>In the previous lesson on Xarray, we learned how to select data based on its dimension coordinates and align data with dimension different coordinates.
 But what if we want to estimate the value of the data variables at <em>different coordinates</em>.
 This is where interpolation comes in.</p>
@@ -1149,7 +885,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8e565f4c70&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_4_1.png" src="../../_images/xarray-part2_4_1.png" />
+<img alt="../../_images/00f23c029e18d34186a5cbafbc88788298258f7ae4e3bdb354dfb3e5e8376ed4.png" src="../../_images/00f23c029e18d34186a5cbafbc88788298258f7ae4e3bdb354dfb3e5e8376ed4.png" />
 </div>
 </div>
 <p>We only have data on the integer points in x.
@@ -1591,7 +1327,7 @@ There are different modes of interpolation.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8e55efd940&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_14_1.png" src="../../_images/xarray-part2_14_1.png" />
+<img alt="../../_images/cd8d18dacc600c2552a954e7f4dd4bf61c05b30a3381958ee454cc4af41ad9a3.png" src="../../_images/cd8d18dacc600c2552a954e7f4dd4bf61c05b30a3381958ee454cc4af41ad9a3.png" />
 </div>
 </div>
 <p>Note that values outside of the original range are not supported:</p>
@@ -1617,7 +1353,7 @@ More sophisticated treatment of spherical geometry requires another package such
 </div>
 </section>
 <section id="groupby">
-<h2>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h2>
+<h2>Groupby<a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h2>
 <p>Xarray copies Pandas’ very useful groupby functionality, enabling the “split / apply / combine” workflow on xarray DataArrays and Datasets. In the first part of the lesson, we will learn to use groupby by analyzing sea-surface temperature data.</p>
 <p>First we load a dataset. We will use the <a class="reference external" href="https://www.ncdc.noaa.gov/data-access/marineocean-data/extended-reconstructed-sea-surface-temperature-ersst-v5">NOAA Extended Reconstructed Sea Surface Temperature (ERSST) v5</a> product, a widely used and trusted gridded compilation of of historical data going back to 1854.</p>
 <p>Since the data is provided via an <a class="reference external" href="https://en.wikipedia.org/wiki/OPeNDAP">OPeNDAP</a> server, we can load it directly without downloading anything:</p>
@@ -2081,7 +1817,7 @@ Attributes: (12/38)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4e41c3a0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_22_1.png" src="../../_images/xarray-part2_22_1.png" />
+<img alt="../../_images/6a3727420fb376c30cf6337d3cca3921d4439358297d2e106d6e5d85a8685bb2.png" src="../../_images/6a3727420fb376c30cf6337d3cca3921d4439358297d2e106d6e5d85a8685bb2.png" />
 </div>
 </div>
 <p>Note that xarray correctly parsed the time index, resulting in a Pandas datetime index on the time dimension.</p>
@@ -2476,7 +2212,7 @@ Attributes:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8e4e3cbeb0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_25_1.png" src="../../_images/xarray-part2_25_1.png" />
+<img alt="../../_images/6dfbc99014358656753a920dc459b95531f96c1d82c30b692dff6299381c1b68.png" src="../../_images/6dfbc99014358656753a920dc459b95531f96c1d82c30b692dff6299381c1b68.png" />
 </div>
 </div>
 <p>As we can see from the plot, the timeseries at any one point is totally dominated by the seasonal cycle. We would like to remove this seasonal cycle (called the “climatology”) in order to better see the long-term variaitions in temperature. We will accomplish this using <strong>groupby</strong>.</p>
@@ -2550,7 +2286,7 @@ core.groupby.DatasetGroupBy
 </div>
 </div>
 <section id="split-step">
-<h3>Split Step<a class="headerlink" href="#split-step" title="Permalink to this headline">#</a></h3>
+<h3>Split Step<a class="headerlink" href="#split-step" title="Permalink to this heading">#</a></h3>
 <p>The most important argument is <code class="docutils literal notranslate"><span class="pre">group</span></code>: this defines the unique values we will us to “split” the data for grouped analysis. We can pass either a DataArray or a name of a variable in the dataset. Lets first use a DataArray. Just like with Pandas, we can use the time indexe to extract specific components of dates and times. Xarray uses a special syntax for this <code class="docutils literal notranslate"><span class="pre">.dt</span></code>, called the <code class="docutils literal notranslate"><span class="pre">DatetimeAccessor</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3558,7 +3294,7 @@ Attributes:
 </div>
 </section>
 <section id="map-combine">
-<h3>Map &amp; Combine<a class="headerlink" href="#map-combine" title="Permalink to this headline">#</a></h3>
+<h3>Map &amp; Combine<a class="headerlink" href="#map-combine" title="Permalink to this heading">#</a></h3>
 <p>Now that we have groups defined, it’s time to “apply” a calculation to the group. Like in Pandas, these calculations can either be:</p>
 <ul class="simple">
 <li><p><em>aggregation</em>: reduces the size of the group</p></li>
@@ -3626,7 +3362,7 @@ applied : DataArray or DataArray
 </div>
 </div>
 <section id="aggregations">
-<h4>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">#</a></h4>
+<h4>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">.apply</span></code> accepts as its argument a function. We can pass an existing function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3998,7 +3734,7 @@ Coordinates:
 <p>Because we specified no extra arguments (like <code class="docutils literal notranslate"><span class="pre">axis</span></code>) the function was applied over all space and time dimensions. This is not what we wanted. Instead, we could define a custom function. This function takes a single argument–the group dataset–and returns a new dataset to be combined:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">time_mean</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">time_mean</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 
 <span class="n">gb</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">time_mean</span><span class="p">)</span>
@@ -4948,7 +4684,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8e4e27b220&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_47_1.png" src="../../_images/xarray-part2_47_1.png" />
+<img alt="../../_images/b520ff1ad367d3960395d10228843af526cf3a3d2c80da72c41b0360c640d937.png" src="../../_images/b520ff1ad367d3960395d10228843af526cf3a3d2c80da72c41b0360c640d937.png" />
 </div>
 </div>
 <p><em>Zonal Mean Climatolgoy</em></p>
@@ -4962,7 +4698,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f8e4e1db100&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_49_1.png" src="../../_images/xarray-part2_49_1.png" />
+<img alt="../../_images/a426601a97447ade5e11b68357c90e951410ace81d0ad6c7d47329ffc1c976e8.png" src="../../_images/a426601a97447ade5e11b68357c90e951410ace81d0ad6c7d47329ffc1c976e8.png" />
 </div>
 </div>
 <p><em>Difference between January and July Climatology</em></p>
@@ -4976,17 +4712,17 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4e1b0790&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_51_1.png" src="../../_images/xarray-part2_51_1.png" />
+<img alt="../../_images/fe303a318b3cb552081929e103c35efb075bb557cd4f29982174d038efd59905.png" src="../../_images/fe303a318b3cb552081929e103c35efb075bb557cd4f29982174d038efd59905.png" />
 </div>
 </div>
 </section>
 <section id="transformations">
-<h4>Transformations<a class="headerlink" href="#transformations" title="Permalink to this headline">#</a></h4>
+<h4>Transformations<a class="headerlink" href="#transformations" title="Permalink to this heading">#</a></h4>
 <p>Now we want to <em>remove</em> this climatology from the dataset, to examine the residual, called the <em>anomaly</em>, which is the interesting part from a climate perspective.
 Removing the seasonal climatology is a perfect example of a transformation: it operates over a group, but doesn’t change the size of the dataset. Here is one way to code it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_time_mean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_time_mean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 
 <span class="n">ds_anom</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_time_mean</span><span class="p">)</span>
@@ -5913,7 +5649,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8e4e0bc2e0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_57_1.png" src="../../_images/xarray-part2_57_1.png" />
+<img alt="../../_images/e3cbe00a4bbcdb2e3d1a3be9bb104de0b4eed028cacc74a30e1b77840721158f.png" src="../../_images/e3cbe00a4bbcdb2e3d1a3be9bb104de0b4eed028cacc74a30e1b77840721158f.png" />
 </div>
 </div>
 <p><em>Difference between Jan. 1 2018 and Jan. 1 1960</em></p>
@@ -5927,16 +5663,16 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4dfca340&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_59_1.png" src="../../_images/xarray-part2_59_1.png" />
+<img alt="../../_images/69c046226cd4c3125fad0aa48807b28d39c960400d8919ce57b5762d6845eacd.png" src="../../_images/69c046226cd4c3125fad0aa48807b28d39c960400d8919ce57b5762d6845eacd.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section id="grouby-related-resample-rolling-coarsen">
-<h2>Grouby-Related: Resample, Rolling, Coarsen<a class="headerlink" href="#grouby-related-resample-rolling-coarsen" title="Permalink to this headline">#</a></h2>
+<h2>Grouby-Related: Resample, Rolling, Coarsen<a class="headerlink" href="#grouby-related-resample-rolling-coarsen" title="Permalink to this heading">#</a></h2>
 <section id="resample">
-<h3>Resample<a class="headerlink" href="#resample" title="Permalink to this headline">#</a></h3>
+<h3>Resample<a class="headerlink" href="#resample" title="Permalink to this heading">#</a></h3>
 <p>Resample in xarray is nearly identical to Pandas.
 <strong>It can be applied only to time-index dimensions.</strong> Here we compute the five-year mean.
 It is effectively a group-by operation, and uses the same basic syntax.
@@ -6388,7 +6124,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8e4ded45e0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_62_1.png" src="../../_images/xarray-part2_62_1.png" />
+<img alt="../../_images/5ff685c395ad9e1d5e3a8e667a0bcc85e15e7c929bc576a7699a31d8dd2a0d3b.png" src="../../_images/5ff685c395ad9e1d5e3a8e667a0bcc85e15e7c929bc576a7699a31d8dd2a0d3b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6402,12 +6138,12 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4dea2730&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_63_1.png" src="../../_images/xarray-part2_63_1.png" />
+<img alt="../../_images/c1a31330ade79a9d480f2685c859b8f7ecf0b1c87792fe6bac81e4260aa0ce65.png" src="../../_images/c1a31330ade79a9d480f2685c859b8f7ecf0b1c87792fe6bac81e4260aa0ce65.png" />
 </div>
 </div>
 </section>
 <section id="rolling">
-<h3>Rolling<a class="headerlink" href="#rolling" title="Permalink to this headline">#</a></h3>
+<h3>Rolling<a class="headerlink" href="#rolling" title="Permalink to this heading">#</a></h3>
 <p>Rolling is also similar to pandas.
 It does not change the length of the arrays.
 Instead, it allows a moving window to be applied to the data at each point.</p>
@@ -6898,13 +6634,13 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8e4de40820&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_66_1.png" src="../../_images/xarray-part2_66_1.png" />
+<img alt="../../_images/28937dadc293a01fa27253555f2aff9f41de81a4941331a997973f052b3db112.png" src="../../_images/28937dadc293a01fa27253555f2aff9f41de81a4941331a997973f052b3db112.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="coarsen">
-<h2>Coarsen<a class="headerlink" href="#coarsen" title="Permalink to this headline">#</a></h2>
+<h2>Coarsen<a class="headerlink" href="#coarsen" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">coarsen</span></code> is a simple way to reduce the size of your data along one or more axes.
 It is very similar to <code class="docutils literal notranslate"><span class="pre">resample</span></code> when operating on time dimensions; the key difference is that <code class="docutils literal notranslate"><span class="pre">coarsen</span></code> only operates on fixed blocks of data, irrespective of the coordinate values, while <code class="docutils literal notranslate"><span class="pre">resample</span></code> actually looks at the coordinates to figure out, e.g. what month a particular data point is in.</p>
 <p>For regularly-spaced monthly data beginning in January, the following should be equivalent to annual resampling.
@@ -7393,12 +7129,12 @@ Attributes: (12/38)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4ddc6880&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_70_1.png" src="../../_images/xarray-part2_70_1.png" />
+<img alt="../../_images/7262d3c61fe5f6a486ac48faed1a0bb0938f48bd872047f001e5a9ecab05d168.png" src="../../_images/7262d3c61fe5f6a486ac48faed1a0bb0938f48bd872047f001e5a9ecab05d168.png" />
 </div>
 </div>
 </section>
 <section id="an-advanced-example">
-<h2>An Advanced Example<a class="headerlink" href="#an-advanced-example" title="Permalink to this headline">#</a></h2>
+<h2>An Advanced Example<a class="headerlink" href="#an-advanced-example" title="Permalink to this heading">#</a></h2>
 <p>In this example we will show a realistic workflow with Xarray.
 We will</p>
 <ul class="simple">
@@ -8774,7 +8510,7 @@ East Indian Atlantic Basin</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><s
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4dcb73d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_75_1.png" src="../../_images/xarray-part2_75_1.png" />
+<img alt="../../_images/2faff0b8f3704cce5619f10e8cdb044727bc73f35b28802f07c020af16b82c56.png" src="../../_images/2faff0b8f3704cce5619f10e8cdb044727bc73f35b28802f07c020af16b82c56.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -8788,7 +8524,7 @@ East Indian Atlantic Basin</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><s
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8e4db88d00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_76_1.png" src="../../_images/xarray-part2_76_1.png" />
+<img alt="../../_images/b78a0855127dec49ccf5cf94e8e0e611d6c45d9e8ea6088ff119560868eeb637.png" src="../../_images/b78a0855127dec49ccf5cf94e8e0e611d6c45d9e8ea6088ff119560868eeb637.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -9699,7 +9435,7 @@ Coordinates:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="n">basin_names</span> <span class="o">=</span> <span class="n">basin_surf</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;CLIST&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">basin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">basin_names</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">basin_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">basin_df</span>
@@ -9787,7 +9523,7 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;basin_name&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/xarray-part2_82_1.png" src="../../_images/xarray-part2_82_1.png" />
+<img alt="../../_images/8376a9eafc5c226bce44efd934cc25d16e3805aaabb918b661ced96602af1b62.png" src="../../_images/8376a9eafc5c226bce44efd934cc25d16e3805aaabb918b661ced96602af1b62.png" />
 </div>
 </div>
 </section>
@@ -9805,7 +9541,7 @@ dtype: object
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./lectures/xarray"
         },
         predefinedOutput: true
@@ -9813,50 +9549,119 @@ dtype: object
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../assignments/basic_xarray.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment: Xarray Fundamentals with Atmospheric Radiation Data</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../assignments/basic_xarray.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment: Xarray Fundamentals with Atmospheric Radiation Data</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../../assignments/more_xarray.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../../assignments/more_xarray.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">Groupby</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-step">Split Step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-combine">Map &amp; Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouby-related-resample-rolling-coarsen">Grouby-Related: Resample, Rolling, Coarsen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">Resample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling">Rolling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coarsen">Coarsen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-advanced-example">An Advanced Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Dan Westervelt<br/>
-  
-      &copy; Copyright 2025.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Dan Westervelt
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
