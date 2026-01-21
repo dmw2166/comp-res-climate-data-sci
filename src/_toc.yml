@@ -12,7 +12,7 @@ parts:
   - file: lectures/environment/intro_to_unix
   - file: assignments/intro_unix
   - file: lectures/environment/intro_to_git
-  - file:  assignments/files_markdown_git
+  - file: assignments/files_markdown_git
 #  - file: lectures/environment/python_environments
 #  - file: lectures/environment/binder
   - file: lectures/data
