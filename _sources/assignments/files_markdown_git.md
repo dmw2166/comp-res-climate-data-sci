@@ -34,7 +34,7 @@ Now go back to the terminal and do the following:
 
 Finally, go back to the editor and add a new subsection called "Professional Interests" to your `Readme.md` file. Update your local git repository and push your changes to GitHub. Verify that the remote repository is updated.
 
-To "hand in" this part of the assignment, put a link to it in the `Readme.md` file in the next part.
+To "hand in" this part of the assignment, put a link to your assignments repository in Courseworks (see next part).
 
 
 ## Create your Assignments Repository
