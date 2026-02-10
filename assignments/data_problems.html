@@ -565,7 +565,7 @@ document.write(`
 <span class="c1"># This example downloads a small air quality dataset</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/pandas-dev/pandas/raw/main/doc/data/air_quality_no2.csv&quot;</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;md5:05f09d0097a7d1b1e71e64e5e5d52c3c&quot;</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File downloaded to:&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
@@ -613,7 +613,7 @@ document.write(`
 <span class="c1"># OPeNDAP provides metadata in different formats</span>
 <span class="c1"># We&#39;ll get basic info about a climate dataset</span>
 
-<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain&quot;</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://iridl.ldeo.columbia.edu/expert/SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP/.GAUGE_BASED/.GLOBAL/.v1p0/.Monthly/.RETRO/.rain/dods&quot;</span>
 
 <span class="c1"># Get DDS (Dataset Descriptor Structure) - describes the structure</span>
 <span class="n">dds_url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;.dds&quot;</span>
@@ -657,16 +657,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./assignments"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
