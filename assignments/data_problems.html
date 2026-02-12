@@ -196,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="files_markdown_git.html">Assignment: Files, Git, and Github</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lectures/data.html">All About Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework Assignment: Data Formats and Access</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Core Python Language</span></p>
 <ul class="nav bd-sidenav">
@@ -458,12 +459,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Homework Assignment: Data Formats and Access</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-install-required-packages">Setup: Install Required Packages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-working-with-json-data">Part 1: Working with JSON Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-downloading-files-with-python">Part 2: Downloading Files with Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end">end</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-understanding-netcdf-metadata">Part 3: Understanding NetCDF Metadata</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -565,13 +573,17 @@ document.write(`
 <span class="c1"># This example downloads a small air quality dataset</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/pandas-dev/pandas/raw/main/doc/data/air_quality_no2.csv&quot;</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File downloaded to:&quot;</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File exists:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="end">
+<h1>end<a class="headerlink" href="#end" title="Permalink to this heading">#</a></h1>
 <p><strong>Your Tasks:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
@@ -602,7 +614,6 @@ document.write(`
 <span class="c1"># YOUR CODE HERE: add your file from task 2</span>
 </pre></div>
 </div>
-</section>
 <hr class="docutils" />
 <section id="part-3-understanding-netcdf-metadata">
 <h2>Part 3: Understanding NetCDF Metadata<a class="headerlink" href="#part-3-understanding-netcdf-metadata" title="Permalink to this heading">#</a></h2>
@@ -712,12 +723,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Homework Assignment: Data Formats and Access</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-install-required-packages">Setup: Install Required Packages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-working-with-json-data">Part 1: Working with JSON Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-downloading-files-with-python">Part 2: Downloading Files with Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end">end</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-understanding-netcdf-metadata">Part 3: Understanding NetCDF Metadata</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
