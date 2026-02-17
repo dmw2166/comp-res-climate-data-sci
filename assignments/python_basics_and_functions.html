@@ -511,7 +511,9 @@ document.write(`
 <p>In this problem, we will explore the basic data structures and flow controls of Python by <em>manually creating data structures</em>.</p>
 <section id="create-a-list-with-the-names-of-the-top-10-co2-emitting-countries-in-order-by-total-emissions">
 <h3>1) Create a list with the names of the top 10 CO₂ emitting countries (in order by total emissions)<a class="headerlink" href="#create-a-list-with-the-names-of-the-top-10-co2-emitting-countries-in-order-by-total-emissions" title="Permalink to this heading">#</a></h3>
-<p>use 2024 data from here: <a class="reference external" href="https://edgar.jrc.ec.europa.eu/report_2025?vis=co2tot#emissions_table">https://edgar.jrc.ec.europa.eu/report_2025?vis=co2tot#emissions_table</a> (don’t include things that aren’t countries)</p>
+<p>use 2024 data from here: <a class="reference external" href="https://edgar.jrc.ec.europa.eu/report_2025?vis=co2tot#emissions_table">https://edgar.jrc.ec.europa.eu/report_2025?vis=co2tot#emissions_table</a></p>
+<p>Note 1: Don’t include things that aren’t countries</p>
+<p>Note 2: You can simply manually read off the values from the table and enter them into your list. You do not need to do any automated data loading e.g. with pooch or things from the last assignment.</p>
 </section>
 <section id="have-python-tell-you-how-many-countries-there-are-by-examining-your-list">
 <h3>2) Have Python tell you how many countries there are by examining your list<a class="headerlink" href="#have-python-tell-you-how-many-countries-there-are-by-examining-your-list" title="Permalink to this heading">#</a></h3>
@@ -583,16 +585,16 @@ Call your previously defined functions if necessary.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./assignments"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
