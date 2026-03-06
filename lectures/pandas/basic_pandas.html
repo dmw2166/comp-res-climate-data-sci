@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://dmw2166.github.io/lectures/pandas/basic_pandas.html" />
 <meta property="og:site_name" content="Python" />
 <meta property="og:description" content="Pandas Data Structures: Series: A Series represents a one-dimensional array of data. The main difference between a Series and numpy array is that a Series has an index. The index contains the label..." />
-<meta property="og:image" content="https://dmw2166.github.io/_images/0c440571cdcb17ca6664e4658fad7090a29449b05bdc2dcedc99d0774ac4b1e2.png" />
+<meta property="og:image" content="https://dmw2166.github.io/_images/31d5493cb7e0b4c0e2c221aaa31098d268d42b3677c803fce96a2953bc88fb33.png" />
 <meta property="og:image:alt" content="Python" />
 <meta name="description" content="Pandas Data Structures: Series: A Series represents a one-dimensional array of data. The main difference between a Series and numpy array is that a Series has an index. The index contains the label..." />
 
@@ -502,7 +502,7 @@ document.write(`
 <h2>Pandas Data Structures: Series<a class="headerlink" href="#pandas-data-structures-series" title="Permalink to this heading">#</a></h2>
 <p>A Series represents a one-dimensional array of data. The main difference between a Series and numpy array is that a Series has an <em>index</em>. The index contains the labels that we use to access the data.</p>
 <p>There are many ways to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/dsintro.html#series">create a Series</a>. We will just show a few.</p>
-<p>(Data are from the NASA <a class="reference external" href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">Planetary Fact Sheet</a>.)</p>
+<p>(Data are from the NASA <a class="reference external" href="https://ssd.jpl.nasa.gov/planets/phys_par.html">JPL</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mercury&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">]</span>
@@ -529,10 +529,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/0c440571cdcb17ca6664e4658fad7090a29449b05bdc2dcedc99d0774ac4b1e2.png" src="../../_images/0c440571cdcb17ca6664e4658fad7090a29449b05bdc2dcedc99d0774ac4b1e2.png" />
+<img alt="../../_images/31d5493cb7e0b4c0e2c221aaa31098d268d42b3677c803fce96a2953bc88fb33.png" src="../../_images/31d5493cb7e0b4c0e2c221aaa31098d268d42b3677c803fce96a2953bc88fb33.png" />
 </div>
 </div>
 <p>Arithmetic operations and most numpy function can be applied to Series.
@@ -575,7 +575,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.97e+24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.97e+24)
 </pre></div>
 </div>
 </div>
@@ -588,7 +588,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.97e+24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.97e+24)
 </pre></div>
 </div>
 </div>
@@ -950,7 +950,7 @@ Name: Earth, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.97e+24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.97e+24)
 </pre></div>
 </div>
 </div>
@@ -1458,10 +1458,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;mass&#39;, ylabel=&#39;diameter&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mass&#39;, ylabel=&#39;diameter&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/d1b522f8d01746c60f3b14c1187564a17dfa056f83b40cb48abac006937b6dbb.png" src="../../_images/d1b522f8d01746c60f3b14c1187564a17dfa056f83b40cb48abac006937b6dbb.png" />
+<img alt="../../_images/92ca2e623d46a7461eddf695d8920410fbb3605b62e55b9d36ac94b0152b9806.png" src="../../_images/92ca2e623d46a7461eddf695d8920410fbb3605b62e55b9d36ac94b0152b9806.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1471,10 +1471,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/6fd48cf1697ecc5911c3d080bea292ab7872b48d531e137f2cc0d6ef7a18ba4c.png" src="../../_images/6fd48cf1697ecc5911c3d080bea292ab7872b48d531e137f2cc0d6ef7a18ba4c.png" />
+<img alt="../../_images/fe981b676a4e7364adaecb2d9fac6b315aefe3801e8ba8f5c50cb2a92e9d7ff3.png" src="../../_images/fe981b676a4e7364adaecb2d9fac6b315aefe3801e8ba8f5c50cb2a92e9d7ff3.png" />
 </div>
 </div>
 </section>
@@ -1491,10 +1491,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/810920d5d4262430266b3a34ee6fa5844b2002b00d3f3ede3496b82d090d211b.png" src="../../_images/810920d5d4262430266b3a34ee6fa5844b2002b00d3f3ede3496b82d090d211b.png" />
+<img alt="../../_images/a61e3fb24cf60961e8b7ec99b6985ab882da867dbd37997d915fd54faae2a271.png" src="../../_images/a61e3fb24cf60961e8b7ec99b6985ab882da867dbd37997d915fd54faae2a271.png" />
 </div>
 </div>
 <p>We can use python’s slicing notation inside <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to select a date range.</p>
@@ -1505,10 +1505,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/2373aa734fa63ceed29e883b4d4b57deb96fc18e40f3c38e33e67710068f7a18.png" src="../../_images/2373aa734fa63ceed29e883b4d4b57deb96fc18e40f3c38e33e67710068f7a18.png" />
+<img alt="../../_images/4fc0158f7c38a32010fa52e034c0293b55f574ae092e425ae84312a178692dd3.png" src="../../_images/4fc0158f7c38a32010fa52e034c0293b55f574ae092e425ae84312a178692dd3.png" />
 </div>
 </div>
 <p>The TimeIndex object has lots of useful attributes</p>
@@ -1519,10 +1519,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
-            ...
-            12, 12, 12, 12, 12, 12, 12, 12, 12,  1],
-           dtype=&#39;int64&#39;, length=731)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+       ...
+       12, 12, 12, 12, 12, 12, 12, 12, 12,  1],
+      dtype=&#39;int32&#39;, length=731)
 </pre></div>
 </div>
 </div>
@@ -1534,10 +1534,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
-            ...
-            23, 24, 25, 26, 27, 28, 29, 30, 31,  1],
-           dtype=&#39;int64&#39;, length=731)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+       ...
+       23, 24, 25, 26, 27, 28, 29, 30, 31,  1],
+      dtype=&#39;int32&#39;, length=731)
 </pre></div>
 </div>
 </div>
@@ -1563,14 +1563,14 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/danielmw/Library/Caches/noaa-data/data.txt&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">&#39;/Users/danielmw/Library/Caches/noaa-data/data.txt&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -3427,7 +3427,7 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b6abf50986972d21eaf9a0d2751ebc19422ecbae8e4a9548faba7000a8959f93.png" src="../../_images/b6abf50986972d21eaf9a0d2751ebc19422ecbae8e4a9548faba7000a8959f93.png" />
+<img alt="../../_images/05444b8dd0980a3f793e9b9a4fed25b371a4c6515704c8386429d66fc4af9516.png" src="../../_images/05444b8dd0980a3f793e9b9a4fed25b371a4c6515704c8386429d66fc4af9516.png" />
 </div>
 </div>
 <p>Pandas is very “time aware”:</p>
@@ -3438,10 +3438,10 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;LST_DATE&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/e24c394683daa12ffce5b8bc942ae93ebf4c144125d7406ee6e3ccfdf018b0dc.png" src="../../_images/e24c394683daa12ffce5b8bc942ae93ebf4c144125d7406ee6e3ccfdf018b0dc.png" />
+<img alt="../../_images/3e919f531621d5b05b2e64e14a72d3ba5ff910fe7770d1cc1b751aa8ed385255.png" src="../../_images/3e919f531621d5b05b2e64e14a72d3ba5ff910fe7770d1cc1b751aa8ed385255.png" />
 </div>
 </div>
 <p>Note: we could also manually create an axis and plot into it.</p>
@@ -3457,7 +3457,7 @@ Name: 2017-08-07 00:00:00, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Pandas Made This!&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/0dc112684274ec0ad002974dff3ad8be22254c73c86a4235a6636969a91b336f.png" src="../../_images/0dc112684274ec0ad002974dff3ad8be22254c73c86a4235a6636969a91b336f.png" />
+<img alt="../../_images/f6aeac92e5fbf994a4c884d50b5c30db9ca59ae7bbfb93d5be1db99aeb4ef8d5.png" src="../../_images/f6aeac92e5fbf994a4c884d50b5c30db9ca59ae7bbfb93d5be1db99aeb4ef8d5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3467,10 +3467,10 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;LST_DATE&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/19f8fd0b824ff91eee4ea54a8157ebab9f7d0db540b64cef00130b7cbacf53d1.png" src="../../_images/19f8fd0b824ff91eee4ea54a8157ebab9f7d0db540b64cef00130b7cbacf53d1.png" />
+<img alt="../../_images/d949d6c2b835caf4bae97df2209323a1e3c48cf6520a014d21028155951c5787.png" src="../../_images/d949d6c2b835caf4bae97df2209323a1e3c48cf6520a014d21028155951c5787.png" />
 </div>
 </div>
 </section>
@@ -3486,14 +3486,18 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.resample.DatetimeIndexResampler object at 0x7f1f14a1d5e0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_89737/3165846859.py:2: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+  rs_obj = df.resample(&#39;M&#39;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.resample.DatetimeIndexResampler object at 0x2ca1e0170&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs_obj</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs_obj</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3565,7 +3569,7 @@ Name: 2017-08-07 00:00:00, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>2017-01-01</th>
+      <th>2017-01-31</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3589,7 +3593,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>2.877419</td>
     </tr>
     <tr>
-      <th>2017-02-01</th>
+      <th>2017-02-28</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3613,7 +3617,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>2.367857</td>
     </tr>
     <tr>
-      <th>2017-03-01</th>
+      <th>2017-03-31</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3637,7 +3641,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>3.387097</td>
     </tr>
     <tr>
-      <th>2017-04-01</th>
+      <th>2017-04-30</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3661,7 +3665,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>6.903333</td>
     </tr>
     <tr>
-      <th>2017-05-01</th>
+      <th>2017-05-31</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3685,7 +3689,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>12.696774</td>
     </tr>
     <tr>
-      <th>2017-06-01</th>
+      <th>2017-06-30</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3709,7 +3713,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>17.333333</td>
     </tr>
     <tr>
-      <th>2017-07-01</th>
+      <th>2017-07-31</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3733,7 +3737,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>21.164516</td>
     </tr>
     <tr>
-      <th>2017-08-01</th>
+      <th>2017-08-31</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3757,7 +3761,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>21.377419</td>
     </tr>
     <tr>
-      <th>2017-09-01</th>
+      <th>2017-09-30</th>
       <td>64756.0</td>
       <td>2.422000</td>
       <td>-73.74</td>
@@ -3781,7 +3785,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>19.530000</td>
     </tr>
     <tr>
-      <th>2017-10-01</th>
+      <th>2017-10-31</th>
       <td>64756.0</td>
       <td>2.602645</td>
       <td>-73.74</td>
@@ -3805,7 +3809,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>17.386667</td>
     </tr>
     <tr>
-      <th>2017-11-01</th>
+      <th>2017-11-30</th>
       <td>64756.0</td>
       <td>2.622000</td>
       <td>-73.74</td>
@@ -3829,7 +3833,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <td>11.440000</td>
     </tr>
     <tr>
-      <th>2017-12-01</th>
+      <th>2017-12-31</th>
       <td>64756.0</td>
       <td>2.622000</td>
       <td>-73.74</td>
@@ -3860,16 +3864,16 @@ Name: 2017-08-07 00:00:00, dtype: object
 <p>We can chain all of that together</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df_mm</span><span class="p">[[</span><span class="s1">&#39;T_DAILY_MIN&#39;</span><span class="p">,</span> <span class="s1">&#39;T_DAILY_MEAN&#39;</span><span class="p">,</span> <span class="s1">&#39;T_DAILY_MAX&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;LST_DATE&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/09504cad077daa596678e831e097795fb3fd0e4dad8c3c97da2a3d40b9baaa04.png" src="../../_images/09504cad077daa596678e831e097795fb3fd0e4dad8c3c97da2a3d40b9baaa04.png" />
+<img alt="../../_images/ddce240b2132a4885126b1f1da0c72d34dc7c0102d6cbcc28610033c7451f378.png" src="../../_images/ddce240b2132a4885126b1f1da0c72d34dc7c0102d6cbcc28610033c7451f378.png" />
 </div>
 </div>
 <p>Next time we will dig deeper into resampling, rolling means, and grouping operations (groupby).</p>
@@ -3886,16 +3890,16 @@ Name: 2017-08-07 00:00:00, dtype: object
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./lectures/pandas"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
