@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://dmw2166.github.io/lectures/pandas/pandas_groupby.html" />
 <meta property="og:site_name" content="Python" />
 <meta property="og:description" content="groupby is an amazingly powerful function in pandas. But it is also complicated to use and understand. The point of this lesson is to make you feel confident in using groupby and its cousins, resam..." />
-<meta property="og:image" content="https://dmw2166.github.io/_images/7da6a28d692e98b9aecf240bd42367452e12ab1f97f1aa871a6ba9f6c39d5dc1.png" />
+<meta property="og:image" content="https://dmw2166.github.io/_images/89f11f2f26c59696ac28373cab6f6e6214e7938c8234cd1259a90605505eb6dd.png" />
 <meta property="og:image:alt" content="Python" />
 <meta name="description" content="groupby is an amazingly powerful function in pandas. But it is also complicated to use and understand. The point of this lesson is to make you feel confident in using groupby and its cousins, resam..." />
 
@@ -461,7 +461,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happened">What Happened?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-groupby-method">The <code class="docutils literal notranslate"><span class="pre">groupby</span></code> method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-groubby-object">The <code class="docutils literal notranslate"><span class="pre">GroubBy</span></code> object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-groupby-object">The <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-and-selecting-groups">Iterating and selecting groups</a></li>
 </ul>
 </li>
@@ -505,7 +505,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 <p>First we read the Earthquake data from our previous assignment:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://www.ldeo.columbia.edu/~rpa/usgs_earthquakes_2014.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://www.ldeo.columbia.edu/~danielmw/usgs_earthquakes_2014.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">df_small</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">]</span>
@@ -515,17 +515,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -672,10 +672,10 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112e20780&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;country&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/7da6a28d692e98b9aecf240bd42367452e12ab1f97f1aa871a6ba9f6c39d5dc1.png" src="../../_images/7da6a28d692e98b9aecf240bd42367452e12ab1f97f1aa871a6ba9f6c39d5dc1.png" />
+<img alt="../../_images/89f11f2f26c59696ac28373cab6f6e6214e7938c8234cd1259a90605505eb6dd.png" src="../../_images/89f11f2f26c59696ac28373cab6f6e6214e7938c8234cd1259a90605505eb6dd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -685,10 +685,10 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112b42d68&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;country&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/bac8ade12926e4e173b63ca2f613624323acb6138376e48233ac3339bd0e01ba.png" src="../../_images/bac8ade12926e4e173b63ca2f613624323acb6138376e48233ac3339bd0e01ba.png" />
+<img alt="../../_images/1d92c41df7bd613997c7fbeaeade47b2fd969fd7ab11762efdd50e1ae57bed74.png" src="../../_images/1d92c41df7bd613997c7fbeaeade47b2fd969fd7ab11762efdd50e1ae57bed74.png" />
 </div>
 </div>
 </section>
@@ -715,7 +715,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.DataFrameGroupBy object at 0x10626f358&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x2c0853680&gt;
 </pre></div>
 </div>
 </div>
@@ -728,14 +728,14 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.DataFrameGroupBy object at 0x10626f208&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x2c0681550&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="the-groubby-object">
-<h3>The <code class="docutils literal notranslate"><span class="pre">GroubBy</span></code> object<a class="headerlink" href="#the-groubby-object" title="Permalink to this heading">#</a></h3>
+<section id="the-groupby-object">
+<h3>The <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object<a class="headerlink" href="#the-groupby-object" title="Permalink to this heading">#</a></h3>
 <p>When we call, <code class="docutils literal notranslate"><span class="pre">groupby</span></code> we get back a <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -745,7 +745,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.DataFrameGroupBy object at 0x1131bcf60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x2c0681a50&gt;
 </pre></div>
 </div>
 </div>
@@ -1065,17 +1065,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1224,17 +1224,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1384,18 +1384,22 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/2808193076.py:1: FutureWarning: The provided callable &lt;function max at 0x1071799e0&gt; is currently using DataFrameGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  gb.aggregate(np.max).head()
+</pre></div>
+</div>
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1533,6 +1537,10 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/2287653877.py:1: FutureWarning: The provided callable &lt;function max at 0x1071799e0&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  gb.mag.aggregate(np.max).head()
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
                6.9
 Afghanistan    5.6
@@ -1551,6 +1559,10 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/2071493650.py:1: FutureWarning: The provided callable &lt;function max at 0x1071799e0&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  gb.mag.aggregate(np.max).nlargest(10)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
 Chile                         8.2
 Alaska                        7.9
@@ -1668,26 +1680,34 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/1381609224.py:1: FutureWarning: The provided callable &lt;function min at 0x107179b20&gt; is currently using SeriesGroupBy.min. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;min&quot; instead.
+  gb.mag.aggregate([np.min, np.max, np.mean]).head()
+/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/1381609224.py:1: FutureWarning: The provided callable &lt;function max at 0x1071799e0&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  gb.mag.aggregate([np.min, np.max, np.mean]).head()
+/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/1381609224.py:1: FutureWarning: The provided callable &lt;function mean at 0x10717a3e0&gt; is currently using SeriesGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;mean&quot; instead.
+  gb.mag.aggregate([np.min, np.max, np.mean]).head()
+</pre></div>
+</div>
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>amin</th>
-      <th>amax</th>
+      <th>min</th>
+      <th>max</th>
       <th>mean</th>
     </tr>
     <tr>
@@ -1739,10 +1759,18 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112a09e80&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/3179219123.py:1: FutureWarning: The provided callable &lt;function min at 0x107179b20&gt; is currently using SeriesGroupBy.min. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;min&quot; instead.
+  gb.mag.aggregate([np.min, np.max, np.mean]).nlargest(10, &#39;mean&#39;).plot(kind=&#39;bar&#39;)
+/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/3179219123.py:1: FutureWarning: The provided callable &lt;function max at 0x1071799e0&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  gb.mag.aggregate([np.min, np.max, np.mean]).nlargest(10, &#39;mean&#39;).plot(kind=&#39;bar&#39;)
+/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/3179219123.py:1: FutureWarning: The provided callable &lt;function mean at 0x10717a3e0&gt; is currently using SeriesGroupBy.mean. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;mean&quot; instead.
+  gb.mag.aggregate([np.min, np.max, np.mean]).nlargest(10, &#39;mean&#39;).plot(kind=&#39;bar&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/52596f2ce6603202abc3ccccfb131177545531f5a10f0ee91add3798b6ddfdbd.png" src="../../_images/52596f2ce6603202abc3ccccfb131177545531f5a10f0ee91add3798b6ddfdbd.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;country&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/678677aa2e252d6a6a6e0692a94a4cdc8fe8b2d4801ad39046ca009251fc1eb4.png" src="../../_images/678677aa2e252d6a6a6e0692a94a4cdc8fe8b2d4801ad39046ca009251fc1eb4.png" />
 </div>
 </div>
 </section>
@@ -1812,17 +1840,17 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -2010,33 +2038,33 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112f05b00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/56928381d06c1450f6e764744cc85dc02f53af41df19bb67a4a9204817928f68.png" src="../../_images/56928381d06c1450f6e764744cc85dc02f53af41df19bb67a4a9204817928f68.png" />
+<img alt="../../_images/18c8223f287eb57e4720f5ce73769cef5630427534085d285d45bc5fc5cfa734.png" src="../../_images/18c8223f287eb57e4720f5ce73769cef5630427534085d285d45bc5fc5cfa734.png" />
 </div>
 </div>
 <p>A common way to analyze such data in climate science is to create a “climatology,” which contains the average values in each month or day of the year. We can do this easily with groupby. Recall that <code class="docutils literal notranslate"><span class="pre">df.index</span></code> is a pandas <code class="docutils literal notranslate"><span class="pre">DateTimeIndex</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_climatology</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_climatology</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">monthly_climatology</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -2093,31 +2121,31 @@ Name: mag, dtype: float64
   <tbody>
     <tr>
       <th>1</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
       <td>2.924731</td>
-      <td>-7.120430</td>
+      <td>-7.122581</td>
       <td>-2.100000</td>
       <td>-1.905376</td>
-      <td>2.480645</td>
-      <td>5.811613</td>
+      <td>2.478495</td>
+      <td>5.812258</td>
       <td>...</td>
-      <td>0.240292</td>
-      <td>0.199547</td>
-      <td>0.150376</td>
-      <td>0.162533</td>
-      <td>0.168817</td>
-      <td>0.232258</td>
+      <td>0.240250</td>
+      <td>0.200698</td>
+      <td>0.153645</td>
+      <td>0.160859</td>
+      <td>0.150538</td>
+      <td>0.248387</td>
       <td>0.788172</td>
-      <td>1.749462</td>
-      <td>3.394624</td>
+      <td>1.766667</td>
+      <td>3.364516</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.487882</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2125,23 +2153,23 @@ Name: mag, dtype: float64
       <td>-5.015294</td>
       <td>0.712941</td>
       <td>1.022353</td>
-      <td>4.080000</td>
-      <td>8.495176</td>
+      <td>4.077647</td>
+      <td>8.495882</td>
       <td>...</td>
-      <td>0.244286</td>
-      <td>0.203089</td>
-      <td>0.154306</td>
-      <td>0.165506</td>
-      <td>1.217647</td>
-      <td>1.183529</td>
-      <td>1.280000</td>
-      <td>1.602353</td>
-      <td>2.460000</td>
+      <td>0.247714</td>
+      <td>0.210044</td>
+      <td>0.159153</td>
+      <td>0.163889</td>
+      <td>1.216471</td>
+      <td>1.169412</td>
+      <td>1.278824</td>
+      <td>1.617647</td>
+      <td>2.442353</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2149,23 +2177,23 @@ Name: mag, dtype: float64
       <td>-3.035484</td>
       <td>2.455914</td>
       <td>2.643011</td>
-      <td>2.786022</td>
-      <td>13.210645</td>
+      <td>2.788172</td>
+      <td>13.211290</td>
       <td>...</td>
-      <td>0.224202</td>
-      <td>0.190742</td>
-      <td>0.153140</td>
-      <td>0.161763</td>
-      <td>3.469892</td>
-      <td>3.407527</td>
-      <td>3.379570</td>
-      <td>3.472043</td>
-      <td>3.792473</td>
+      <td>0.228612</td>
+      <td>0.203634</td>
+      <td>0.157796</td>
+      <td>0.160366</td>
+      <td>3.450538</td>
+      <td>3.400000</td>
+      <td>3.372043</td>
+      <td>3.480645</td>
+      <td>3.777419</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2173,23 +2201,23 @@ Name: mag, dtype: float64
       <td>1.816667</td>
       <td>8.302222</td>
       <td>8.574444</td>
-      <td>2.400000</td>
-      <td>15.295222</td>
+      <td>2.396667</td>
+      <td>15.295889</td>
       <td>...</td>
-      <td>0.208600</td>
-      <td>0.183911</td>
-      <td>0.150022</td>
-      <td>0.159989</td>
-      <td>9.402222</td>
-      <td>9.138889</td>
-      <td>8.438889</td>
-      <td>7.600000</td>
-      <td>6.633333</td>
+      <td>0.214067</td>
+      <td>0.195844</td>
+      <td>0.153878</td>
+      <td>0.158100</td>
+      <td>9.415556</td>
+      <td>9.117778</td>
+      <td>8.455556</td>
+      <td>7.618889</td>
+      <td>6.670000</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2197,23 +2225,23 @@ Name: mag, dtype: float64
       <td>8.460215</td>
       <td>14.850538</td>
       <td>15.121505</td>
-      <td>3.016129</td>
-      <td>17.287849</td>
+      <td>3.015054</td>
+      <td>17.288602</td>
       <td>...</td>
-      <td>0.198925</td>
-      <td>0.175452</td>
-      <td>0.146032</td>
-      <td>0.157710</td>
-      <td>16.889247</td>
-      <td>16.691398</td>
-      <td>15.569892</td>
-      <td>14.193548</td>
-      <td>12.344086</td>
+      <td>0.204796</td>
+      <td>0.187097</td>
+      <td>0.148871</td>
+      <td>0.155720</td>
+      <td>16.934409</td>
+      <td>16.640860</td>
+      <td>15.612903</td>
+      <td>14.208602</td>
+      <td>12.455914</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2222,22 +2250,22 @@ Name: mag, dtype: float64
       <td>18.733333</td>
       <td>19.026667</td>
       <td>3.053333</td>
-      <td>21.912111</td>
+      <td>21.913333</td>
       <td>...</td>
-      <td>0.132856</td>
-      <td>0.127044</td>
-      <td>0.128311</td>
-      <td>0.154978</td>
-      <td>22.372222</td>
-      <td>22.198889</td>
-      <td>20.916667</td>
-      <td>19.417778</td>
-      <td>17.452222</td>
+      <td>0.136911</td>
+      <td>0.135211</td>
+      <td>0.129422</td>
+      <td>0.152711</td>
+      <td>22.403333</td>
+      <td>22.126667</td>
+      <td>20.956667</td>
+      <td>19.448889</td>
+      <td>17.552222</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2245,23 +2273,23 @@ Name: mag, dtype: float64
       <td>15.536559</td>
       <td>22.054839</td>
       <td>22.012903</td>
-      <td>3.867742</td>
-      <td>21.569140</td>
+      <td>3.865591</td>
+      <td>21.570645</td>
       <td>...</td>
-      <td>0.100871</td>
-      <td>0.084957</td>
-      <td>0.112538</td>
-      <td>0.153278</td>
-      <td>25.453763</td>
-      <td>25.408602</td>
-      <td>24.141935</td>
-      <td>22.725806</td>
-      <td>20.994624</td>
+      <td>0.105806</td>
+      <td>0.095204</td>
+      <td>0.114419</td>
+      <td>0.150000</td>
+      <td>25.448387</td>
+      <td>25.318280</td>
+      <td>24.163441</td>
+      <td>22.746237</td>
+      <td>21.068817</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2269,23 +2297,23 @@ Name: mag, dtype: float64
       <td>15.351613</td>
       <td>21.410753</td>
       <td>21.378495</td>
-      <td>4.476344</td>
-      <td>18.492688</td>
+      <td>4.480645</td>
+      <td>18.493333</td>
       <td>...</td>
-      <td>0.150946</td>
-      <td>0.121290</td>
-      <td>0.125409</td>
-      <td>0.162650</td>
-      <td>24.784946</td>
-      <td>24.897849</td>
-      <td>24.117204</td>
-      <td>23.311828</td>
-      <td>22.278495</td>
+      <td>0.156161</td>
+      <td>0.132333</td>
+      <td>0.128796</td>
+      <td>0.158750</td>
+      <td>24.758065</td>
+      <td>24.829032</td>
+      <td>24.116129</td>
+      <td>23.325806</td>
+      <td>22.301075</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2293,90 +2321,90 @@ Name: mag, dtype: float64
       <td>12.032222</td>
       <td>18.057778</td>
       <td>17.866667</td>
-      <td>3.728889</td>
-      <td>13.625000</td>
+      <td>3.730000</td>
+      <td>13.625667</td>
       <td>...</td>
-      <td>0.131144</td>
-      <td>0.113678</td>
-      <td>0.117722</td>
-      <td>0.156965</td>
-      <td>21.060000</td>
-      <td>21.218889</td>
-      <td>20.947778</td>
-      <td>20.823333</td>
-      <td>20.717778</td>
+      <td>0.136900</td>
+      <td>0.126422</td>
+      <td>0.121356</td>
+      <td>0.154000</td>
+      <td>21.028889</td>
+      <td>21.168889</td>
+      <td>20.921111</td>
+      <td>20.834444</td>
+      <td>20.707778</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>64756</td>
-      <td>2.533688</td>
+      <td>64756.0</td>
+      <td>2.548882</td>
       <td>-73.74</td>
       <td>41.79</td>
-      <td>19.548000</td>
-      <td>6.704000</td>
-      <td>13.124000</td>
-      <td>13.149333</td>
-      <td>3.408000</td>
-      <td>9.659733</td>
+      <td>18.127473</td>
+      <td>5.757143</td>
+      <td>11.938462</td>
+      <td>11.952747</td>
+      <td>3.228261</td>
+      <td>9.442527</td>
       <td>...</td>
-      <td>0.127653</td>
-      <td>0.087333</td>
-      <td>0.103053</td>
-      <td>0.141000</td>
-      <td>15.598667</td>
-      <td>15.749333</td>
-      <td>15.986667</td>
-      <td>16.608000</td>
-      <td>17.434667</td>
+      <td>0.155275</td>
+      <td>0.128462</td>
+      <td>0.120187</td>
+      <td>0.144588</td>
+      <td>14.872527</td>
+      <td>15.056044</td>
+      <td>15.379121</td>
+      <td>16.159341</td>
+      <td>17.059341</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>64756</td>
-      <td>2.522000</td>
+      <td>64756.0</td>
+      <td>2.555333</td>
       <td>-73.74</td>
       <td>41.79</td>
-      <td>10.986667</td>
-      <td>-1.536667</td>
-      <td>4.721667</td>
-      <td>4.858333</td>
-      <td>2.481667</td>
-      <td>6.991500</td>
+      <td>9.586667</td>
+      <td>-1.375556</td>
+      <td>4.097778</td>
+      <td>4.277778</td>
+      <td>3.991111</td>
+      <td>6.350111</td>
       <td>...</td>
-      <td>0.197867</td>
-      <td>0.159883</td>
-      <td>0.140783</td>
-      <td>0.150367</td>
-      <td>7.018333</td>
-      <td>7.100000</td>
-      <td>7.860000</td>
-      <td>9.181667</td>
-      <td>11.268333</td>
+      <td>0.226111</td>
+      <td>0.212200</td>
+      <td>0.164778</td>
+      <td>0.163078</td>
+      <td>6.777778</td>
+      <td>6.975556</td>
+      <td>7.658889</td>
+      <td>9.048889</td>
+      <td>10.864444</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>64756</td>
-      <td>2.522000</td>
+      <td>64756.0</td>
+      <td>2.555333</td>
       <td>-73.74</td>
       <td>41.79</td>
-      <td>2.845161</td>
-      <td>-6.472581</td>
-      <td>-1.819355</td>
-      <td>-1.677419</td>
-      <td>2.454839</td>
-      <td>4.752903</td>
+      <td>3.569892</td>
+      <td>-5.704301</td>
+      <td>-1.069892</td>
+      <td>-0.850538</td>
+      <td>2.791398</td>
+      <td>4.708602</td>
       <td>...</td>
-      <td>0.225093</td>
-      <td>0.186726</td>
-      <td>0.154403</td>
-      <td>0.171903</td>
-      <td>1.732258</td>
-      <td>1.845161</td>
-      <td>2.622581</td>
-      <td>3.914516</td>
-      <td>6.038710</td>
+      <td>0.259527</td>
+      <td>0.221280</td>
+      <td>0.171817</td>
+      <td>0.177172</td>
+      <td>1.831183</td>
+      <td>2.009677</td>
+      <td>2.647312</td>
+      <td>3.910753</td>
+      <td>5.710753</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -2397,17 +2425,17 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -2467,10 +2495,10 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10f0577b8&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/efe26a4d68264fa5383a2bcf335614bc6d04936731a98f48b50451fab360f072.png" src="../../_images/efe26a4d68264fa5383a2bcf335614bc6d04936731a98f48b50451fab360f072.png" />
+<img alt="../../_images/0cdb3efb75a74d9edce0eb63c0a21766fdb36d6596328e1ab41a35e7a182b1eb.png" src="../../_images/0cdb3efb75a74d9edce0eb63c0a21766fdb36d6596328e1ab41a35e7a182b1eb.png" />
 </div>
 </div>
 <p>If we want to do it on a finer scale, we can group by day of year.</p>
@@ -2484,10 +2512,10 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1129e5c88&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/c1eaaca74dec760fb25af7ff7f16746a1d2567bee53cd4fe307923f713283968.png" src="../../_images/c1eaaca74dec760fb25af7ff7f16746a1d2567bee53cd4fe307923f713283968.png" />
+<img alt="../../_images/f5a1e60d1a15cc306522de62656789d77b924092b971400f65b01405de36fb53.png" src="../../_images/f5a1e60d1a15cc306522de62656789d77b924092b971400f65b01405de36fb53.png" />
 </div>
 </div>
 <section id="calculating-anomalies">
@@ -2504,14 +2532,134 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/geo_scipy/lib/python3.6/site-packages/pandas/core/ops.py:692: RuntimeWarning: invalid value encountered in double_scalars
-  lambda x: op(x, rvalues))
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">standardize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">anomaly</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">standardize</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">anomaly</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;T_DAILY_MEAN&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/groupby/generic.py:1815,</span> in <span class="ni">DataFrameGroupBy.transform</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1812</span> <span class="nd">@Substitution</span><span class="p">(</span><span class="n">klass</span><span class="o">=</span><span class="s2">&quot;DataFrame&quot;</span><span class="p">,</span> <span class="n">example</span><span class="o">=</span><span class="n">__examples_dataframe_doc</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1813</span> <span class="nd">@Appender</span><span class="p">(</span><span class="n">_transform_template</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1814</span> <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1815</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1816</span>         <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">   </span><span class="mi">1817</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/groupby/groupby.py:2028,</span> in <span class="ni">GroupBy._transform</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2025</span>     <span class="n">warn_alias_replacement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_func</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2027</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2028</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transform_general</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">engine_kwargs</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2030</span> <span class="k">elif</span> <span class="n">func</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">base</span><span class="o">.</span><span class="n">transform_kernel_allowlist</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2031</span>     <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">func</span><span class="si">}</span><span class="s2">&#39; is not a valid function name for transform(name)&quot;</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/groupby/generic.py:1732,</span> in <span class="ni">DataFrameGroupBy._transform_general</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1730</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1731</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1732</span>     <span class="n">path</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_choose_path</span><span class="p">(</span><span class="n">fast_path</span><span class="p">,</span> <span class="n">slow_path</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span> <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>     <span class="c1"># e.g. test_transform_with_non_scalar_group</span>
+<span class="g g-Whitespace">   </span><span class="mi">1735</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;transform must return a scalar value for each group&quot;</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/groupby/generic.py:1834,</span> in <span class="ni">DataFrameGroupBy._choose_path</span><span class="nt">(self, fast_path, slow_path, group)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1832</span> <span class="k">def</span><span class="w"> </span><span class="nf">_choose_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast_path</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">slow_path</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">group</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1833</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">slow_path</span>
+<span class="ne">-&gt; </span><span class="mi">1834</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">slow_path</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1836</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ngroups</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1837</span>         <span class="c1"># no need to evaluate multiple paths when only</span>
+<span class="g g-Whitespace">   </span><span class="mi">1838</span>         <span class="c1"># a single group exists</span>
+<span class="g g-Whitespace">   </span><span class="mi">1839</span>         <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">res</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/groupby/generic.py:1827,</span> in <span class="ni">DataFrameGroupBy._define_paths.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(group)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1825</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1826</span>     <span class="n">fast_path</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">group</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1827</span>     <span class="n">slow_path</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">group</span><span class="p">:</span> <span class="n">group</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1828</span>         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span>
+<span class="g g-Whitespace">   </span><span class="mi">1829</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1830</span> <span class="k">return</span> <span class="n">fast_path</span><span class="p">,</span> <span class="n">slow_path</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/frame.py:10401,</span> in <span class="ni">DataFrame.apply</span><span class="nt">(self, func, axis, raw, result_type, args, by_row, engine, engine_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">10387</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.apply</span><span class="w"> </span><span class="kn">import</span> <span class="n">frame_apply</span>
+<span class="g g-Whitespace">  </span><span class="mi">10389</span> <span class="n">op</span> <span class="o">=</span> <span class="n">frame_apply</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">10390</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">10391</span>     <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="mi">10399</span>     <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">10400</span> <span class="p">)</span>
+<span class="ne">&gt; </span><span class="mi">10401</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;apply&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/apply.py:916,</span> in <span class="ni">FrameApply.apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_raw</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">,</span> <span class="n">engine_kwargs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">engine_kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">916</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_standard</span><span class="p">()</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/apply.py:1063,</span> in <span class="ni">FrameApply.apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> <span class="k">def</span><span class="w"> </span><span class="nf">apply_standard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1063</span>         <span class="n">results</span><span class="p">,</span> <span class="n">res_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_series_generator</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1064</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1065</span>         <span class="n">results</span><span class="p">,</span> <span class="n">res_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_series_numba</span><span class="p">()</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/apply.py:1081,</span> in <span class="ni">FrameApply.apply_series_generator</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1078</span> <span class="k">with</span> <span class="n">option_context</span><span class="p">(</span><span class="s2">&quot;mode.chained_assignment&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1079</span>     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">series_gen</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span>         <span class="c1"># ignore SettingWithCopy here in case the user mutates</span>
+<span class="ne">-&gt; </span><span class="mi">1081</span>         <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1082</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ABCSeries</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span>             <span class="c1"># If we have a view on v, we need to make a copy because</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span>             <span class="c1">#  series_generator will swap out the underlying data</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span>             <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/groupby/generic.py:1828,</span> in <span class="ni">DataFrameGroupBy._define_paths.&lt;locals&gt;.&lt;lambda&gt;.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1825</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1826</span>     <span class="n">fast_path</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">group</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1827</span>     <span class="n">slow_path</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">group</span><span class="p">:</span> <span class="n">group</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1828</span>         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span>
+<span class="g g-Whitespace">   </span><span class="mi">1829</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1830</span> <span class="k">return</span> <span class="n">fast_path</span><span class="p">,</span> <span class="n">slow_path</span>
+
+<span class="nn">Cell In[47], line 2,</span> in <span class="ni">standardize</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">standardize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/series.py:6570,</span> in <span class="ni">Series.mean</span><span class="nt">(self, axis, skipna, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6562</span> <span class="nd">@doc</span><span class="p">(</span><span class="n">make_doc</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">6563</span> <span class="k">def</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">6564</span>     <span class="bp">self</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">6568</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">6569</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">6570</span>     <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/generic.py:12485,</span> in <span class="ni">NDFrame.mean</span><span class="nt">(self, axis, skipna, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">12478</span> <span class="k">def</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">12479</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">12480</span>     <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="mi">12483</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">12484</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span> <span class="o">|</span> <span class="nb">float</span><span class="p">:</span>
+<span class="ne">&gt; </span><span class="mi">12485</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">12486</span>         <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">nanops</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">  </span><span class="mi">12487</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/generic.py:12442,</span> in <span class="ni">NDFrame._stat_function</span><span class="nt">(self, name, func, axis, skipna, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">12438</span> <span class="n">nv</span><span class="o">.</span><span class="n">validate_func</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">(),</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">12440</span> <span class="n">validate_bool_kwarg</span><span class="p">(</span><span class="n">skipna</span><span class="p">,</span> <span class="s2">&quot;skipna&quot;</span><span class="p">,</span> <span class="n">none_allowed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="ne">&gt; </span><span class="mi">12442</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">12443</span>     <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
+<span class="g g-Whitespace">  </span><span class="mi">12444</span> <span class="p">)</span>
+
+<span class="nn">File /opt/anaconda3/lib/python3.13/site-packages/pandas/core/series.py:6474,</span> in <span class="ni">Series._reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6472</span>         <span class="n">kwd_name</span> <span class="o">=</span> <span class="s2">&quot;bool_only&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">6473</span>     <span class="c1"># GH#47500 - change to TypeError to match other methods</span>
+<span class="ne">-&gt; </span><span class="mi">6474</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">6475</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not allow </span><span class="si">{</span><span class="n">kwd_name</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">numeric_only</span><span class="si">}</span><span class="s2"> &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">6476</span>         <span class="s2">&quot;with non-numeric dtypes.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">6477</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6478</span> <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: Series.mean does not allow numeric_only=True with non-numeric dtypes.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10ef63828&gt;
-</pre></div>
-</div>
-<img alt="../../_images/b971545457193b5ec90a9ecd3fa636b2d6c08981aa59a53ea2a88a2fe786f0a0.png" src="../../_images/b971545457193b5ec90a9ecd3fa636b2d6c08981aa59a53ea2a88a2fe786f0a0.png" />
 </div>
 </div>
 </section>
@@ -2521,29 +2669,37 @@ Name: mag, dtype: float64
 <p>Below we resample the dataset by taking the mean over each month.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;T_DAILY_MEAN&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;T_DAILY_MEAN&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1126a5278&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/4129696654.py:1: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+  df.resample(&#39;M&#39;).mean(numeric_only=True).plot(y=&#39;T_DAILY_MEAN&#39;, marker=&#39;o&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/7a12d9af78bd0c0743d05a8de00ff80d23747e2f6608260949e62d421ae858ff.png" src="../../_images/7a12d9af78bd0c0743d05a8de00ff80d23747e2f6608260949e62d421ae858ff.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/affa96dec80e2f31d6e3bb1ce4c9e29db4f1ab30e37a5d14427e79069f5c7000.png" src="../../_images/affa96dec80e2f31d6e3bb1ce4c9e29db4f1ab30e37a5d14427e79069f5c7000.png" />
 </div>
 </div>
 <p>Just like with <code class="docutils literal notranslate"><span class="pre">groupby</span></code>, we can apply any aggregation function to our <code class="docutils literal notranslate"><span class="pre">resample</span></code> operation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;T_DAILY_MAX&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;T_DAILY_MAX&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10efc6160&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/d3/z1hh03l929gdlgfh23vm9h0c0000gp/T/ipykernel_37901/2256691261.py:1: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+  df.resample(&#39;M&#39;).max(numeric_only=True).plot(y=&#39;T_DAILY_MAX&#39;, marker=&#39;o&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/fa0d4a28974be76fc6f4723f0e02955f60afa89556c489a5e0e3ce1f433bc249.png" src="../../_images/fa0d4a28974be76fc6f4723f0e02955f60afa89556c489a5e0e3ce1f433bc249.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/3eeea19d795b66b889d742bb413ad9cc6a89e2d0104ae8bd6190a201677bcfb8.png" src="../../_images/3eeea19d795b66b889d742bb413ad9cc6a89e2d0104ae8bd6190a201677bcfb8.png" />
 </div>
 </div>
 </section>
@@ -2558,10 +2714,10 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112cd4b38&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/7783f31d226bb89827e78b44681b9a62273955f069b3202c4f0c7b333c476f3f.png" src="../../_images/7783f31d226bb89827e78b44681b9a62273955f069b3202c4f0c7b333c476f3f.png" />
+<img alt="../../_images/af33d6347511c9213891557f7205f5191fe25c6220cdc45c3f6072cdfebc5ccd.png" src="../../_images/af33d6347511c9213891557f7205f5191fe25c6220cdc45c3f6072cdfebc5ccd.png" />
 </div>
 </div>
 </section>
@@ -2577,16 +2733,16 @@ Name: mag, dtype: float64
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./lectures/pandas"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -2635,7 +2791,7 @@ Name: mag, dtype: float64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happened">What Happened?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-groupby-method">The <code class="docutils literal notranslate"><span class="pre">groupby</span></code> method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-groubby-object">The <code class="docutils literal notranslate"><span class="pre">GroubBy</span></code> object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-groupby-object">The <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-and-selecting-groups">Iterating and selecting groups</a></li>
 </ul>
 </li>
