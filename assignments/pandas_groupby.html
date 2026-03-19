@@ -488,17 +488,130 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-pandas-groupby-with-hurricane-data">
 <h1>Assignment: Pandas Groupby with Hurricane Data<a class="headerlink" href="#assignment-pandas-groupby-with-hurricane-data" title="Permalink to this heading">#</a></h1>
 <p>Import Numpy, Pandas and Matplotlib and set the display options.</p>
-<p>Use the following code to load a CSV file of the <a class="reference external" href="https://www.ncdc.noaa.gov/ibtracs/index.php?name=ibtracs-data">NOAA IBTrACS</a> hurricane dataset:</p>
+<p>Use the following code to load a CSV file of the <a class="reference external" href="https://www.ncei.noaa.gov/products/international-best-track-archive">NOAA IBTrACS</a> hurricane dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/csv/ibtracs.ALL.list.v04r00.csv&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/csv/ibtracs.ALL.list.v04r00.csv&#39;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ISO_TIME&#39;</span><span class="p">],</span> <span class="n">usecols</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span>
                  <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_NAMED&#39;</span><span class="p">],</span>
                  <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">})</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SID</th>
+      <th>SEASON</th>
+      <th>NUMBER</th>
+      <th>BASIN</th>
+      <th>SUBBASIN</th>
+      <th>NAME</th>
+      <th>ISO_TIME</th>
+      <th>NATURE</th>
+      <th>LAT</th>
+      <th>LON</th>
+      <th>WMO_WIND</th>
+      <th>WMO_PRES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>716160</th>
+      <td>2024147N19089</td>
+      <td>2024</td>
+      <td>27</td>
+      <td>NI</td>
+      <td>BB</td>
+      <td>REMAL</td>
+      <td>2024-05-27 06:00:00</td>
+      <td>NR</td>
+      <td>23.0325</td>
+      <td>89.3509</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>716161</th>
+      <td>2024147N19089</td>
+      <td>2024</td>
+      <td>27</td>
+      <td>NI</td>
+      <td>BB</td>
+      <td>REMAL</td>
+      <td>2024-05-27 09:00:00</td>
+      <td>NR</td>
+      <td>23.3337</td>
+      <td>89.6178</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>716162</th>
+      <td>2024147N19089</td>
+      <td>2024</td>
+      <td>27</td>
+      <td>NI</td>
+      <td>BB</td>
+      <td>REMAL</td>
+      <td>2024-05-27 12:00:00</td>
+      <td>NR</td>
+      <td>23.6263</td>
+      <td>89.8799</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>716163</th>
+      <td>2024147N19089</td>
+      <td>2024</td>
+      <td>27</td>
+      <td>NI</td>
+      <td>BB</td>
+      <td>REMAL</td>
+      <td>2024-05-27 15:00:00</td>
+      <td>NR</td>
+      <td>23.9143</td>
+      <td>90.1400</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>716164</th>
+      <td>2024147N19089</td>
+      <td>2024</td>
+      <td>27</td>
+      <td>NI</td>
+      <td>BB</td>
+      <td>REMAL</td>
+      <td>2024-05-27 18:00:00</td>
+      <td>NR</td>
+      <td>24.2000</td>
+      <td>90.4000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Basin Key: (NI - North Indian, SI - South Indian, WP - Western Pacific, SP - Southern Pacific, EP - Eastern Pacific, NA - North Atlantic)</p>
 <p>How many rows does this dataset have?</p>
@@ -575,16 +688,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./assignments"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
