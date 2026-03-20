@@ -506,7 +506,7 @@ document.write(`
 <p>In this assignment, we will use Xarray to analyze top-of-atmosphere radiation data from <a class="reference external" href="https://ceres.larc.nasa.gov/">NASA’s CERES project</a>.</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/The-NASA-Earth%27s-Energy-Budget-Poster-Radiant-Energy-System-satellite-infrared-radiation-fluxes.jpg" width=65%>
 <p><em>Public domain, by NASA, from Wikimedia Commons</em></p>
-<p>A pre-downloaded and subsetted a portion of the CERES dataset is available here: <a class="reference external" href="http://ldeo.columbia.edu/~rpa/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc">http://ldeo.columbia.edu/~rpa/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc</a>. The size of the data file is 702.53 MB. It may take a few minutes to download.</p>
+<p>A pre-downloaded and subsetted a portion of the CERES dataset is available here: <a class="reference external" href="http://ldeo.columbia.edu/~danielmw/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc">http://ldeo.columbia.edu/~danielmw/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc</a>. The size of the data file is 702.53 MB. It may take a few minutes to download.</p>
 <p>Please review the CERES <a class="reference external" href="https://ceres.larc.nasa.gov/resources/faqs">FAQs</a> before getting started.</p>
 <p>Start by importing Numpy, Matplotlib, and Xarray. Set the default figure size to (12, 6).</p>
 <div class="cell docutils container">
@@ -525,10 +525,24 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pooch</span>
 <span class="n">fname</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
-    <span class="s1">&#39;http://ldeo.columbia.edu/~rpa/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc&#39;</span><span class="p">,</span>
-    <span class="n">known_hash</span><span class="o">=</span><span class="s1">&#39;a876cc7106e7dcb1344fbec5dcd7510e5cd947e62049a8cbc188ad05ffe00345&#39;</span>
+    <span class="s1">&#39;http://ldeo.columbia.edu/~danielmw/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc&#39;</span><span class="p">,</span>
+    <span class="n">known_hash</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="n">downloader</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">HTTPDownloader</span><span class="p">(</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from &#39;http://ldeo.columbia.edu/~danielmw/CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc&#39; to file &#39;/Users/danielmw/Library/Caches/pooch/a379a4cf37bf10809e636b0809c1c88b-CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc&#39;.
+/opt/anaconda3/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host &#39;ldeo.columbia.edu&#39;. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/opt/anaconda3/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host &#39;www.ldeo.columbia.edu&#39;. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+SHA256 hash of downloaded file: a876cc7106e7dcb1344fbec5dcd7510e5cd947e62049a8cbc188ad05ffe00345
+Use this value as the &#39;known_hash&#39; argument of &#39;pooch.retrieve&#39; to ensure that the file hasn&#39;t changed if it is downloaded again in the future.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/danielmw/Library/Caches/pooch/a379a4cf37bf10809e636b0809c1c88b-CERES_EBAF-TOA_Edition4.0_200003-201701.condensed.nc
 </pre></div>
 </div>
 </div>
@@ -657,16 +671,16 @@ Try to have your legend created automatically from the data.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./assignments"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
