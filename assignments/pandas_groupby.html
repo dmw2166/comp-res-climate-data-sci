@@ -469,11 +469,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-hurricane-katrina-from-2005-and-plot-its-track-as-a-scatter-plot">9) Find Hurricane Katrina (from 2005) and plot its track as a scatter plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-time-the-index-on-your-dataframe">10) Make time the index on your dataframe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-count-of-all-datapoints-per-year-as-a-timeseries">11) Plot the count of all datapoints per year as a timeseries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-all-tracks-from-the-north-atlantic-in-2005">12) Plot all tracks from the North Atlantic in 2005</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-filtered-dataframe-that-contains-only-data-since-1970-from-the-north-atlantic-na-basin">13) Create a filtered dataframe that contains only data since 1970 from the North Atlantic (“NA”) Basin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-number-of-datapoints-per-day-from-this-filtered-dataframe">14) Plot the number of datapoints per day from this filtered dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-climatology-of-datapoint-counts-as-a-function-of-dayofyear">15) Calculate the climatology of datapoint counts as a function of <code class="docutils literal notranslate"><span class="pre">dayofyear</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-transform-to-calculate-the-anomaly-of-daily-counts-from-the-climatology">16) Use <code class="docutils literal notranslate"><span class="pre">transform</span></code> to calculate the anomaly of daily counts from the climatology</a></li>
 </ul>
             </nav>
         </div>
@@ -655,26 +650,6 @@ document.write(`
 <section id="plot-the-count-of-all-datapoints-per-year-as-a-timeseries">
 <h2>11) Plot the count of all datapoints per year as a timeseries<a class="headerlink" href="#plot-the-count-of-all-datapoints-per-year-as-a-timeseries" title="Permalink to this heading">#</a></h2>
 <p>You should use <code class="docutils literal notranslate"><span class="pre">resample</span></code></p>
-</section>
-<section id="plot-all-tracks-from-the-north-atlantic-in-2005">
-<h2>12) Plot all tracks from the North Atlantic in 2005<a class="headerlink" href="#plot-all-tracks-from-the-north-atlantic-in-2005" title="Permalink to this heading">#</a></h2>
-<p>You will probably have to iterate through a <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object</p>
-</section>
-<section id="create-a-filtered-dataframe-that-contains-only-data-since-1970-from-the-north-atlantic-na-basin">
-<h2>13) Create a filtered dataframe that contains only data since 1970 from the North Atlantic (“NA”) Basin<a class="headerlink" href="#create-a-filtered-dataframe-that-contains-only-data-since-1970-from-the-north-atlantic-na-basin" title="Permalink to this heading">#</a></h2>
-<p>Use this for the rest of the assignment</p>
-</section>
-<section id="plot-the-number-of-datapoints-per-day-from-this-filtered-dataframe">
-<h2>14) Plot the number of datapoints per day from this filtered dataframe<a class="headerlink" href="#plot-the-number-of-datapoints-per-day-from-this-filtered-dataframe" title="Permalink to this heading">#</a></h2>
-<p>Make sure you figure is big enough to actually see the plot</p>
-</section>
-<section id="calculate-the-climatology-of-datapoint-counts-as-a-function-of-dayofyear">
-<h2>15) Calculate the climatology of datapoint counts as a function of <code class="docutils literal notranslate"><span class="pre">dayofyear</span></code><a class="headerlink" href="#calculate-the-climatology-of-datapoint-counts-as-a-function-of-dayofyear" title="Permalink to this heading">#</a></h2>
-<p>Plot the mean and standard deviation on a single figure</p>
-</section>
-<section id="use-transform-to-calculate-the-anomaly-of-daily-counts-from-the-climatology">
-<h2>16) Use <code class="docutils literal notranslate"><span class="pre">transform</span></code> to calculate the anomaly of daily counts from the climatology<a class="headerlink" href="#use-transform-to-calculate-the-anomaly-of-daily-counts-from-the-climatology" title="Permalink to this heading">#</a></h2>
-<p>Resample the anomaly timeseries at annual resolution and plot a line with dots as markers.</p>
 <p>Which years stand out as having anomalous hurricane activity?</p>
 </section>
 </section>
@@ -754,11 +729,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-hurricane-katrina-from-2005-and-plot-its-track-as-a-scatter-plot">9) Find Hurricane Katrina (from 2005) and plot its track as a scatter plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-time-the-index-on-your-dataframe">10) Make time the index on your dataframe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-count-of-all-datapoints-per-year-as-a-timeseries">11) Plot the count of all datapoints per year as a timeseries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-all-tracks-from-the-north-atlantic-in-2005">12) Plot all tracks from the North Atlantic in 2005</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-filtered-dataframe-that-contains-only-data-since-1970-from-the-north-atlantic-na-basin">13) Create a filtered dataframe that contains only data since 1970 from the North Atlantic (“NA”) Basin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-number-of-datapoints-per-day-from-this-filtered-dataframe">14) Plot the number of datapoints per day from this filtered dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-climatology-of-datapoint-counts-as-a-function-of-dayofyear">15) Calculate the climatology of datapoint counts as a function of <code class="docutils literal notranslate"><span class="pre">dayofyear</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-transform-to-calculate-the-anomaly-of-daily-counts-from-the-climatology">16) Use <code class="docutils literal notranslate"><span class="pre">transform</span></code> to calculate the anomaly of daily counts from the climatology</a></li>
 </ul>
   </nav></div>
 
