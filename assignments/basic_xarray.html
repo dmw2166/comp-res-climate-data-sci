@@ -630,6 +630,14 @@ Use this value as the &#39;known_hash&#39; argument of &#39;pooch.retrieve&#39; 
 <p>Your goal is to make a map that looks like the one below. It shows total precipitation on Oct. 15, 2018 in blue, plus contours of the 500 mb geopotential surface.</p>
 <p><em>Hint: examine the dataset variables and attirbutes carefully in order to determine the projection of the data.</em></p>
 <p><img alt="narr_map" src="../_images/narr_map.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/NARR/Dailies/pressure/hgt.201810.nc&quot;</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="antarctic-sea-ice">
 <h3>5.2) Antarctic Sea Ice<a class="headerlink" href="#antarctic-sea-ice" title="Permalink to this heading">#</a></h3>
